@@ -1,0 +1,43 @@
+group 'VK_test'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+task buildJar(type: Jar){
+    manifest{
+        attributes 'Implementation-Title': 'Appium Framework',
+                   'Implementation-version': version,
+                   'Main-Class': 'Runner'
+    }
+    baseName = project.name + "-FM"
+    from {configurations.compile.collect {it.isDirectory() ? it:zipTree(it)}}
+    with jar
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+
+    compile group: 'io.appium', name: 'java-client', version: '4.1.2'
+    compile 'log4j:log4j:1.2.17'
+    compile group: 'org.bytedeco.javacpp-presets', name: 'tesseract', version: '3.03-rc1-0.11'
+    compile group: 'org.bytedeco', name: 'javacpp', version: '1.0'
+    compile group: 'org.bytedeco', name: 'javacv', version: '1.0'
+    //compile group: 'org.bytedeco.javacpp-presets', name: 'tesseract', version: '3.03-rc1-0.11' //, classifier: opencvBinaryClassifer
+    //compile group: 'org.bytedeco.javacpp-presets', name: 'leptonica', version: '1.71-0.11', classifier: opencvBinaryClassifer
+    compile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    //compile group: 'net.sf.json-lib', name: 'json-lib', version: '2.4'
+    compile 'org.testng:testng:6.1.1'
+}
+
+test {
+    useTestNG {
+        suites 'src/main/resources/testng.xml'
+    }
+}
