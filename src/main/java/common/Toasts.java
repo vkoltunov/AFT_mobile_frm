@@ -20,6 +20,7 @@ import static org.bytedeco.javacpp.lept.pixRead;
 /**
  * Created by User on 6/1/2017.
  */
+
 public class Toasts {
 
     public static String getToastMessage() throws InterruptedException {

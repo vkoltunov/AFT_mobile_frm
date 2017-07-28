@@ -3,6 +3,7 @@ package core;
 import core.managers.ServerManager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by User on 4/18/2017.
@@ -20,8 +21,8 @@ public class AVD {
         else return output;
     }
 
-    public static ArrayList getEmulatorList(){
-        ArrayList emulators = new ArrayList();
+    public static ArrayList<String> getEmulatorList(){
+        ArrayList<String> emulators = new ArrayList<>();
         String output = command("emulator -list-avds");
         for(String line : output.split("\n")){
             line = line.trim();

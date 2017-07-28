@@ -7,6 +7,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -14,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by User on 3/28/2017.
  */
+
 public class UiObject {
 
     private String locator;
@@ -116,11 +118,12 @@ public class UiObject {
     }
 
     public int size() {
-        List<WebElement> list;
+        List<?> list;
         //Android.driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         if (isXpath()) list = Android.driver.findElementsByXPath(locator);
         else list = Android.driver.findElementsByAndroidUIAutomator(locator);
         return list.size();
+
     }
 
     public String getText(){

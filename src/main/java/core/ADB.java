@@ -5,13 +5,16 @@ import org.aspectj.lang.annotation.Before;
 import org.junit.Test;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Observable;
 
 /**
  * Created by User on 3/28/2017.
  */
+
 public class ADB {
 
     private String ID;
@@ -38,7 +41,7 @@ public class ADB {
     }
 
     public static ArrayList getConnectedDevices(){
-        ArrayList devices = new ArrayList();
+        ArrayList<String> devices = new ArrayList<>();
         String output = command("adb devices");
         for(String line : output.split("\n")){
             line = line.trim();
@@ -62,7 +65,7 @@ public class ADB {
     }
 
     public ArrayList getInstalledPackages(){
-        ArrayList packages = new ArrayList();
+        ArrayList<String> packages = new ArrayList<>();
         String[] output = command("adb -s "+ID+" shell pm list packages").split("\n");
         for(String packageID : output) packages.add(packageID.replace("package:", "").trim());
         return packages;
@@ -139,9 +142,9 @@ public class ADB {
         command("adb -s "+ID+" shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///mnt/sdcard/Pictures");
     }
 
-    public ArrayList getLogcatProcesses(){
+    public List<String> getLogcatProcesses(){
         String[] output = command("adb -s "+ID+" shell top -n 1 | grep -i 'logcat'").split("\n");
-        ArrayList processes = new ArrayList();
+        List<String> processes = new ArrayList<>();
         for(String line : output){
             processes.add(line.split(" ")[0]);
             processes.removeAll(Arrays.asList("", null));
@@ -149,8 +152,10 @@ public class ADB {
         return processes;
     }
 
+    List<String> processes = new ArrayList<String>();
+
     public Object startLogcat(final String logID, final String grep){
-        ArrayList pidBefore = getLogcatProcesses();
+        List<String> pidBefore = getLogcatProcesses();
 
         Thread logcat = new Thread(new Runnable() {
             @Override
@@ -163,7 +168,7 @@ public class ADB {
         logcat.start();
         logcat.interrupt();
 
-        ArrayList pidAfter =  getLogcatProcesses();
+        List<String> pidAfter =  getLogcatProcesses();
         Timer timer = new Timer();
         timer.start();
         while(!timer.expired(5)){

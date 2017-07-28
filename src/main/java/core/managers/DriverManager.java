@@ -28,6 +28,7 @@ import java.util.Set;
 /**
  * Created by User on 3/28/2017.
  */
+
 public class DriverManager {
 
     //private static String nodeJS = System.getenv("APPIUM_HOME")+ "/node.exe";
@@ -63,7 +64,7 @@ public class DriverManager {
 
     private static ArrayList<String> getAvailableDevices(){
         MyLogger.log.info("Checking for available devices");
-        ArrayList<String> avaiableDevices = new ArrayList<String>();
+        ArrayList<String> avaiableDevices = new ArrayList<>();
         ArrayList connectedDevices = ADB.getConnectedDevices();
         for(Object connectedDevice: connectedDevices){
             String device = connectedDevice.toString();
@@ -126,14 +127,12 @@ public class DriverManager {
         try {
             MyLogger.log.info("Queueing Up: "+deviceID);
             JSONObject json = new JSONObject();
-            json.put("queued_at", Timer.getTimeStamp());
+//            json.put("queued_at", Timer.getTimeStamp());
             JSONObject jsonQueue = Resources.getQueue();
-            jsonQueue.put(deviceID, json);
+//            jsonQueue.put(deviceID, json);
             MyLogger.log.info("JSON Queue: "+jsonQueue);
             ServerManager.write(new File(Resources.QUEUE), jsonQueue.toString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
     }
@@ -148,9 +147,7 @@ public class DriverManager {
                 if(diff >= 30) return true;
                 else return false;
             } else return true;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
+        } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
     }
