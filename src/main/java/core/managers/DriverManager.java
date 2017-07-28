@@ -127,9 +127,9 @@ public class DriverManager {
         try {
             MyLogger.log.info("Queueing Up: "+deviceID);
             JSONObject json = new JSONObject();
-//            json.put("queued_at", Timer.getTimeStamp());
+            json.put("queued_at", Timer.getTimeStamp());
             JSONObject jsonQueue = Resources.getQueue();
-//            jsonQueue.put(deviceID, json);
+            jsonQueue.put(deviceID, json);
             MyLogger.log.info("JSON Queue: "+jsonQueue);
             ServerManager.write(new File(Resources.QUEUE), jsonQueue.toString());
         } catch (IOException | ParseException e) {

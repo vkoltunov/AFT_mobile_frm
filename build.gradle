@@ -6,9 +6,9 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 
-tasks.withType(JavaCompile) {
-    options.compilerArgs << "-Xlint:unchecked" << "-Werror"
-}
+//tasks.withType(JavaCompile) {
+//    options.compilerArgs << "-Xlint:unchecked" << "-Werror"
+//}
 
 task buildJar(type: Jar){
     manifest{
