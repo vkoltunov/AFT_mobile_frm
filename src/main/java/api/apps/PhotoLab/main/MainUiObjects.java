@@ -27,7 +27,8 @@ public class MainUiObjects {
             categoryItem_last,
             inspirationBlock,
             category_area,
-            inspirationItem;
+            inspirationItem,
+            inspirationProfile;
 
     public UiObject photoLab(){
         if(photoLab == null) photoLab = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").text("Photo Lab").makeUiObject();
@@ -117,12 +118,17 @@ public class MainUiObjects {
     }
 
     public UiObject inspirationBlock(String name){
-        inspirationBlock = new UiSelector().className("android.widget.CheckedTextView").textContains(name).makeUiObject();
+        inspirationBlock = new UiSelector().className("android.widget.CheckedTextView").text(name).makeUiObject();
         return inspirationBlock;
     }
 
     public UiObject inspirationItem(int index){
         inspirationItem = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.FrameLayout[@index='"+index+"']//android.widget.ImageView[@resource-id='vsin.t16_funny_photo:id/image_collage']").makeUiObject();
         return inspirationItem;
+    }
+
+    public UiObject inspirationProfile(){
+        if(inspirationProfile == null) inspirationProfile = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/profile").makeUiObject();
+        return inspirationProfile;
     }
 }

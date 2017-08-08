@@ -6,6 +6,9 @@ import core.managers.TestManager;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/26/2017.
@@ -14,26 +17,27 @@ public class test_VersionCheck extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @BeforeClass
+    @org.testng.annotations.BeforeClass
     public static void beforeClass(){
         photolab.open();
     }
 
-    @Before
+    @BeforeTest
     public void before(){
         testInfo.suite("test_VersionCheck");
     }
 
     //===== Version check =====
 
-    @Test
-    public void test5(){
+    @org.testng.annotations.Test
+    @Parameters({"Version"})
+    public void test5(String version){
         testInfo.id("test5").suite("Functionality").name("version Page check.");
         photolab.main.waitToLoad();
         photolab.menu.open();
         photolab.menu.tapAbout();
         photolab.about.waitToLoad();
-        photolab.about.checkVersion("2.1.");
+        photolab.about.checkVersion(version);
         photolab.menu.open();
         photolab.menu.tapHome();
     }

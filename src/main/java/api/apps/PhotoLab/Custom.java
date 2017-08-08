@@ -1,11 +1,11 @@
 package api.apps.PhotoLab;
 
 import api.android.Android;
-import common.FileManager;
 import core.MyLogger;
+import core.utils.Common;
 import io.appium.java_client.android.AndroidKeyCode;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
 
@@ -80,7 +80,7 @@ public class Custom {
         File[] listOfFiles = folder.listFiles();
 
         for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) bflag = FileManager.compareImage(fileEtalon, listOfFiles[i]);
+            if (listOfFiles[i].isFile()) bflag = Common.compareImage(fileEtalon, listOfFiles[i]);
         }
         if (bflag) MyLogger.log.info("Compare files result : TRUE." );
         else MyLogger.log.error("Compare files result : FALSE." );
@@ -168,6 +168,70 @@ public class Custom {
             }
         }
         return flag;
+    }
+
+    public static void swipeTo (String from, String to) {
+
+        Dimension size;
+        size = driver.manage().window().getSize();
+        int endx;
+        int startx;
+        int starty;
+        int endy;
+
+        switch (from) {
+            case "Top":
+            case "top":
+                startx = (int) (size.width * 0.2);
+                starty = (int) (size.height * 0.5);
+                break;
+            case "Bottom":
+            case "bottom":
+                startx = (int) (size.width * 0.85);
+                starty = (int) (size.height * 0.5);
+                break;
+            case "Left":
+            case "left":
+                startx = (int) (size.width * 0.5);
+                starty = (int) (size.height * 0.2);
+                break;
+            case "Right":
+            case "right":
+                startx = (int) (size.width * 0.5);
+                starty = (int) (size.height * 0.85);
+                break;
+            default:
+                startx = (int) (size.width * 0.2);
+                starty = (int) (size.height * 0.5);
+                break;
+        }
+        switch (to) {
+            case "Top":
+            case "top":
+                endx = (int) (size.width * 0.2);
+                endy = (int) (size.height * 0.5);
+                break;
+            case "Bottom":
+            case "bottom":
+                endx = (int) (size.width * 0.85);
+                endy = (int) (size.height * 0.5);
+                break;
+            case "Left":
+            case "left":
+                endx = (int) (size.width * 0.5);
+                endy = (int) (size.height * 0.2);
+                break;
+            case "Right":
+            case "right":
+                endx = (int) (size.width * 0.5);
+                endy = (int) (size.height * 0.85);
+                break;
+            default:
+                endx = (int) (size.width * 0.85);
+                endy = (int) (size.height * 0.5);
+                break;
+        }
+        driver.swipe(startx, starty, endx, endy, 1700);
     }
 
 }

@@ -3,9 +3,11 @@ package tests;
 import api.android.Android;
 import api.apps.PhotoLab.PhotoLab;
 import core.managers.TestManager;
+import core.utils.Config;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.testng.annotations.BeforeTest;
 
 /**
  * Created by User on 6/26/2017.
@@ -14,27 +16,27 @@ public class test_Art extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @BeforeClass
+    @org.testng.annotations.BeforeClass
     public static void beforeClass(){
         photolab.open();
     }
 
-    @Before
+    @BeforeTest
     public void before(){
         testInfo.suite("test_Art");
     }
 
     //===== Full + Art =====
 
-    @Test
+    @org.testng.annotations.Test
     public void test10(){
         testInfo.id("test10").suite("Functionality").name("Full cycle work with photo + Add art Effect (Category:Smart Filters; Effect:Color On You)");
 
-        photolab.custom.loadPictureToDevice("D:\\Base\\t1.png");
+        photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Smart Filters");
-        photolab.categories.selectEffect("Color On You");
+        photolab.categories.selectEffect("Color on You");
         photolab.pictures.selectTab("All");
         photolab.pictures.selectPicture(1);
         photolab.property.waitToLoad();
@@ -48,8 +50,8 @@ public class test_Art extends TestManager {
         photolab.save.selectDownload();
         photolab.menu.open();
         photolab.menu.tapHome();
-        photolab.custom.moveResPictureToPC("D:\\Base_Res");
+        photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
         //photolab.custom.compareFiles("D:\\Base_Res", "D:\\Base_Res\\ColorOnYou.jpg");
-        photolab.custom.clearFolderData("D:\\Base_Res");
+        photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 }

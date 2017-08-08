@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [тестовый запуск]">
+  <parameter name="Fb_Password" value="testbook"/>
+  <parameter name="Fb_Login" value="zqobenkoji_1497287426@tfbnw.net"/>
+  <test name="025(failed)" preserve-order="false">
+    <parameter name="Fb_Password" value="testbook"/>
+    <parameter name="Fb_Login" value="zqobenkoji_1497287426@tfbnw.net"/>
+    <classes>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="test17_2" invocation-numbers="0"/>
+          <include name="afterTest"/>
+          <include name="beforeClass"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

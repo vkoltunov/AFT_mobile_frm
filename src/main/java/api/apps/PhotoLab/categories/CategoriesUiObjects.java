@@ -22,11 +22,17 @@ public class CategoriesUiObjects {
             effect_items,
             effectItem_by_index,
             effectItem_last,
-            category_area;
+            category_area,
+            page_Title;
 
     public UiObject effects(){
         if(effects == null) effects = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_subtitle").textContains("effects").makeUiObject();
         return effects;
+    }
+
+    public UiObject page_Title(String title){
+        page_Title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").textContains(title).makeUiObject();
+        return page_Title;
     }
 
     public UiObject advertisement(){

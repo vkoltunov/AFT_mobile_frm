@@ -29,6 +29,16 @@ public class Categories implements Activity {
         }
     }
 
+    public Boolean categoryTitle_check(String title){
+        MyLogger.log.info("Check is category page title '"+title+"' exists");
+        waitToLoad();
+        if (uiObject.page_Title(title).size() > 0) return true;
+        else {
+            MyLogger.log.info("Category page title '"+title+"' checks failed.");
+            return false;
+        }
+    }
+
     public Boolean effectExists(String effectName){
         MyLogger.log.info("Check is effect '"+effectName+"' exists");
         if (scrollToEffect(effectName)) return true;

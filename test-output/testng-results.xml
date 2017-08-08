@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="тестовый запуск" duration-ms="25158" started-at="2017-08-08T16:48:07Z" finished-at="2017-08-08T16:48:32Z">
+    <groups>
+    </groups>
+    <test name="002" duration-ms="25158" started-at="2017-08-08T16:48:07Z" finished-at="2017-08-08T16:48:32Z">
+      <class name="tests.test_Navigation_Tabs">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-08-08T16:48:07Z" finished-at="2017-08-08T16:48:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2f217633]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="beforeClass()" name="beforeClass" is-config="true" duration-ms="664" started-at="2017-08-08T16:48:07Z" finished-at="2017-08-08T16:48:08Z">
+        </test-method>
+        <test-method status="PASS" signature="test1()" name="test1" duration-ms="24492" started-at="2017-08-08T16:48:08Z" finished-at="2017-08-08T16:48:32Z">
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-08-08T16:48:32Z" finished-at="2017-08-08T16:48:32Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

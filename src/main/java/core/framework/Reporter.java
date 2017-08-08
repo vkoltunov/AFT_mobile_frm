@@ -1,6 +1,11 @@
-package core;
+package core.framework;
 
 import api.android.Android;
+import com.gargoylesoftware.htmlunit.javascript.host.xml.XMLDocument;
+import core.framework.base.BaseEntity;
+import core.utils.Common;
+import core.utils.Config;
+import core.utils.GlobalDict;
 import javafx.scene.shape.PathElement;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -20,13 +25,17 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.logging.FileHandler;
 import java.util.logging.SimpleFormatter;
 
 import static core.managers.DriverManager.sdCard;
+import static core.utils.Config.Keys.DATA_DIR;
+import static core.utils.Config.Keys.DATA_FILE;
+
 
 /**
- * Created by User on 7/14/2017.
+ * Created by User on 8/2/2017.
  */
 public class Reporter {
 

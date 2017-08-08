@@ -4,6 +4,7 @@ import api.android.Android;
 import api.apps.PhotoLab.categories.Categories;
 import api.apps.PhotoLab.menu.Menu;
 import api.apps.PhotoLab.pictures.Pictures;
+import api.apps.PhotoLab.profile.Profile;
 import api.apps.PhotoLab.store.Store;
 import api.interfaces.Activity;
 import core.MyLogger;
@@ -76,12 +77,12 @@ public class Main implements Activity {
         else throw new AssertionError("Category bar '"+categoryBarName+"' not found.");
     }
 
-    public Categories selectCategory(String categoryName){
+    public Boolean selectCategory(String categoryName){
         MyLogger.log.info("Select category '"+categoryName+"'.");
         waitToLoad();
         if (scrollToCategory(categoryName)) {
             uiObject.categoryItem(categoryName).tap();
-            return Android.app.photoLab.categories.waitToLoad();
+            return Android.app.photoLab.categories.categoryTitle_check(categoryName);
         }
         else throw new AssertionError("Category '"+categoryName+"' not found.");
     }
@@ -141,6 +142,16 @@ public class Main implements Activity {
             return Android.app.photoLab.main.waitToLoad();
         }catch (AssertionError e) {
             throw new AssertionError("Inspiration block '"+name+"' failed to select.");
+        }
+    }
+
+    public Profile openProfile(){
+        try{
+            MyLogger.log.info("Open Inspiration user profile.");
+            uiObject.inspirationProfile().tap();
+            return Android.app.photoLab.profile.waitToLoad();
+        }catch (AssertionError e) {
+            throw new AssertionError("Inspiration profile page not found.");
         }
     }
 

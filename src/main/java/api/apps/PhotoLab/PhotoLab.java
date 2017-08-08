@@ -16,6 +16,7 @@ import api.apps.PhotoLab.camera.Camera;
 import api.apps.PhotoLab.categories.Categories;
 import api.apps.PhotoLab.main.Main;
 import api.apps.PhotoLab.menu.Menu;
+import api.apps.PhotoLab.profile.Profile;
 import api.apps.PhotoLab.property.Property;
 import api.apps.PhotoLab.processing.Processing;
 import api.apps.PhotoLab.result.Result;
@@ -55,6 +56,7 @@ public class PhotoLab implements Application{
     public Advertisement advertisement = new Advertisement();
     public Notifications notifications = new Notifications();
     public AboutCombo aboutCombo = new AboutCombo();
+    public Profile profile = new Profile();
 
     @Override
     public void forceStop() {

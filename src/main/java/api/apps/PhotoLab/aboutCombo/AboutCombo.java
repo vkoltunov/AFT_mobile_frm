@@ -1,6 +1,8 @@
 package api.apps.PhotoLab.aboutCombo;
 
 import api.android.Android;
+import api.apps.PhotoLab.Custom;
+import api.apps.PhotoLab.PhotoLab;
 import api.interfaces.Activity;
 import core.MyLogger;
 
@@ -29,10 +31,23 @@ public class AboutCombo implements Activity {
         try{
             MyLogger.log.info("Check All Page elements for exists.");
             uiObject.title().waitToAppear(3);
-            uiObject.comboBy().waitToAppear(2);
+            checkComboBy();
             uiObject.close().waitToAppear(2);
         }catch (AssertionError e) {
             throw new AssertionError("All Page elements for exists check failed.");
+        }
+    }
+
+    public Boolean checkComboBy() {
+
+        MyLogger.log.info("Check ComboBy text on Page.");
+        Custom.swipeTo("bottom", "top");
+        if (uiObject.comboBy().size() > 0){
+            MyLogger.log.info("ComboBy text exists on Page.");
+            return true;
+        } else{
+            MyLogger.log.info("ComboBy text isn't exist on Page.");
+            return false;
         }
     }
 

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="смоке запуск" verbose="1">
+    <test name="001" preserve-order="true">
+        <parameter name="Tab" value='Popular' />
+        <classes>
+            <class name="tests.test_Navigation_Tabs" />
+        </classes>
+    </test>
+    <test name="002" preserve-order="true">
+        <classes>
+            <class name="tests.test_Navigation_Categories" />
+        </classes>
+    </test>
+    <test name="003" preserve-order="true">
+        <parameter name="Version" value='2.1.' />
+        <classes>
+            <class name="tests.test_VersionCheck" />
+        </classes>
+    </test>
+    <test name="004" preserve-order="true">
+        <classes>
+            <class name="tests.test_SaveAndShare" />
+        </classes>
+    </test>
+    <test name="005" preserve-order="true">
+        <classes>
+            <class name="tests.test_SimpleWorkflow" />
+        </classes>
+    </test>
+    <test name="006" preserve-order="true">
+        <classes>
+            <class name="tests.test_GoPro" />
+        </classes>
+    </test>
+    <test name="007" preserve-order="true">
+        <classes>
+            <class name="tests.test_Watemark" />
+        </classes>
+    </test>
+    <test name="008" preserve-order="true">
+        <classes>
+            <class name="tests.test_Animation" />
+        </classes>
+    </test>
+    <test name="009" preserve-order="true">
+        <classes>
+            <class name="tests.test_Art" />
+        </classes>
+    </test>
+    <test name="010" preserve-order="true">
+        <classes>
+            <class name="tests.test_Notifications" />
+        </classes>
+    </test>
+    <test name="011" preserve-order="true">
+        <classes>
+            <class name="tests.test_Collage" />
+        </classes>
+    </test>
+    <test name="012" preserve-order="true">
+        <classes>
+            <class name="tests.test_Favorites" />
+        </classes>
+    </test>
+    <test name="013" preserve-order="true">
+        <classes>
+            <class name="tests.test_Inspiration" />
+        </classes>
+    </test>
+    <test name="014" preserve-order="true">
+        <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
+        <parameter name="Fb_Password" value='testbook' />
+        <classes>
+            <class name="tests.test_Compositions_Ok" />
+        </classes>
+    </test>
+</suite>

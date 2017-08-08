@@ -105,7 +105,8 @@ public class PicturesUiObjects {
     }
 
     public UiObject folder(String folderName){
-        folder = new UiSelector().className("android.widget.TextView").text(folderName).makeUiObject();
+        if (folderName.contains("first") || folderName.contains("First")) folder = new UiSelector().className("android.support.v7.app.ActionBar$Tab").index(0).makeUiObject();
+        else folder = new UiSelector().className("android.widget.TextView").text(folderName).makeUiObject();
         return folder;
     }
 
@@ -115,7 +116,7 @@ public class PicturesUiObjects {
     }
 
     public UiObject moreOptions(){
-        if(moreOptions == null) moreOptions = new UiSelector().className("android.widget.ImageView").text("More options").makeUiObject();
+        if(moreOptions == null) moreOptions = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/more").makeUiObject();
         return moreOptions;
     }
 

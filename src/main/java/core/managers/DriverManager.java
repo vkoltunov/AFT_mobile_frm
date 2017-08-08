@@ -31,10 +31,11 @@ import java.util.Set;
 
 public class DriverManager {
 
-    //private static String nodeJS = System.getenv("APPIUM_HOME")+ "/node.exe";
-    //private static String appiumJS = System.getenv("APPIUM_HOME")+"/node_modules/appium/bin/appium.js";
-    private static String nodeJS = "C:/Appium/node.exe";
-    private static String appiumJS = "C:/Appium/node_modules/appium/bin/appium.js";
+    private static String nodeJS = System.getenv("APPIUM_HOME")+ "/node.exe";
+    private static String appiumJS = System.getenv("APPIUM_HOME")+"/node_modules/appium/bin/appium.js";
+    private static String appiumUnlock = System.getenv("APPIUM_HOME")+"/node_modules/appium/build/unlock_apk/unlock_apk-debug.apk";
+    //private static String nodeJS = "C:/Appium/node.exe";
+    //private static String appiumJS = "C:/Appium/node_modules/appium/bin/appium.js";
     private static DriverService service;
     private static String deviceID;
 
@@ -43,13 +44,16 @@ public class DriverManager {
 
     //public static String sdCard = "sdcard";
     public static String sdCard = "sdcard";
+    private static File app=new File(appiumUnlock);
+
+
 
     private static DesiredCapabilities getCaps(String deviceID){
         MyLogger.log.info("Creating driver caps for device: "+deviceID);
         DesiredCapabilities caps = new DesiredCapabilities();
             caps.setCapability("deviceName", deviceID);
             caps.setCapability("platformName", "Android");
-            caps.setCapability("app", "C:/Appium/node_modules/appium/build/unlock_apk/unlock_apk-debug.apk");
+            caps.setCapability("app", app.getAbsolutePath());
         return caps;
     }
 

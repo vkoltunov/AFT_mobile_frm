@@ -73,15 +73,21 @@ public class Save implements Activity {
             size = driver.manage().window().getSize();
             int startx = size.width;
             int xpos = startx;
+            int xpos2 = xpos;
 
             location = uiObject.collage().getLocation();
             size2 = uiObject.collage().getSize();
             int ypos = (int) (location.getY() + size2.getHeight() * 0.95);
-
-            while ((!(Android.app.photoLab.dialogs.uiObject.dialog().size() > 0)) && (xpos > startx/2)) {
-                xpos = (int)(xpos * 0.9);
-                TouchAction touchAction=new TouchAction(driver);
-                touchAction.tap(xpos, ypos).perform();
+            int ypos2 = (int) ypos/2;
+            while ((ypos > ypos2) && (!bflag)){
+                while ((!bflag) && (xpos > startx/2)) {
+                    xpos = (int)(xpos * 0.9);
+                    TouchAction touchAction=new TouchAction(driver);
+                    touchAction.tap(xpos, ypos).perform();
+                    if (Android.app.photoLab.dialogs.uiObject.dialog().size() > 0) bflag = true;
+                }
+                xpos = xpos2;
+                ypos = (int)(ypos * 0.95);
             }
             if (xpos > startx/2) return Android.app.photoLab.dialogs.waitToLoad();
             else throw new AssertionError("Watemark #photolab not found.");

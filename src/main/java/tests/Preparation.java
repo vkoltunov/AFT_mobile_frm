@@ -2,10 +2,16 @@ package tests;
 
 import api.android.Android;
 import api.apps.PhotoLab.PhotoLab;
+import core.MyLogger;
 import core.managers.TestManager;
+import core.utils.Common;
+import core.utils.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/27/2017.
@@ -14,12 +20,12 @@ public class Preparation extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @BeforeClass
+    @org.testng.annotations.BeforeClass
     public static void beforeClass() {
         photolab.open();
     }
 
-    @Before
+    @BeforeTest
     public void before() {
         testInfo.suite("Preparation");
     }
@@ -31,13 +37,18 @@ public class Preparation extends TestManager {
     //    Android.app.instagram.runTest();
     //}
 
-    @Test
-    public void test0(){
+    /**
+     * Обработка входящих параметров
+     *
+     */
+    @org.testng.annotations.Test
+    @Parameters({"Build_Path"})
+    public void test0(String buildPath){
         testInfo.id("test0").suite("Preparation").name("Clear application data. Uninstall current application build. Install new build.");
         photolab.forceStop();
         photolab.clearData();
         photolab.uninstallApp();
-        photolab.installApp("D:\\AFT\\Build\\PhotoLab-PlayFree-v2.1.44-1182-debug.apk");
+        photolab.installApp(buildPath);
         photolab.open();
         photolab.main.waitToLoad();
     }

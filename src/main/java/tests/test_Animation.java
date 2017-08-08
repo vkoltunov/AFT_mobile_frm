@@ -3,9 +3,11 @@ package tests;
 import api.android.Android;
 import api.apps.PhotoLab.PhotoLab;
 import core.managers.TestManager;
+import core.utils.Config;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.testng.annotations.BeforeTest;
 
 /**
  * Created by User on 6/26/2017.
@@ -14,23 +16,23 @@ public class test_Animation extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @BeforeClass
+    @org.testng.annotations.BeforeClass
     public static void beforeClass(){
         photolab.open();
     }
 
-    @Before
+    @BeforeTest
     public void before(){
         testInfo.suite("test_Animation");
     }
 
     //===== Animation effect (Old Photo) =====
 
-    @Test
+    @org.testng.annotations.Test
     public void test11(){
         testInfo.id("test11").suite("Functionality").name("Full cycle work with Animation photo effect (Category:New Reality; Effect:Old Photo)");
 
-        photolab.custom.loadPicsToDeviceFromFolder("D:\\Base");
+        photolab.custom.loadPicsToDeviceFromFolder(Config.APP_DATA_DIR+"\\photoLab\\source");
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("New Reality");
@@ -50,8 +52,8 @@ public class test_Animation extends TestManager {
         photolab.save.selectDownload();
         photolab.menu.open();
         photolab.menu.tapHome();
-        photolab.custom.moveResPictureToPC("D:\\Base_Res");
-        photolab.custom.compareFiles("D:\\Base_Res", "D:\\Base_Res\\AnimationEffect_OldPhoto.gif");
-        photolab.custom.clearFolderData("D:\\Base_Res");
+        photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\AnimationEffect_OldPhoto.gif");
+        photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 }

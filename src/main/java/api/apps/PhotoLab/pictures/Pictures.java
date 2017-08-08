@@ -52,12 +52,14 @@ public class Pictures implements Activity {
     public Pictures selectTab(String tabName){
         try{
             MyLogger.log.info("Select Picture Tab "+tabName);
-            uiObject.tab(tabName).tap();
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-            if (uiObject.folder("Download").size() > 0) {
-                selectFolder("Download");
-                return Android.app.photoLab.pictures;
-            } else return Android.app.photoLab.pictures.waitToLoad();
+            if (uiObject.folder(tabName).size() > 0) {
+                if (!uiObject.folder(tabName).isSelected()) selectFolder(tabName);
+            } else {
+                selectFolder("First");
+                selectFolder(tabName);
+            }
+            return Android.app.photoLab.pictures.waitToLoad();
         }catch (AssertionError e) {
             throw new AssertionError("Picture Tab select failed. Maybe tab with description "+tabName+" doesn't exist");
         }

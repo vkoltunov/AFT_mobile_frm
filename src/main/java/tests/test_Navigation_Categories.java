@@ -3,42 +3,30 @@ package tests;
 import api.android.Android;
 import api.apps.PhotoLab.PhotoLab;
 import core.managers.TestManager;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
+//import org.testng.annotations.*;
 
 /**
  * Created by User on 4/5/2017.
  */
-public class test_Navigation extends TestManager {
+public class test_Navigation_Categories extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @BeforeClass
+    @org.testng.annotations.BeforeClass
     public static void beforeClass(){
         photolab.open();
     }
 
-    @Before
+    @BeforeTest
     public void before(){
-        testInfo.suite("test_Navigation");
+        testInfo.suite("test_Navigation_Categories");
     }
 
 //===== Categories =====
 
-    @Test
-    public void test1() {
-        testInfo.id("test1").suite("Functionality").name("Check Categories bar.");
-        photolab.main.waitToLoad();
-        photolab.main.selectCategoryBar("Categories");
-        photolab.main.selectCategoryBar("Inspiration");
-        //photolab.main.selectCategoryBar("Popular");
-        photolab.main.selectCategoryBar("Favorites");
-    }
-
-    @Test
+    @org.testng.annotations.Test
     public void test2() {
         testInfo.id("test2").suite("Functionality").name("Check Categories.");
         photolab.main.waitToLoad();
@@ -65,6 +53,9 @@ public class test_Navigation extends TestManager {
         photolab.custom.pressBack();
         photolab.main.waitToLoad();
         photolab.main.selectCategory("Half-Human Half-Animal");
+        photolab.custom.pressBack();
+        photolab.main.waitToLoad();
+        photolab.main.selectCategory("Emotion Changer");
         photolab.custom.pressBack();
         photolab.main.waitToLoad();
         photolab.main.selectCategory("Drawing vs Photography");

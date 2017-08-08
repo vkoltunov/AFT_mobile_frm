@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="тестовый запуск" verbose="1">
+    <test name="001" preserve-order="true">
+        <parameter name="Build_Path" value='D:\\AFT\\Build\\PhotoLab-PlayFree-v2.1.44-1182-debug.apk' />
+        <classes>
+            <class name="tests.Preparation" />
+        </classes>
+    </test>
+    <test name="002" preserve-order="true">
+        <parameter name="Tab" value='Popular' />
+        <classes>
+            <class name="tests.test_Navigation_Tabs" />
+        </classes>
+    </test>
+    <test name="003" preserve-order="true">
+        <classes>
+            <class name="tests.test_Navigation_Categories" />
+        </classes>
+    </test>
+    <test name="004" preserve-order="true">
+        <parameter name="Version" value='2.1.' />
+        <classes>
+            <class name="tests.test_VersionCheck" />
+        </classes>
+    </test>
+    <test name="005" preserve-order="true">
+        <classes>
+            <class name="tests.test_Inspiration" />
+        </classes>
+    </test>
+</suite>
