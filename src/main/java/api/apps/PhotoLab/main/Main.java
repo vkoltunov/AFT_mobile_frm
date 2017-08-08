@@ -229,9 +229,9 @@ public class Main implements Activity {
         location = uiObject.firsInstanceBarItem().getLocation();
         size2 = uiObject.firsInstanceBarItem().getSize();
         int ypos = (int) (location.getY() + size2.getHeight() / 2);
-        while (!(uiObject.barItem_by_index(0).size() > 0)) {
-            driver.swipe(endx, ypos, startx, ypos, 500);
-        }
+        //while (!(uiObject.barItem_by_index(0).size() > 0)) {
+        //    driver.swipe(endx, ypos, startx, ypos, 500);
+        //}
 
         int curind = uiObject.bar_items().size() - 1;
         int index_count = 0;
