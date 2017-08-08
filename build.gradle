@@ -11,6 +11,7 @@ sourceCompatibility = 1.8
 //}
 
 task buildJar(type: Jar){
+
     manifest{
         attributes 'Implementation-Title': 'Appium framework',
                    'Implementation-version': version,
@@ -39,6 +40,7 @@ dependencies {
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     //compile group: 'net.sf.json-lib', name: 'json-lib', version: '2.4'
     compile 'org.testng:testng:6.1.1'
+
     //compile 'org.apache.commons:commons-lang3:3.4'
     //compile 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 }
