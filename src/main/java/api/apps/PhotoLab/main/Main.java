@@ -177,13 +177,13 @@ public class Main implements Activity {
             String lastdesc = "";
             String currdesc = uiObject.categoryItem_last().getText();
 
-            while (!(uiObject.categoryItem_by_desc(0).size()>0)) {
+            //while (!(uiObject.categoryItem_by_desc(0).size()>0)) {
                 //driver.swipe(endx + 50, (int)(endy*1.5), endx + 50, (int)(starty*1.2), 1000);
 
-                driver.swipe(endx + 50, endy, endx + 50, starty, 500);
+            //    driver.swipe(endx + 50, endy, endx + 50, starty, 500);
                 //lastdesc = currdesc;
                 //currdesc = uiObject.categoryItem_last().getText();
-            }
+            //}
 
             lastdesc = "";
             ind_count = uiObject.category_items().size() - 1;
@@ -204,7 +204,7 @@ public class Main implements Activity {
                 }
                 lastdesc = currdesc;
                 size = uiObject.category_area().getSize();
-                endy = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.15);
+                endy = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.2);
                 starty = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.85);
                 driver.swipe(endx + 50, starty, endx + 50, endy, 1000);
                 ind_count = uiObject.category_items().size() - 1;
@@ -229,9 +229,9 @@ public class Main implements Activity {
         location = uiObject.firsInstanceBarItem().getLocation();
         size2 = uiObject.firsInstanceBarItem().getSize();
         int ypos = (int) (location.getY() + size2.getHeight() / 2);
-        //while (!(uiObject.barItem_by_index(0).size() > 0)) {
-        //    driver.swipe(endx, ypos, startx, ypos, 500);
-        //}
+        while (!(uiObject.barItem_by_index(0).size() > 0)) {
+            driver.swipe(endx, ypos, startx, ypos, 500);
+        }
 
         int curind = uiObject.bar_items().size() - 1;
         int index_count = 0;
