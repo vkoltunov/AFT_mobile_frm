@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="регрессионный запуск" verbose="1">
+    <listeners>
+        <listener class-name="core.Listener" />
+    </listeners>
     <test name="001" preserve-order="true">
         <parameter name="Build_Path" value='D:\\AFT\\Build\\PhotoLab-PlayFree-v2.1.44-1182-debug.apk' />
         <classes>

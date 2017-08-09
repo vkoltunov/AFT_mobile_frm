@@ -1,7 +1,10 @@
 package core.framework.base;
 
+import api.android.Android;
+import core.utils.Config;
 import core.utils.GlobalDict;
 import core.utils.Logger;
+import org.testng.TestListenerAdapter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import javax.imageio.ImageIO;
@@ -9,6 +12,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
+import static core.managers.DriverManager.sdCard;
 
 /**
  * BaseEntity
@@ -36,6 +41,17 @@ public abstract class BaseEntity {
      */
     protected static String getLoc(final String key) {
         return Logger.getLoc(key);
+    }
+
+    /**
+     * Делает снимок экрана и сохраняет его на диск
+     *
+     *
+     */
+    public void makeScreen(String suiteName, String testName){
+        Android.adb.takeScreenshot("/storage/"+sdCard+"/Pictures/screen1.png");
+        Android.adb.pullFile("/storage/"+sdCard+"/Pictures/screen1.png", Config.REPORT_DIR+"\\"+suiteName+"_"+testName.replace(" ", "_")+".png");
+        Android.adb.deleteFile("/storage/"+sdCard+"/Pictures/screen1.png");
     }
 
     // ==============================================================================================
@@ -118,4 +134,5 @@ public abstract class BaseEntity {
         System.setProperty("org.uncommons.reportng.custom-report-dir", "reports");
         System.setProperty("org.uncommons.reportng.everystepscreen", "false");
     }
+
 }

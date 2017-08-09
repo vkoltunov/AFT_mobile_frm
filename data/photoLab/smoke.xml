@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="смоке запуск" verbose="1">
+    <listeners>
+        <listener class-name="core.Listener" />
+    </listeners>
     <test name="001" preserve-order="true">
         <parameter name="Tab" value='Popular' />
         <classes>

@@ -1,3 +1,4 @@
+import core.Listener;
 import core.MyLogger;
 import core.framework.Reporter;
 import core.framework.base.BaseEntity;
@@ -74,7 +75,8 @@ public class Runner extends BaseEntity {
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+3"));
 
         try {
-            TestManager.setReporter(new Reporter(new File(Config.REPORT_DIR+"\\result_"+new Date().getTime()+"\\report.xml")));
+            MyLogger.log.info("Path for reporter : "+ Config.REPORT_DIR);
+            Listener.setReporter(new Reporter(new File(Config.REPORT_DIR+"\\result_"+new Date().getTime()+"\\report.xml")));
             DriverManager.createDriver();
             //Android.app.fabby.runTest();
             //Android.app.fabby.runToast();

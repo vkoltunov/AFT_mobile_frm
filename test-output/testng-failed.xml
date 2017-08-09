@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [тестовый запуск]">
-  <parameter name="Fb_Password" value="testbook"/>
-  <parameter name="Fb_Login" value="zqobenkoji_1497287426@tfbnw.net"/>
-  <test name="025(failed)" preserve-order="false">
-    <parameter name="Fb_Password" value="testbook"/>
-    <parameter name="Fb_Login" value="zqobenkoji_1497287426@tfbnw.net"/>
+  <parameter name="Tab" value="Popular"/>
+  <test name="002(failed)" preserve-order="false">
+    <parameter name="Tab" value="Popular"/>
     <classes>
-      <class name="tests.test_Compositions_ShowInFeed">
+      <class name="tests.test_Navigation_Tabs">
         <methods>
-          <include name="test17_2" invocation-numbers="0"/>
           <include name="afterTest"/>
           <include name="beforeClass"/>
           <include name="before"/>
+          <include name="test1"/>
         </methods>
       </class>
     </classes>

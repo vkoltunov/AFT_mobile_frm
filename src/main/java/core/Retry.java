@@ -1,42 +1,27 @@
 package core;
+import org.testng.IRetryAnalyzer;
+import org.testng.ITestResult;
 
-import org.junit.rules.TestRule;
-import org.junit.runner.Description;
-import org.junit.runners.model.Statement;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by User on 04/05/2017.
- */
-public class Retry implements TestRule {
 
-    private int rc;
+public class Retry implements IRetryAnalyzer {
+    private static int MAX_RETRY_COUNT = 3;
 
-    public Retry(int rc){
-        this.rc = rc;
+    AtomicInteger count = new AtomicInteger(MAX_RETRY_COUNT);
+
+    public boolean isRetryAvailable() {
+        return (count.intValue() > 0);
     }
 
     @Override
-    public Statement apply(Statement base, Description description) {
-        return statement(base, description);
-    }
-
-    private Statement statement(final Statement base, final Description description){
-        return new Statement() {
-            @Override
-            public void evaluate() throws Throwable {
-                Throwable throwable = null;
-                for(int i = 0; i < rc; i++){
-                    try{
-                        base.evaluate();
-                        return;
-                    }catch (Throwable e){
-                        throwable = e;
-                        System.out.println("Run "+(i+1)+" failed!");
-                    }
-                }
-                System.out.println("Giving up after "+rc+" failures");
-                throw throwable;
-            }
-        };
+    public boolean retry(ITestResult result) {
+        boolean retry = false;
+        if (isRetryAvailable()) {
+            System.out.println("Going to retry test case: " + result.getMethod() + ", " + (MAX_RETRY_COUNT - count.intValue() + 1) + " out of " + MAX_RETRY_COUNT);
+            retry = true;
+            count.decrementAndGet();
+        }
+        return retry;
     }
 }

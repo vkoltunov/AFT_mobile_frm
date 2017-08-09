@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite name="тестовый запуск" verbose="1">
-    <test name="025" preserve-order="true">
-        <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
-        <parameter name="Fb_Password" value='testbook' />
+    <listeners>
+        <listener class-name="core.Listener" />
+    </listeners>
+    <test name="002" preserve-order="true">
+        <parameter name="Tab" value='Popular' />
         <classes>
-            <class name="tests.test_Compositions_ShowInFeed" />
+            <class name="tests.test_Navigation_Tabs" />
         </classes>
     </test>
 </suite>

@@ -1,6 +1,7 @@
 package core.managers;
 
 
+import core.Listener;
 import core.MyLogger;
 import core.Retry;
 import core.TestInfo;
@@ -15,6 +16,9 @@ import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.TestListenerAdapter;
 import org.testng.annotations.*;
 
 import java.util.ArrayList;
@@ -27,7 +31,7 @@ import static core.utils.Config.Keys.GRAB_SCRENSHOOT;
 /**
  * Created by User on 3/28/2017.
  */
-public class TestManager extends BaseEntity{
+public class TestManager extends BaseEntity {
 
     public static TestInfo testInfo = new TestInfo();
     private static Reporter reporter;
@@ -69,33 +73,35 @@ public class TestManager extends BaseEntity{
         return params;
     }
 
-    @Rule
-    public Retry retry = new Retry(1);
+//    @Rule
+//    public Retry retry = new Retry(1);
+
+//    @Rule
+//    public TestRule listen = new TestWatcher() {
+//        @Override
+//        public void failed(Throwable t, Description description){
+//            MyLogger.log.info("Test Failed.");
+//            TestInfo.printResults();
+//            if(TestManager.reporter != null)
+//                TestManager.reporter.update(TestInfo.suite(), TestInfo.name(), "FAIL");
+//        }
+
+//        @Override
+//        public void succeeded(Description description){
+//            MyLogger.log.info("Test Passed.");
+//            TestInfo.printResults();
+//            if(TestManager.reporter != null)
+//                TestManager.reporter.update(TestInfo.suite(), TestInfo.name(), "PASS");
+//        }
+//    };
 
     @BeforeTest
     protected void before(final ITestContext itc) {
         Thread.currentThread().setName("Thread-" + getTherad());
         testInfo.reset();
+        //new Retry();
     }
 
-    @Rule
-    public TestRule listen = new TestWatcher() {
-        @Override
-        public void failed(Throwable t, Description description){
-            MyLogger.log.info("Test Failed.");
-            TestInfo.printResults();
-            if(TestManager.reporter != null)
-                TestManager.reporter.update(TestInfo.suite(), TestInfo.name(), "FAIL");
-        }
-
-        @Override
-        public void succeeded(Description description){
-            MyLogger.log.info("Test Passed.");
-            TestInfo.printResults();
-            if(TestManager.reporter != null)
-                TestManager.reporter.update(TestInfo.suite(), TestInfo.name(), "PASS");
-        }
-    };
 
     /**
      * Подготовка основных параметров теста
@@ -130,6 +136,7 @@ public class TestManager extends BaseEntity{
             for (String xmlParamKey : xmlParamKeys) {
                 oDictExternal.remove(xmlParamKey);
             }
+
         } catch (NullPointerException ex) {
         }
     }
@@ -139,8 +146,8 @@ public class TestManager extends BaseEntity{
         return message;
     }
 
-    public static void setReporter(Reporter reporter){
-        TestManager.reporter = reporter;
-    }
+    //public static void setReporter(Reporter reporter){
+    //    Listener.reporter = reporter;
+    //}
 
 }
