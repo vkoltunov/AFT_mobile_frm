@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [тестовый запуск]">
-  <parameter name="Tab" value="Popular"/>
-  <test name="002(failed)" preserve-order="false">
-    <parameter name="Tab" value="Popular"/>
+  <listeners>
+    <listener class-name="core.Listener"/>
+    <listener class-name="core.AnnotationTransformer"/>
+  </listeners>
+  <test name="015(failed)" preserve-order="false">
     <classes>
-      <class name="tests.test_Navigation_Tabs">
+      <class name="tests.test_Art">
         <methods>
           <include name="afterTest"/>
+          <include name="test10"/>
           <include name="beforeClass"/>
           <include name="before"/>
-          <include name="test1"/>
         </methods>
       </class>
     </classes>

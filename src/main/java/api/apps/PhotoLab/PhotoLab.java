@@ -24,6 +24,7 @@ import api.apps.PhotoLab.save.Save;
 import api.apps.PhotoLab.store.Store;
 import api.apps.PhotoLab.text.Text;
 import api.interfaces.Application;
+import core.utils.Common;
 
 import java.io.File;
 
@@ -33,6 +34,7 @@ import java.io.File;
 public class PhotoLab implements Application{
 
     public Boolean favoriteFlag = false;
+    private Common commonFunc;
 
     public Main main = new Main();
     public Menu menu = new Menu();
@@ -74,8 +76,18 @@ public class PhotoLab implements Application{
     }
 
     @Override
+    public String apkPath() {
+        return "D:\\AFT\\build";
+    }
+
+    @Override
     public void installApp(String path) {
-        if (path.contains(".apk")) Android.adb.installApp(path);
+        if (path.contains(".apk") && !(path.contains("http"))) Android.adb.installApp(path);
+        if (path.contains("http")) {
+            String fileName = commonFunc.getMatch(path, "(PhotoLab-Play.+).apk");
+            if (!commonFunc.downloadUsingStream(path, apkPath()+"\\"+fileName)) throw new AssertionError("Failed to download new build .apk file.");
+            else Android.adb.installApp(apkPath()+"\\"+fileName);
+        }
         else {
             File folder = new File(apkPath());
             File[] listOfFiles = folder.listFiles();
@@ -93,11 +105,6 @@ public class PhotoLab implements Application{
     public Object open() {
         Android.adb.openAppsActivity(packageID(), activityID());
         return null;
-    }
-
-    @Override
-    public String apkPath() {
-        return "D:\\PhotoLab\\build";
     }
 
     @Override

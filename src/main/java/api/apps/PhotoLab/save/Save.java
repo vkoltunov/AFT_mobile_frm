@@ -35,6 +35,7 @@ public class Save implements Activity {
         try{
             MyLogger.log.info("Tap to Save to device option.");
             uiObject.menu().tap();
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
             uiObject.saveToDevice().waitToAppear(3).tap();
         }catch (AssertionError e) {
             throw new AssertionError("Save to device option failed to tap.");
@@ -55,6 +56,8 @@ public class Save implements Activity {
     public void selectDownload(){
         try{
             MyLogger.log.info("Tap to save option Download.");
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            if (uiObject.tutorialShare().size()>0) uiObject.tutorialShare().tap();
             uiObject.download().tap();
         }catch (AssertionError e) {
             throw new AssertionError("Save option Download failed to tap.");

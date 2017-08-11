@@ -2,6 +2,7 @@
 <suite name="смоке запуск" verbose="1">
     <listeners>
         <listener class-name="core.Listener" />
+        <listener class-name="core.AnnotationTransformer"/>
     </listeners>
     <test name="001" preserve-order="true">
         <parameter name="Tab" value='Popular' />

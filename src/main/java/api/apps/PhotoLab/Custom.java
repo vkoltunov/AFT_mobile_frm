@@ -69,6 +69,7 @@ public class Custom {
     }
 
     public void compareFiles (String sourcePath, String etalonPath){
+
         MyLogger.log.info("Compare res files with source." );
 
         Boolean bflag = false;
@@ -83,7 +84,7 @@ public class Custom {
             if (listOfFiles[i].isFile()) bflag = Common.compareImage(fileEtalon, listOfFiles[i]);
         }
         if (bflag) MyLogger.log.info("Compare files result : TRUE." );
-        else MyLogger.log.error("Compare files result : FALSE." );
+        else throw new AssertionError("Compare files result : FALSE.");
     }
 
     public void clearFolderData (String resultFolder){

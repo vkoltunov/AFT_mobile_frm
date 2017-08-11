@@ -58,16 +58,12 @@ public class test_Persistent extends TestManager {
         photolab.pictures.selectPicture(1);
         photolab.property.waitToLoad();
         photolab.property.tapDone();
-        photolab.result.tapAddEffects();
-        photolab.result.tapArt();
-        photolab.art.selectArt(1);
-        photolab.animate.tapDone();
         photolab.result.tapSaveToDevice();
         photolab.save.selectDownload();
         photolab.menu.open();
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
-        //photolab.custom.compareFiles("D:\\Base_Res", "D:\\Base_Res\\StarDust_Kandinsky.jpg");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\StarDust.jpg");
         photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 }

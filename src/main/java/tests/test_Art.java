@@ -33,25 +33,26 @@ public class test_Art extends TestManager {
         testInfo.id("test10").suite("Functionality").name("Full cycle work with photo + Add art Effect (Category:Smart Filters; Effect:Color On You)");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
-        photolab.main.selectCategory("Smart Filters");
-        photolab.categories.selectEffect("Color on You");
+        photolab.main.selectCategory("Face Photo Props");
+        photolab.categories.selectEffect("Red Lips Sticker");
         photolab.pictures.selectTab("All");
         photolab.pictures.selectPicture(1);
         photolab.property.waitToLoad();
-        photolab.property.tapCrop3();
         photolab.property.tapDone();
         photolab.result.tapAddEffects();
         photolab.result.tapArt();
-        photolab.art.selectArt(1);
+        photolab.art.selectArt(4);
         photolab.animate.tapDone();
         photolab.result.tapSaveToDevice();
         photolab.save.selectDownload();
         photolab.menu.open();
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
-        //photolab.custom.compareFiles("D:\\Base_Res", "D:\\Base_Res\\ColorOnYou.jpg");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\RedLipsSticker.jpg");
         photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 }

@@ -2,25 +2,32 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="тестовый запуск" duration-ms="38927" started-at="2017-08-09T16:06:26Z" finished-at="2017-08-09T16:07:05Z">
+  <suite name="тестовый запуск" duration-ms="71509" started-at="2017-08-11T12:36:08Z" finished-at="2017-08-11T12:37:20Z">
     <groups>
     </groups>
-    <test name="002" duration-ms="38927" started-at="2017-08-09T16:06:26Z" finished-at="2017-08-09T16:07:05Z">
-      <class name="tests.test_Navigation_Tabs">
-        <test-method status="PASS" signature="beforeClass()" name="beforeClass" is-config="true" duration-ms="861" started-at="2017-08-09T16:06:26Z" finished-at="2017-08-09T16:06:27Z">
-        </test-method>
-        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-08-09T16:06:26Z" finished-at="2017-08-09T16:06:26Z">
+    <test name="001" duration-ms="71509" started-at="2017-08-11T12:36:08Z" finished-at="2017-08-11T12:37:20Z">
+      <class name="tests.Preparation">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-08-11T12:36:08Z" finished-at="2017-08-11T12:36:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@15043a2f]]>
+                <![CDATA[org.testng.TestRunner@57c03d88]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="test1()" name="test1" duration-ms="37939" started-at="2017-08-09T16:06:27Z" finished-at="2017-08-09T16:07:05Z">
+        <test-method status="PASS" signature="beforeClass()" name="beforeClass" is-config="true" duration-ms="656" started-at="2017-08-11T12:36:08Z" finished-at="2017-08-11T12:36:09Z">
         </test-method>
-        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="16" started-at="2017-08-09T16:07:05Z" finished-at="2017-08-09T16:07:05Z">
+        <test-method status="PASS" signature="test0(java.lang.String)" name="test0" duration-ms="70790" started-at="2017-08-11T12:36:09Z" finished-at="2017-08-11T12:37:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v2.2.1-1300-debug.apk]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-08-11T12:37:20Z" finished-at="2017-08-11T12:37:20Z">
         </test-method>
       </class>
     </test>

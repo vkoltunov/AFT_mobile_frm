@@ -31,6 +31,7 @@ public class test_Inspiration extends TestManager {
     public void test17_3(){
         testInfo.id("test17_3").suite("Functionality").name("Inspiration page from start + check blocks.");
         photolab.main.waitToLoad();
+        photolab.main.selectCategoryBar("Inspiration");
         photolab.main.uiObject.barItem("Inspiration").exists();
         photolab.main.selectBlock("Top");
         photolab.main.selectBlock("Trending");

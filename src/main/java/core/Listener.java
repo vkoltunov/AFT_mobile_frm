@@ -2,8 +2,12 @@ package core;
 
 import core.framework.Reporter;
 import core.managers.TestManager;
+import org.testng.ITestContext;
+import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+
+import java.util.Iterator;
 
 /**
  * Created by User on 8/9/2017.
@@ -27,11 +31,20 @@ public class Listener extends TestListenerAdapter {
 
     @Override
     public void onTestFailure(ITestResult tr) {
+        if (tr.getMethod().getRetryAnalyzer() != null) {
+            Retry retryAnalyzer = (Retry)tr.getMethod().getRetryAnalyzer();
 
-        MyLogger.log.info("Test Failed.");
-        TestInfo.printResults();
-        if (Listener.reporter != null)
-            Listener.reporter.update(TestInfo.suite(), TestInfo.name(), "FAIL");
+            if(retryAnalyzer.isRetryAvailable()) {
+                MyLogger.log.info("Test will be run again.");
+                tr.setStatus(ITestResult.SKIP);
+            } else {
+                tr.setStatus(ITestResult.FAILURE);
+                MyLogger.log.info("Test Failed.");
+                TestInfo.printResults();
+                if (Listener.reporter != null)
+                    Listener.reporter.update(TestInfo.suite(), TestInfo.name(), "FAIL");
+            }
+        }
     }
 
     public static void setReporter(Reporter reporter){

@@ -33,6 +33,8 @@ public class test_Animation extends TestManager {
         testInfo.id("test11").suite("Functionality").name("Full cycle work with Animation photo effect (Category:New Reality; Effect:Old Photo)");
 
         photolab.custom.loadPicsToDeviceFromFolder(Config.APP_DATA_DIR+"\\photoLab\\source");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("New Reality");
@@ -44,10 +46,6 @@ public class test_Animation extends TestManager {
         photolab.pictures.selectPicture(4);
         photolab.pictures.tapNext();
         photolab.property.tapDone();
-        photolab.result.tapAddText();
-        photolab.text.typeText("Test");
-        photolab.text.tapNext();
-        photolab.text.tapDone();
         photolab.result.tapSaveToDevice();
         photolab.save.selectDownload();
         photolab.menu.open();

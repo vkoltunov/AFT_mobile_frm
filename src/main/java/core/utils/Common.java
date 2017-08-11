@@ -138,18 +138,23 @@ public class Common extends BaseEntity {
      * Скчиваем файл по указанному URL.
      *
      */
-    public static void downloadUsingStream(String urlStr, String file) throws IOException{
-        URL url = new URL(urlStr);
-        BufferedInputStream bis = new BufferedInputStream(url.openStream());
-        FileOutputStream fis = new FileOutputStream(file);
-        byte[] buffer = new byte[1024];
-        int count=0;
-        while((count = bis.read(buffer,0,1024)) != -1)
-        {
-            fis.write(buffer, 0, count);
+    public static boolean downloadUsingStream(String urlStr, String file){
+        try {
+            URL url = new URL(urlStr);
+            BufferedInputStream bis = new BufferedInputStream(url.openStream());
+            FileOutputStream fis = new FileOutputStream(file);
+            byte[] buffer = new byte[1024];
+            int count = 0;
+            while ((count = bis.read(buffer, 0, 1024)) != -1) {
+                fis.write(buffer, 0, count);
+            }
+            fis.close();
+            bis.close();
+            return true;
+        }catch (IOException e) {
+            MyLogger.log.info("Failed to download file ...");
+            return  false;
         }
-        fis.close();
-        bis.close();
     }
 
     /**
