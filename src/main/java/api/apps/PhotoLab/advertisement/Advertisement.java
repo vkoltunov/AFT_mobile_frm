@@ -20,7 +20,7 @@ public class Advertisement implements Activity {
     public Advertisement waitToLoad(){
         MyLogger.log.info("Waiting for Advertisement Page");
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        if ((uiObject.advertisement().size() > 0) || (uiObject.unmute().size() > 0)) return Android.app.photoLab.advertisement;
+        if ((uiObject.advertisement().size() > 0) || (uiObject.unmute().size() > 0) || (uiObject.video().size() > 0)) return Android.app.photoLab.advertisement;
         else throw new AssertionError("Advertisement Page failed to load/open");
     }
 

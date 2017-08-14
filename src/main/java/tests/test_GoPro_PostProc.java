@@ -32,6 +32,8 @@ public class test_GoPro_PostProc extends TestManager {
     public void test8(){
         testInfo.id("test8").suite("Functionality").name("Check Demo tizer for PRO effect. (PostProcessing Go PRO now option)");
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Overlays");

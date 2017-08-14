@@ -30,6 +30,8 @@ public class test_Watemark_NoSponsored extends TestManager {
         testInfo.id("test15_2").suite("Functionality").name("Check watemark working. Tap button NOT NOW. Tap No for sponsored video.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Masterpiece");

@@ -30,6 +30,8 @@ public class test_Watemark_YesSponsored extends TestManager {
         testInfo.id("test15_3").suite("Functionality").name("Check watemark working. Tap button NOT NOW. Tap Yes for sponsored video.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Masterpiece");
@@ -46,6 +48,8 @@ public class test_Watemark_YesSponsored extends TestManager {
         photolab.custom.workWithSponsoredPage("Yes");
         photolab.menu.open();
         photolab.menu.tapHome();
-        //photolab.custom.moveResPictureToPC("D:\\Base_Res");
+        photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\NoWatemark.jpg");
+        photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 }

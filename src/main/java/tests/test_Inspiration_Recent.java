@@ -31,6 +31,8 @@ public class test_Inspiration_Recent extends TestManager {
         testInfo.id("test18_1").suite("Functionality").name("Inspiration full test with FIRST pic from Recent block.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Inspiration");
         photolab.main.selectBlock("Recent");

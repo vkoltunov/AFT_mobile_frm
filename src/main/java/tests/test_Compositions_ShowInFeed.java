@@ -36,6 +36,8 @@ public class test_Compositions_ShowInFeed extends TestManager {
         testInfo.id("test17_2").suite("Functionality").name("Create composition + save to Photo Lab option.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Masterpiece");

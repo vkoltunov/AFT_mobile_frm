@@ -38,7 +38,7 @@ public class Text implements Activity {
     public Result tapDone(){
         try{
             MyLogger.log.info("Tap Done button for Text page.");
-            uiObject.done().waitToAppear(10).tap();
+            uiObject.done().waitToAppear(12).tap();
             return Android.app.photoLab.result.waitToLoad();
         }catch (AssertionError e) {
             throw new AssertionError("Done button for Text page failed to tap.");

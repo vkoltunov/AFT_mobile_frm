@@ -4,10 +4,9 @@
         <listener class-name="core.Listener" />
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
-    <test name="001" preserve-order="true">
-        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v2.2.1-1300-debug.apk' />
+    <test name="021" preserve-order="true">
         <classes>
-            <class name="tests.Preparation" />
+            <class name="tests.test_Inspiration" />
         </classes>
     </test>
 </suite>

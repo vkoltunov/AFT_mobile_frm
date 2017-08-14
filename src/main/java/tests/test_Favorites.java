@@ -30,7 +30,8 @@ public class test_Favorites extends TestManager {
     @org.testng.annotations.Test
     public void test14_1(){
         testInfo.id("test14_1").suite("Functionality").name("Add and delete effect from Favorites.");
-
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Masterpiece");

@@ -56,7 +56,7 @@ public class Save implements Activity {
     public void selectDownload(){
         try{
             MyLogger.log.info("Tap to save option Download.");
-            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             if (uiObject.tutorialShare().size()>0) uiObject.tutorialShare().tap();
             uiObject.download().tap();
         }catch (AssertionError e) {

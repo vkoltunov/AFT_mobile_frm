@@ -42,7 +42,7 @@ public class Runner extends BaseEntity {
     public static void main(String[] args) throws MalformedURLException, InterruptedException, ParserConfigurationException {
 
 
-        MyLogger.log.setLevel(Level.INFO);
+        MyLogger.log.setLevel(Level.DEBUG);
         Properties prop;
         String testSuite = "data/photoLab/test.xml";
 

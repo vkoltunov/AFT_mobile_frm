@@ -33,6 +33,8 @@ public class test_Persistent extends TestManager {
         testInfo.id("test6").suite("Functionality").name("OFF/ON Persistent + Full cycle work with photo + Add art Effect Kandinsky(Category:Double Exposures; Effect:Star Dust)");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Double Exposures");

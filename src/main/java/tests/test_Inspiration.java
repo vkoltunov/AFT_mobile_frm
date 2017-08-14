@@ -30,9 +30,10 @@ public class test_Inspiration extends TestManager {
     @org.testng.annotations.Test
     public void test17_3(){
         testInfo.id("test17_3").suite("Functionality").name("Inspiration page from start + check blocks.");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Inspiration");
-        photolab.main.uiObject.barItem("Inspiration").exists();
         photolab.main.selectBlock("Top");
         photolab.main.selectBlock("Trending");
         photolab.main.selectBlock("Recent");

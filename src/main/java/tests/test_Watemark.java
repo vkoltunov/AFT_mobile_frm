@@ -33,6 +33,8 @@ public class test_Watemark extends TestManager {
         testInfo.id("test15_1").suite("Functionality").name("Check watemark working. Tap button GO PRO.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
+        photolab.forceStop();
+        photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Masterpiece");

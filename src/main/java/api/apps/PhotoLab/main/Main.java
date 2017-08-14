@@ -70,7 +70,31 @@ public class Main implements Activity {
 
     public Main selectCategoryBar (String categoryBarName){
         MyLogger.log.info("Select category bar '"+categoryBarName+"'.");
-        if (scrollBarTo(categoryBarName)){
+        Boolean bFlag = false;
+        if (categoryBarName.contains("Inspiration") || categoryBarName.contains("Explore") || categoryBarName.contains("Combos") || categoryBarName.contains("Community") || categoryBarName.contains("Feed")){
+            if (!bFlag) {
+                bFlag=scrollBarTo("Inspiration");
+                categoryBarName = "Inspiration";
+            }
+            if (!bFlag) {
+                bFlag=scrollBarTo("Explore");
+                categoryBarName = "Explore";
+            }
+            if (!bFlag) {
+                bFlag=scrollBarTo("Combos");
+                categoryBarName = "Combos";
+            }
+            if (!bFlag) {
+                bFlag=scrollBarTo("Community");
+                categoryBarName = "Community";
+            }
+            if (!bFlag) {
+                bFlag=scrollBarTo("Feed");
+                categoryBarName = "Feed";
+            }
+        } else bFlag= scrollBarTo(categoryBarName);
+
+        if (bFlag){
             uiObject.barItem(categoryBarName).tap();
             return Android.app.photoLab.main.waitToLoad();
         }
