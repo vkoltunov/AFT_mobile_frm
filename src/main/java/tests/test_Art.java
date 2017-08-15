@@ -45,7 +45,7 @@ public class test_Art extends TestManager {
         photolab.property.tapDone();
         photolab.result.tapAddEffects();
         photolab.result.tapArt();
-        photolab.art.selectArt(4);
+        photolab.art.selectArt(1);
         photolab.animate.tapDone();
         photolab.result.tapSaveToDevice();
         photolab.save.selectDownload();
