@@ -5,6 +5,7 @@ import api.apps.PhotoLab.PhotoLab;
 import core.managers.TestManager;
 import core.utils.Config;
 import org.junit.Test;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 /**
@@ -46,6 +47,10 @@ public class test_Inspiration_Recent extends TestManager {
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
         //photolab.custom.compareFiles("D:\\Base_Res", "D:\\Base_Res\\NotificationCheck.jpg");
+    }
+
+    @AfterTest
+    public void after(){
         photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 }

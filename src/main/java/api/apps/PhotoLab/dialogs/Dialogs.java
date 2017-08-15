@@ -4,6 +4,7 @@ import api.android.Android;
 import api.apps.PhotoLab.advertisement.Advertisement;
 import api.apps.PhotoLab.main.Main;
 import api.apps.PhotoLab.main.MainUiObjects;
+import api.apps.PhotoLab.profile.Profile;
 import api.apps.PhotoLab.save.Save;
 import api.apps.PhotoLab.store.Store;
 import api.interfaces.Activity;
@@ -102,11 +103,11 @@ public class Dialogs implements Activity {
         }
     }
 
-    public Main tapShowInFeed(){
+    public Profile tapShowInFeed(){
         try{
             MyLogger.log.info("Tap to Show In Feed button for dialog.");
             uiObject.showInFeed().waitToAppear(10).tap();
-            return Android.app.photoLab.main.waitToLoad();
+            return Android.app.photoLab.profile.waitToLoad();
         }catch (AssertionError e) {
             throw new AssertionError("Show In Feed button failed to tap/load for dialog");
         }

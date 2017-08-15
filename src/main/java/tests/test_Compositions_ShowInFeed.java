@@ -47,8 +47,8 @@ public class test_Compositions_ShowInFeed extends TestManager {
         photolab.property.waitToLoad();
         photolab.property.tapDone();
         photolab.result.tapSaveToDevice();
-        photolab.logIn.tapLogInFB(fb_Login,fb_Password);
         photolab.save.selectTarget("Photo Lab");
+        photolab.logIn.tapLogInFB(fb_Login,fb_Password);
         photolab.dialogs.checkDialogMessage("Your photo effects combo has been published");
         photolab.dialogs.tapShowInFeed();
         photolab.profile.waitToLoad();

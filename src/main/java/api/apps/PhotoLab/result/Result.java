@@ -62,7 +62,7 @@ public class Result implements Activity {
     public Result tapAddEffects(){
         try{
             MyLogger.log.info("Tap to Plus(additional effects) for picture button.");
-            uiObject.addEffects().tap();
+            uiObject.addEffects().waitToAppear(5).tap();
             uiObject.animate().waitToAppear(5);
             return Android.app.photoLab.result;
         }catch (AssertionError e) {

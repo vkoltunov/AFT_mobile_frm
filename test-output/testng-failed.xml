@@ -10,6 +10,7 @@
       <class name="tests.test_Art">
         <methods>
           <include name="afterTest"/>
+          <include name="after"/>
           <include name="test10"/>
           <include name="beforeClass"/>
           <include name="before"/>

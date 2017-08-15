@@ -7,6 +7,7 @@ import core.utils.Config;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 /**
@@ -61,6 +62,10 @@ public class test_SimpleWorkflow extends TestManager {
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
         photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\NR_WeddingMarch.jpg");
+    }
+
+    @AfterTest
+    public void after(){
         photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 }

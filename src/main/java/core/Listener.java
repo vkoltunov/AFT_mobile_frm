@@ -35,8 +35,8 @@ public class Listener extends TestListenerAdapter {
             Retry retryAnalyzer = (Retry)tr.getMethod().getRetryAnalyzer();
 
             if(retryAnalyzer.isRetryAvailable()) {
-                MyLogger.log.info("Test will be run again.");
-                tr.setStatus(ITestResult.SKIP);
+                MyLogger.log.info("Test '" +TestInfo.name()+ "' failed and will be run again.");
+                //tr.setStatus(ITestResult.SKIP);
             } else {
                 tr.setStatus(ITestResult.FAILURE);
                 MyLogger.log.info("Test Failed.");
