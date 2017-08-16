@@ -24,7 +24,7 @@ public class Save implements Activity {
     public Save waitToLoad(){
         try{
             MyLogger.log.info("Waiting for Save & Share page");
-            uiObject.saveAndShare().waitToAppear(5);
+            uiObject.saveAndShare().waitToAppear(10);
             return Android.app.photoLab.save;
         }catch (AssertionError e) {
             throw new AssertionError("Save & Share page failed to load/open");

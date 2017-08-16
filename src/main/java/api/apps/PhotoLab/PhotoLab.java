@@ -25,8 +25,12 @@ import api.apps.PhotoLab.store.Store;
 import api.apps.PhotoLab.text.Text;
 import api.interfaces.Application;
 import core.utils.Common;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by User on 4/4/2017.
@@ -81,23 +85,40 @@ public class PhotoLab implements Application{
     }
 
     @Override
-    public void installApp(String path) {
-        if (path.contains(".apk") && !(path.contains("http"))) Android.adb.installApp(path);
-        if (path.contains("http")) {
-            String fileName = commonFunc.getMatch(path, "(PhotoLab-Play.+).apk");
-            if (!commonFunc.downloadUsingStream(path, apkPath()+"\\"+fileName)) throw new AssertionError("Failed to download new build .apk file.");
-            else Android.adb.installApp(apkPath()+"\\"+fileName);
-        }
-        else {
-            File folder = new File(apkPath());
-            File[] listOfFiles = folder.listFiles();
+    public void installApp(String path, String type) {
+        try {
 
-            for (int i = 0; i < listOfFiles.length; i++) {
-                if (listOfFiles[i].isFile()) {
-                    Android.adb.installApp(listOfFiles[i].getPath());
-                    break;
+            if (path.contains(".apk") && !(path.contains("http"))) Android.adb.installApp(path);
+            if (path.contains("http")) {
+                String fileName;
+                if (path.contains(".apk")){
+                    fileName = commonFunc.getMatch(path, "(PhotoLab-Play.+).apk");
+                } else {
+                    Document doc = Jsoup.connect(path).get();
+                    if (type.isEmpty()) type = "debug";
+                    Elements links = doc.select("a[href$=" + type + ".apk]"); // a with href
+                    fileName = links.attr("href");
+                    path = path + fileName;
+                }
+
+                Boolean check = new File(apkPath(), fileName).exists();
+                if (!check) commonFunc.downloadUsingStream(path, apkPath()+"\\"+fileName);
+                Android.adb.installApp(apkPath()+"\\"+fileName);
+
+            }
+            else {
+                File folder = new File(apkPath());
+                File[] listOfFiles = folder.listFiles();
+
+                for (int i = 0; i < listOfFiles.length; i++) {
+                    if (listOfFiles[i].isFile()) {
+                        Android.adb.installApp(listOfFiles[i].getPath());
+                        break;
+                    }
                 }
             }
+        } catch (IOException e){
+            e.printStackTrace();
         }
     }
 

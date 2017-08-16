@@ -2,27 +2,35 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="тестовый запуск" duration-ms="47897" started-at="2017-08-15T17:28:58Z" finished-at="2017-08-15T17:29:46Z">
+  <suite name="тестовый запуск" duration-ms="58430" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:26:42Z">
     <groups>
     </groups>
-    <test name="016" duration-ms="47897" started-at="2017-08-15T17:28:58Z" finished-at="2017-08-15T17:29:46Z">
-      <class name="tests.test_Notifications">
-        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-08-15T17:28:58Z" finished-at="2017-08-15T17:28:58Z">
+    <test name="001" duration-ms="58430" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:26:42Z">
+      <class name="tests.Preparation">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="5" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:25:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@b978d10]]>
+                <![CDATA[org.testng.TestRunner@4ae9cfc1]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="beforeClass()" name="beforeClass" is-config="true" duration-ms="578" started-at="2017-08-15T17:28:58Z" finished-at="2017-08-15T17:28:58Z">
+        <test-method status="PASS" signature="test0(java.lang.String, java.lang.String)" name="test0" duration-ms="58348" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:26:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://ci.pho.to/builds/photolab/android/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[debug]]>
+              </value>
+            </param>
+          </params>
         </test-method>
-        <test-method status="PASS" signature="test16()" name="test16" duration-ms="47240" started-at="2017-08-15T17:28:58Z" finished-at="2017-08-15T17:29:45Z">
-        </test-method>
-        <test-method status="PASS" signature="after()" name="after" is-config="true" duration-ms="16" started-at="2017-08-15T17:29:45Z" finished-at="2017-08-15T17:29:46Z">
-        </test-method>
-        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-08-15T17:29:46Z" depends-on-methods="tests.test_Notifications.after" finished-at="2017-08-15T17:29:46Z">
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-08-16T21:26:42Z" finished-at="2017-08-16T21:26:42Z">
         </test-method>
       </class>
     </test>

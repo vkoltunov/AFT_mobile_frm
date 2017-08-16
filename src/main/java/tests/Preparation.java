@@ -5,10 +5,12 @@ import api.apps.PhotoLab.PhotoLab;
 import core.MyLogger;
 import core.managers.TestManager;
 import core.utils.Common;
+import core.utils.Config;
 import core.utils.Logger;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
@@ -19,11 +21,6 @@ import org.testng.annotations.Parameters;
 public class Preparation extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
-
-    @org.testng.annotations.BeforeClass
-    public static void beforeClass() {
-        photolab.open();
-    }
 
     @BeforeTest
     public void before() {
@@ -42,13 +39,14 @@ public class Preparation extends TestManager {
      *
      */
     @org.testng.annotations.Test
-    @Parameters({"Build_Path"})
-    public void test0(String buildPath){
+    @Parameters({"Build_Path", "Build_Type"})
+    public void test0(String buildPath, @Optional("true") String buildType){
         testInfo.id("test0").suite("Preparation").name("Clear application data. Uninstall current application build. Install new build.");
+        photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
         photolab.forceStop();
         photolab.clearData();
         photolab.uninstallApp();
-        photolab.installApp(buildPath);
+        photolab.installApp(buildPath, buildType);
         photolab.open();
         photolab.main.waitToLoad();
     }

@@ -14,7 +14,12 @@ public class AnimateUiObjects {
             animateItem,
             animateCounts,
             animate_byIndex,
-            animate_None;
+            animate_None,
+            animate_List,
+            toolbar_Title,
+            animate_items,
+            animateItem_by_index,
+            animate_Result;
 
     public UiObject animate(){
         if(animate == null) animate = new UiSelector().className("android.widget.TextView").text("Animate").makeUiObject();
@@ -45,5 +50,31 @@ public class AnimateUiObjects {
         animate_None = new UiSelector().className("android.widget.TextView").resourceId("android:id/title").textContains("None").makeUiObject();
         return animate_None;
     }
+
+    public UiObject animate_List(){
+        animate_List = new UiSelector().className("android.support.v7.widget.RecyclerView").resourceId("android:id/list").makeUiObject();
+        return animate_List;
+    }
+
+    public UiObject toolbar_Title(){
+        toolbar_Title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").makeUiObject();
+        return toolbar_Title;
+    }
+
+    public UiObject animate_items(){
+        animate_items = new UiSelector().className("android.widget.FrameLayout").descriptionContains("list_item_").makeUiObject();
+        return animate_items;
+    }
+
+    public UiObject animateItem_by_index(int index){
+        animateItem_by_index = new UiSelector().className("android.widget.FrameLayout").descriptionContains("list_item_").index(index).makeUiObject();
+        return animateItem_by_index;
+    }
+
+    public UiObject animate_Result(){
+        animate_Result = new UiSelector().className("android.view.View").resourceId("vsin.t16_funny_photo:id/result_content").makeUiObject();
+        return animate_Result;
+    }
+
 
 }

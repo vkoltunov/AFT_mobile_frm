@@ -46,7 +46,7 @@ public class test_Art extends TestManager {
         photolab.property.tapDone();
         photolab.result.tapAddEffects();
         photolab.result.tapArt();
-        photolab.art.selectArt(1);
+        photolab.art.selectArt("Red Boost");
         photolab.animate.tapDone();
         photolab.result.tapSaveToDevice();
         photolab.save.selectDownload();

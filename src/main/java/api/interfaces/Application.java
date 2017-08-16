@@ -8,7 +8,7 @@ public interface Application {
     void forceStop();
     void clearData();
     void uninstallApp();
-    void installApp(String path);
+    void installApp(String path, String optional);
     Object open();
     String apkPath();
     String packageID();

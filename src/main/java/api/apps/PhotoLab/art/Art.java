@@ -40,57 +40,58 @@ public class Art implements Activity {
         }
     }
 
-    public void selectArt (Integer effectNumber){
-        MyLogger.log.info("Select art effect '"+effectNumber+"'.");
-        if (scrollTo(effectNumber)){
-            uiObject.art_byIndex(effectNumber).tap();
+    public void selectArt (String effectName){
+        MyLogger.log.info("Select art effect '"+effectName+"'.");
+        if (scrollTo(effectName)){
             uiObject.done().waitToAppear(10);
         }
-        else throw new AssertionError("Art effect '"+effectNumber+"' not found.");
+        else throw new AssertionError("Art effect '"+effectName+"' not found.");
     }
 
-    private Boolean scrollTo(Integer itemNumber){
+    private Boolean scrollTo(String itemName){
 
-        //Point location;
-        //Dimension size, size2;
-        //Boolean bflag = false;
-        //Boolean beofflag = false;
+        Point location;
+        Dimension size, size2;
+        Boolean bflag = false;
+        Boolean beofflag = false;
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-        //size = driver.manage().window().getSize();
-        //int startx = (int) (size.width * 0.9);
-        //int endx = (int) (size.width * 0.1);
+        size = uiObject.art_List().getSize();
+        int startx = (int) (size.width * 0.9);
+        int endx = (int) (size.width * 0.1);
 
-        //location = uiObject.art_firsInstance().getLocation();
-        //size2 = uiObject.art_firsInstance().getSize();
-        //int ypos = (int) (location.getY() + size2.getHeight() / 2);
-        //while (!(uiObject.art_byIndex(0).size() > 0)) {
-        //    driver.swipe(endx, ypos, startx, ypos, 500);
-        //}
+        location = uiObject.art_List().getLocation();
+        size2 = uiObject.art_List().getSize();
+        int ypos = (int) (location.getY() + size2.getHeight() / 2);
+        while (!(uiObject.art_None().size() > 0)) {
+            driver.swipe(endx, ypos, startx, ypos, 500);
+        }
+        String curTitle;
+        String lastList = "";
+        int index_count = uiObject.art_items().size();
+        String curList = uiObject.artItem_by_index(index_count-1).getText();
 
-        //int index_count = uiObject.artCounts().size() - 1;
-
-        int index_count = uiObject.artCounts().size() - 1;
-
-        if (uiObject.art_byIndex(itemNumber).size() > 0) return true;
-        else return false;
-
-        //String curind = "";
-
-        //while ((!bflag) && (!beofflag)) {
-        //    if (uiObject.artItem(itemName).size() > 0) {
-        //        bflag = true;
-        //        MyLogger.log.info("Art item found.");
-        //        break;
-        //    } else if (uiObject.art_byIndex(index_count).getText().contains(curind)) {
-        //        beofflag = true;
-        //        MyLogger.log.info("Art item not found. ");
-        //        break;
-        //    }
-        //    curind = uiObject.art_byIndex(index_count).getText();
-        //    driver.swipe(startx, ypos, endx, ypos, 500);
-        //}
-        //return bflag;
+        while ((!bflag) && (!beofflag)) {
+            for (int i = 0; i < index_count; i++) {
+                uiObject.artItem_by_index(i).tap();
+                uiObject.art_Result().waitToAppear(10);
+                curTitle = uiObject.toolbar_Title().getText();
+                if (curTitle.contains(itemName)) {
+                    bflag = true;
+                    MyLogger.log.info("Art by name found. ");
+                    break;
+                } else if (lastList.contains(curList)) {
+                    beofflag = true;
+                    MyLogger.log.info("Art item not found. ");
+                    break;
+                }
+            }
+            lastList = curList;
+            driver.swipe(startx, ypos, endx, ypos, 1500);
+            index_count = uiObject.art_items().size();
+            curList = uiObject.artItem_by_index(index_count-1).getText();
+        }
+        return bflag;
     }
 
 }

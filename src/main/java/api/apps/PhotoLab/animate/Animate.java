@@ -40,16 +40,15 @@ public class Animate implements Activity {
         }
     }
 
-    public void selectAnimate (Integer effectNumber){
-        MyLogger.log.info("Select animate effect '"+effectNumber+"'.");
-        if (scrollTo(effectNumber)) {
-            uiObject.animate_byIndex(effectNumber).tap();
+    public void selectAnimate (String effectName){
+        MyLogger.log.info("Select animate effect '"+effectName+"'.");
+        if (scrollTo(effectName)) {
             uiObject.done().waitToAppear(10);
         }
-        else throw new AssertionError("Animate effect '"+effectNumber+"' not found.");
+        else throw new AssertionError("Animate effect '"+effectName+"' not found.");
     }
 
-    private Boolean scrollTo(Integer itemNumber){
+    private Boolean scrollTo(String itemName){
 
         Point location;
         Dimension size, size2;
@@ -57,34 +56,42 @@ public class Animate implements Activity {
         Boolean beofflag = false;
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 
-        //size = driver.manage().window().getSize();
-        //int startx = (int) (size.width * 0.9);
-        //int endx = (int) (size.width * 0.1);
+        size = uiObject.animate_List().getSize();
+        int startx = (int) (size.width * 0.9);
+        int endx = (int) (size.width * 0.1);
 
-        //location = uiObject.animate_byIndex(0).getLocation();
-        //size2 = uiObject.animate_byIndex(0).getSize();
-        //int ypos = (int) (location.getY() + size2.getHeight() / 2);
-        int index_count = uiObject.animateCounts().size() - 1;
+        location = uiObject.animate_List().getLocation();
+        size2 = uiObject.animate_List().getSize();
+        int ypos = (int) (location.getY() + size2.getHeight() / 2);
+        while (!(uiObject.animate_None().size() > 0)) {
+            driver.swipe(endx, ypos, startx, ypos, 500);
+        }
+        String curTitle;
+        String lastList = "";
+        int index_count = uiObject.animate_items().size();
+        String curList = uiObject.animateItem_by_index(index_count-1).getText();
 
-        if (uiObject.animate_byIndex(itemNumber).size() > 0) return true;
-        else return false;
-
-        //String curind = "";
-
-        //while ((!bflag) && (!beofflag)) {
-        //    if (uiObject.animateItem(itemName).size() > 0) {
-        //        bflag = true;
-        //        MyLogger.log.info("Animate item found.");
-        //        break;
-        //    } else if (uiObject.animate_byIndex(index_count).getText().contains(curind)) {
-        //        beofflag = true;
-        //        MyLogger.log.info("Animate item not found. ");
-        //        break;
-        //    }
-        //    curind = uiObject.animate_byIndex(index_count).getText();
-        //    driver.swipe(startx, ypos, endx, ypos, 1000);
-        //}
-        //return bflag;
+        while ((!bflag) && (!beofflag)) {
+            for (int i = 0; i < index_count; i++) {
+                uiObject.animateItem_by_index(i).tap();
+                uiObject.animate_Result().waitToAppear(10);
+                curTitle = uiObject.toolbar_Title().getText();
+                if (curTitle.contains(itemName)) {
+                    bflag = true;
+                    MyLogger.log.info("Art by name found. ");
+                    break;
+                } else if (lastList.contains(curList)) {
+                    beofflag = true;
+                    MyLogger.log.info("Art item not found. ");
+                    break;
+                }
+            }
+            lastList = curList;
+            driver.swipe(startx, ypos, endx, ypos, 1500);
+            index_count = uiObject.animate_items().size();
+            curList = uiObject.animateItem_by_index(index_count-1).getText();
+        }
+        return bflag;
     }
 
 }
