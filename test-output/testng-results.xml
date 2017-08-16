@@ -2,35 +2,35 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="тестовый запуск" duration-ms="58430" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:26:42Z">
+  <suite name="тестовый запуск" duration-ms="50879" started-at="2017-08-16T21:40:08Z" finished-at="2017-08-16T21:40:59Z">
     <groups>
     </groups>
-    <test name="001" duration-ms="58430" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:26:42Z">
+    <test name="001" duration-ms="50879" started-at="2017-08-16T21:40:08Z" finished-at="2017-08-16T21:40:59Z">
       <class name="tests.Preparation">
-        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="5" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:25:44Z">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="6" started-at="2017-08-16T21:40:08Z" finished-at="2017-08-16T21:40:08Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@4ae9cfc1]]>
+                <![CDATA[org.testng.TestRunner@7c37508a]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="test0(java.lang.String, java.lang.String)" name="test0" duration-ms="58348" started-at="2017-08-16T21:25:44Z" finished-at="2017-08-16T21:26:42Z">
+        <test-method status="PASS" signature="test0(java.lang.String, java.lang.String)" name="test0" duration-ms="50792" started-at="2017-08-16T21:40:08Z" finished-at="2017-08-16T21:40:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[https://ci.pho.to/builds/photolab/android/]]>
+                <![CDATA[https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v2.2.1-1307-release.apk]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[debug]]>
+                <![CDATA[true]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-08-16T21:26:42Z" finished-at="2017-08-16T21:26:42Z">
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="1" started-at="2017-08-16T21:40:59Z" finished-at="2017-08-16T21:40:59Z">
         </test-method>
       </class>
     </test>

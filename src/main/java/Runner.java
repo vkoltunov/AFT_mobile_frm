@@ -43,39 +43,39 @@ public class Runner extends BaseEntity {
 
     public static void main(String[] args) throws MalformedURLException, InterruptedException, ParserConfigurationException {
 
-        try {
-            MyLogger.log.setLevel(Level.INFO);
-            Properties prop;
-            String testSuite = "data/photoLab/test.xml";
 
-            // file properties
-            if (args.length > 0 && args[0].endsWith(".properties")) {
-                prop = loadProperties(args);
-                globalConfig.set(prop);
-                dataFolder = prop.getProperty("test.data_folder");
+        Properties prop;
+        String testSuite = "data/photoLab/test.xml";
 
-                if (prop.getProperty(core.utils.Config.TEST_TEST_SUITE) != null) {
-                    testSuite = prop.getProperty(core.utils.Config.TEST_TEST_SUITE);
-                }
-            } else {
-                if (args.length > 0 && !args[0].equals("")) {
-                    testSuite = args[0].replaceAll("(.*).xml", "$1").concat(".xml");
-                }
+        // file properties
+        if (args.length > 0 && args[0].endsWith(".properties")) {
+            prop = loadProperties(args);
+            globalConfig.set(prop);
+            dataFolder = prop.getProperty("test.data_folder");
 
-                if (args.length > 1) {
-                    dataFolder = args[1];
-                    if (dataFolder.endsWith("\\")) {
-                        dataFolder = dataFolder.substring(0, dataFolder.length() - 1);
-                    }
+            if (prop.getProperty(core.utils.Config.TEST_TEST_SUITE) != null) {
+                testSuite = prop.getProperty(core.utils.Config.TEST_TEST_SUITE);
+            }
+        } else {
+            if (args.length > 0 && !args[0].equals("")) {
+                testSuite = args[0].replaceAll("(.*).xml", "$1").concat(".xml");
+            }
+
+            if (args.length > 1) {
+                dataFolder = args[1];
+                if (dataFolder.endsWith("\\")) {
+                    dataFolder = dataFolder.substring(0, dataFolder.length() - 1);
                 }
             }
-            globalConfig.set(DATA_DIR, dataFolder);
-            globalConfig.set(APP_DATA_DIR, globalConfig.get(DATA_DIR) + "\\..\\appdata");
+        }
+        globalConfig.set(DATA_DIR, dataFolder);
+        globalConfig.set(APP_DATA_DIR, globalConfig.get(DATA_DIR) + "\\..\\appdata");
 
 
-            TimeZone.setDefault(TimeZone.getTimeZone("GMT+3"));
+        TimeZone.setDefault(TimeZone.getTimeZone("GMT+3"));
 
-
+        try {
+            MyLogger.log.setLevel(Level.INFO);
             MyLogger.log.info("Path for reporter : "+ Config.REPORT_DIR);
             Listener.setReporter(new Reporter(new File(Config.REPORT_DIR+"\\result_"+new Date().getTime()+"\\report.xml")));
             DriverManager.createDriver();
