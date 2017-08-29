@@ -5,7 +5,7 @@
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
     <test name="001" preserve-order="true">
-        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v2.2.1-1307-release.apk' />
+        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/' />
         <classes>
             <class name="tests.Preparation" />
         </classes>
@@ -84,52 +84,57 @@
     </test>
     <test name="016" preserve-order="true">
         <classes>
-            <class name="tests.test_Notifications" />
+            <class name="tests.test_Notifications_Effect" />
         </classes>
     </test>
     <test name="017" preserve-order="true">
         <classes>
-            <class name="tests.test_Collage" />
+            <class name="tests.test_Notifications_Combo" />
         </classes>
     </test>
     <test name="018" preserve-order="true">
         <classes>
-            <class name="tests.test_Favorites" />
+            <class name="tests.test_Notifications_Group" />
         </classes>
     </test>
     <test name="019" preserve-order="true">
         <classes>
-            <class name="tests.test_Favorites_Add" />
+            <class name="tests.test_Notifications_Tab" />
         </classes>
     </test>
     <test name="020" preserve-order="true">
         <classes>
-            <class name="tests.test_Favorites_Delete" />
+            <class name="tests.test_Notifications_User" />
         </classes>
     </test>
     <test name="021" preserve-order="true">
         <classes>
-            <class name="tests.test_Inspiration" />
+            <class name="tests.test_Collage" />
         </classes>
     </test>
     <test name="022" preserve-order="true">
         <classes>
-            <class name="tests.test_Inspiration_About" />
+            <class name="tests.test_Inspiration" />
         </classes>
     </test>
     <test name="023" preserve-order="true">
         <classes>
-            <class name="tests.test_Inspiration_Recent" />
+            <class name="tests.test_Inspiration_About" />
         </classes>
     </test>
     <test name="024" preserve-order="true">
+        <classes>
+            <class name="tests.test_Inspiration_Recent" />
+        </classes>
+    </test>
+    <test name="025" preserve-order="true">
         <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
         <parameter name="Fb_Password" value='testbook' />
         <classes>
             <class name="tests.test_Compositions_Ok" />
         </classes>
     </test>
-    <test name="025" preserve-order="true">
+    <test name="026" preserve-order="true">
         <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
         <parameter name="Fb_Password" value='testbook' />
         <classes>

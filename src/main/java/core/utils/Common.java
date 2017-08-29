@@ -6,9 +6,14 @@ import core.MyLogger;
 import core.framework.Reporter;
 import core.framework.base.BaseEntity;
 
+import jdk.nashorn.internal.parser.JSONParser;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
+import org.json.JSONException;
+import org.json.simple.JSONObject;
+import sun.rmi.runtime.Log;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -18,14 +23,13 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Random;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -133,6 +137,38 @@ public class Common extends BaseEntity {
     }
 
     //======================================================= Работа с Файловой системой =============================================================
+
+    private static String readAll(Reader rd) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        int cp;
+        while ((cp = rd.read()) != -1) {
+            sb.append((char) cp);
+        }
+        return sb.toString();
+    }
+
+    public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+        InputStream is = new URL(url).openStream();
+        try {
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+            String jsonText = readAll(rd);
+            Map<String, String> hashMap = new HashMap<>();
+            hashMap.put("json", jsonText);
+
+            JSONObject json = new JSONObject(hashMap);
+            return json;
+        } finally {
+            is.close();
+        }
+    }
+
+    public static JSONObject readJsonURL(String url) throws IOException, JSONException {
+        Map<String, String> hashMap = new HashMap<>();
+        hashMap.put("json", IOUtils.toString(new URL(url), Charset.forName("UTF-8")));
+        JSONObject json = new JSONObject(hashMap);
+        return json;
+    }
+
 
     /**
      * Скчиваем файл по указанному URL.

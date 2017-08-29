@@ -1,7 +1,12 @@
 package api.apps.PhotoLab;
 
 import api.android.Android;
+import api.apps.PhotoLab.custom.CustomUiObjects;
+import api.apps.PhotoLab.pictures.Pictures;
+import api.apps.PhotoLab.pictures.PicturesUiObjects;
 import core.MyLogger;
+import core.UiObject;
+import core.UiSelector;
 import core.utils.Common;
 import io.appium.java_client.android.AndroidKeyCode;
 import org.apache.commons.io.FileUtils;
@@ -24,6 +29,7 @@ import static core.managers.DriverManager.sdCard;
 public class Custom {
 
     private static String card = sdCard;
+    public CustomUiObjects uiObject = new CustomUiObjects();
 
     public void loadPictureToDevice(String pathToPicture) {
         MyLogger.log.info("Load Picture '" +pathToPicture+ "' to device." );
@@ -116,10 +122,10 @@ public class Custom {
         }
     }
 
-    public void sendNotification (){
+    public void sendNotification (String action){
         try{
             MyLogger.log.info("Sent Notification to PhotoLab.1");
-            PushNotificationTools.sentTestData(Android.driver);
+            PushNotificationTools.sentTestData(Android.driver, action);
             MyLogger.log.info("Sent Notification to PhotoLab.2");
             Android.driver.openNotifications();
             MyLogger.log.info("Sent Notification to PhotoLab.3");
@@ -233,6 +239,12 @@ public class Custom {
                 break;
         }
         driver.swipe(startx, starty, endx, endy, 1700);
+    }
+
+    public Boolean checkTitle(String title){
+        MyLogger.log.info("Check page title is '"+title+"'.");
+        if (uiObject.title().getText().contains(title)) return true;
+        else throw new AssertionError("Title Object isn't exists.");
     }
 
 }

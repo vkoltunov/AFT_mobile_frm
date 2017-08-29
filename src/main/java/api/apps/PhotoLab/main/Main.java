@@ -28,7 +28,7 @@ public class Main implements Activity {
         try{
             MyLogger.log.info("Waiting for Main page.");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            if (!(uiObject.actionBar().size() > 0)){
+            if (!(uiObject.photoLab().size() > 0)){
                 Android.app.photoLab.menu.open();
                 Android.app.photoLab.menu.tapHome();
             }
@@ -103,7 +103,7 @@ public class Main implements Activity {
 
     public Boolean selectCategory(String categoryName){
         MyLogger.log.info("Select category '"+categoryName+"'.");
-        waitToLoad();
+        //waitToLoad();
         if (scrollToCategory(categoryName)) {
             uiObject.categoryItem(categoryName).tap();
             return Android.app.photoLab.categories.categoryTitle_check(categoryName);
@@ -182,33 +182,13 @@ public class Main implements Activity {
     private Boolean scrollToCategory(String categoryName){
         Dimension size;
         Boolean bflag = false;
-
-        //size = driver.manage().window().getSize();
-
         int endx = uiObject.category_area().getLocation().getX();
-        size = uiObject.category_area().getSize();
-        int endy = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.2);
-        int starty = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.85);
-
-        //int endx = (int) (size.width * 0.1);
-        //int starty = (int) (size.height * 0.99);
-        //int endy = (int) (size.height * 0.01);
-
         int ind_count = uiObject.category_items().size() - 1;
 
         if (ind_count < 0) return false;
         else {
-            String lastdesc = "";
-            String currdesc = uiObject.categoryItem_last().getText();
-
-            //while (!(uiObject.categoryItem_by_desc(0).size()>0)) {
-                //driver.swipe(endx + 50, (int)(endy*1.5), endx + 50, (int)(starty*1.2), 1000);
-
-            //    driver.swipe(endx + 50, endy, endx + 50, starty, 500);
-                //lastdesc = currdesc;
-                //currdesc = uiObject.categoryItem_last().getText();
-            //}
-
+            String lastdesc; // = "";
+            String currdesc; // = uiObject.categoryItem_last().getText();
             lastdesc = "";
             ind_count = uiObject.category_items().size() - 1;
             currdesc = uiObject.categoryItem_by_index(ind_count).getText();
@@ -228,17 +208,24 @@ public class Main implements Activity {
                 }
                 lastdesc = currdesc;
                 size = uiObject.category_area().getSize();
-                endy = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.2);
-                starty = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.85);
-                driver.swipe(endx + 50, starty, endx + 50, endy, 1000);
+                int endy = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.2);
+                int starty = uiObject.category_area().getLocation().getY() + (int) (size.height * 0.85);
+                driver.swipe(endx + 150, starty, endx + 150, endy, 1400);
+
                 ind_count = uiObject.category_items().size() - 1;
                 currdesc = uiObject.categoryItem_by_index(ind_count).getText();
+
             }
             return bflag;
         }
     }
 
     private Boolean scrollBarTo(String itemName){
+        if (uiObject.barItem(itemName).size() > 0) return true;
+        else return false;
+    }
+
+    private Boolean scrollBarTo2(String itemName){
 
         Point location;
         Dimension size, size2;

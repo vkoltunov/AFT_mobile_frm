@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [тестовый запуск]">
-  <parameter name="Build_Path" value="https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v2.2.1-1307-release.apk"/>
   <listeners>
     <listener class-name="core.Listener"/>
     <listener class-name="core.AnnotationTransformer"/>
   </listeners>
-  <test name="001(failed)" preserve-order="false">
-    <parameter name="Build_Path" value="https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v2.2.1-1307-release.apk"/>
+  <test name="016(failed)" preserve-order="false">
     <classes>
-      <class name="tests.Preparation">
+      <class name="tests.test_Navigation_Categories">
         <methods>
           <include name="afterTest"/>
+          <include name="test2"/>
           <include name="before"/>
-          <include name="test0" invocation-numbers="0 0 0 0"/>
+          <include name="beforeClass"/>
         </methods>
       </class>
     </classes>

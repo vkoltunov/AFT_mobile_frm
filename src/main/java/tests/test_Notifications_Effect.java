@@ -13,7 +13,7 @@ import org.testng.annotations.BeforeTest;
 /**
  * Created by User on 6/26/2017.
  */
-public class test_Notifications extends TestManager {
+public class test_Notifications_Effect extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
@@ -24,7 +24,7 @@ public class test_Notifications extends TestManager {
 
     @BeforeTest
     public void before(){
-        testInfo.suite("test_Notifications");
+        testInfo.suite("test_Notifications_Effect");
     }
 
     //===== Notification work =====
@@ -36,7 +36,7 @@ public class test_Notifications extends TestManager {
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();
-        photolab.custom.sendNotification();
+        photolab.custom.sendNotification("navigate=fx&id=1552");
         photolab.notifications.waitToLoad();
         photolab.notifications.tapNotification();
         photolab.pictures.waitToLoad();

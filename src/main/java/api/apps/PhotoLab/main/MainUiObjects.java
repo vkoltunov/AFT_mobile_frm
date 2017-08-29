@@ -21,10 +21,8 @@ public class MainUiObjects {
             categoryItem,
             category_items,
             categoryItem_by_index,
-            categoryItem_by_desc,
             delete,
             favoritesText,
-            categoryItem_last,
             inspirationBlock,
             category_area,
             inspirationItem,
@@ -56,7 +54,8 @@ public class MainUiObjects {
     }
 
     public UiObject barItem(String barName){
-        barItem = new UiSelector().className("android.widget.TextView").textContains(barName).makeUiObject();
+        //barItem = new UiSelector().className("android.widget.TextView").textContains(barName).makeUiObject();
+        barItem = new UiSelector().className("android.widget.CheckedTextView").textContains(barName).makeUiObject();
         return barItem;
     }
 
@@ -86,7 +85,7 @@ public class MainUiObjects {
     }
 
     public UiObject category_area(){
-        category_area = new UiSelector().className("android.support.v7.widget.RecyclerView").resourceId("vsin.t16_funny_photo:id/recyclerView").makeUiObject();
+        category_area = new UiSelector().className("android.support.v4.view.ViewPager").resourceId("vsin.t16_funny_photo:id/non_swipe_view_pager").makeUiObject();
         return category_area;
     }
 
@@ -94,16 +93,6 @@ public class MainUiObjects {
         categoryItem_by_index = new UiSelector().className("android.widget.FrameLayout").descriptionContains("list_item_").index(index).makeUiObject();
         //categoryItem_by_index = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.TextView[@resource-id='android:id/title'][@index='"+index+"']").makeUiObject();
         return categoryItem_by_index;
-    }
-
-    public UiObject categoryItem_last(){
-        categoryItem_last = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.TextView[last()]").makeUiObject();
-        return categoryItem_last;
-    }
-
-    public UiObject categoryItem_by_desc(int index){
-        categoryItem_by_desc = new UiSelector().className("android.widget.FrameLayout").descriptionContains("list_item_"+index).makeUiObject();
-        return categoryItem_by_desc;
     }
 
     public UiObject delete(){
@@ -118,7 +107,7 @@ public class MainUiObjects {
     }
 
     public UiObject inspirationBlock(String name){
-        inspirationBlock = new UiSelector().className("android.widget.CheckedTextView").text(name).makeUiObject();
+        inspirationBlock = new UiSelector().className("android.widget.TextView").text(name).makeUiObject();
         return inspirationBlock;
     }
 

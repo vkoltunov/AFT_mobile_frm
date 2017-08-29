@@ -4,10 +4,12 @@ import core.framework.Reporter;
 import core.framework.base.BaseEntity;
 import core.managers.DriverManager;
 
+import static core.utils.Common.readJsonURL;
 import static core.utils.Config.Keys.*;
 
 
 import core.managers.TestManager;
+import core.utils.Common;
 import core.utils.Config;
 import core.utils.GlobalDict;
 import core.utils.TestNGParser;
@@ -24,6 +26,9 @@ import static java.lang.Thread.sleep;
 //import static junit.framework.TestCase.assertTrue;
 //import static sun.plugin2.util.SystemUtil.debug;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
 import org.testng.TestNG;
 import org.testng.xml.XmlSuite;
@@ -39,7 +44,6 @@ public class Runner extends BaseEntity {
     //private static final DateFormat sdf = new SimpleDateFormat("yyyy_MM_dd|HH:mm:ss");
     private static String dataFolder = "d:\\aft\\data";
     public static GlobalDict globalConfig = new GlobalDict();
-
 
     public static void main(String[] args) throws MalformedURLException, InterruptedException, ParserConfigurationException {
 
@@ -79,9 +83,13 @@ public class Runner extends BaseEntity {
             MyLogger.log.info("Path for reporter : "+ Config.REPORT_DIR);
             Listener.setReporter(new Reporter(new File(Config.REPORT_DIR+"\\result_"+new Date().getTime()+"\\report.xml")));
             DriverManager.createDriver();
+
+            //JSONObject json = readJsonURL("http://testing.cfg.ws.pho.to/androidphotolab/conf.json");
             //Android.app.fabby.runTest();
             //Android.app.fabby.runToast();
             int res = new Runner().runTests(testSuite);
+        } catch (IOException e) {
+            e.printStackTrace();
         } finally {
             DriverManager.killDriver();
         }

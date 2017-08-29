@@ -14,11 +14,17 @@ public class MenuUiObjects {
             list_item,
             by_index,
             about,
-            last_item;
+            last_item,
+            menu;
 
     public UiObject item(String categoryName){
         item = new UiSelector().className("android.widget.TextView").textContains(categoryName).makeUiObject();
         return item;
+    }
+
+    public UiObject menu(){
+        if(menu == null) menu = new UiSelector().className("android.widget.ImageButton").resourceId("android:id/button1").makeUiObject();
+        return menu;
     }
 
     public UiObject home(){

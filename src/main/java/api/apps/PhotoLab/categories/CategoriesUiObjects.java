@@ -26,7 +26,7 @@ public class CategoriesUiObjects {
             page_Title;
 
     public UiObject effects(){
-        if(effects == null) effects = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_subtitle").textContains("effects").makeUiObject();
+        if(effects == null) effects = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_subtitle").makeUiObject();
         return effects;
     }
 

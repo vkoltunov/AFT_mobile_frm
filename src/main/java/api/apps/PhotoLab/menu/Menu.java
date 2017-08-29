@@ -81,6 +81,15 @@ public class Menu implements Activity {
         //else throw new AssertionError("Menu Home button tap failed.");
     }
 
+    public Menu tapMenu(){
+        MyLogger.log.info("Tap menu button.");
+        if (uiObject.menu().size() > 0) {
+            uiObject.menu().tap();
+            return Android.app.photoLab.menu.waitToLoad();
+        }
+        else throw new AssertionError("Menu button isn't available.");
+    }
+
     public About tapAbout(){
         MyLogger.log.info("Tap menu About button");
         if (scrollToItem("About")){

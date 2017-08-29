@@ -42,7 +42,7 @@ public class Preparation extends TestManager {
     @Parameters({"Build_Path", "Build_Type"})
     public void test0(String buildPath, @Optional("true") String buildType){
         testInfo.id("test0").suite("Preparation").name("Clear application data. Uninstall current application build. Install new build.");
-        photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
+        //photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
         photolab.forceStop();
         photolab.clearData();
         photolab.uninstallApp();

@@ -40,7 +40,8 @@ public class PushNotificationTools {
         }
     }
 
-    public static boolean sentTestData(AndroidDriver dr) throws MalformedURLException, InterruptedException {
+    public static boolean sentTestData(AndroidDriver dr, String action) throws MalformedURLException, InterruptedException {
+        TEST_DATA_JSON.put("action", action);
         return sentData(dr, TEST_DATA_JSON);
     }
 
@@ -120,6 +121,5 @@ public class PushNotificationTools {
         TEST_DATA_JSON.put("title", "It`s Thanksgiving Day!");
         TEST_DATA_JSON.put("body", "Time to be thankful & send your gratitude in a classy wrapping.");
         TEST_DATA_JSON.put("attachment", "http://d3kk92hl2t7r5d.cloudfront.net/i/e/default/1552.jpg");
-        TEST_DATA_JSON.put("action", "navigate=fx&id=1552");
     }
 }
