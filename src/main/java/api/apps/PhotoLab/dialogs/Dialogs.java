@@ -73,11 +73,10 @@ public class Dialogs implements Activity {
         }
     }
 
-    public Advertisement tapYes(){
+    public void tapYes(){
         try{
             MyLogger.log.info("Tap to Yes button for dialog.");
             uiObject.yes().waitToAppear(10).tap();
-            return Android.app.photoLab.advertisement.waitToLoad();
         }catch (AssertionError e) {
             throw new AssertionError("No button failed to tap/load for dialog");
         }

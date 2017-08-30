@@ -39,6 +39,5 @@ public class test_Navigation_Tabs extends TestManager {
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategoryBar("Inspiration");
         photolab.main.selectCategoryBar("Popular");
-        //photolab.main.selectCategoryBar("Favorites");
     }
 }

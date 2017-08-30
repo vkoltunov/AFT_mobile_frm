@@ -30,7 +30,7 @@ public class PicturesUiObjects {
             option;
 
     public UiObject previewPic(){
-        if(previewPic == null) previewPic = new UiSelector().className("android.widget.ImageView").resourceId("vsin.t16_funny_photo:id/preview_large").makeUiObject();
+        if(previewPic == null) previewPic = new UiSelector().className("android.widget.ImageView").resourceIdMatches("vsin.t16_funny_photo:id/preview.*").makeUiObject();
         return previewPic;
     }
 

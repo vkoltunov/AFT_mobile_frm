@@ -36,7 +36,7 @@ public class test_Watemark_YesSponsored extends TestManager {
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
         photolab.main.selectCategory("Masterpiece");
-        photolab.main.selectEffect("Pop Art Style");
+        photolab.categories.selectEffect("Pop Art Style");
         photolab.pictures.selectTab("All");
         photolab.pictures.selectPicture(1);
         photolab.property.waitToLoad();

@@ -41,6 +41,7 @@ public class Listener extends TestListenerAdapter {
                 tr.setStatus(ITestResult.FAILURE);
                 MyLogger.log.info("Test Failed.");
                 TestInfo.printResults();
+                
                 if (Listener.reporter != null)
                     Listener.reporter.update(TestInfo.suite(), TestInfo.name(), "FAIL");
             }

@@ -4,9 +4,11 @@
         <listener class-name="core.Listener" />
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
-    <test name="016" preserve-order="true">
+    <test name="026" preserve-order="true">
+        <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
+        <parameter name="Fb_Password" value='testbook' />
         <classes>
-            <class name="tests.test_Navigation_Tabs" />
+            <class name="tests.test_Compositions_ShowInFeed" />
         </classes>
     </test>
 </suite>

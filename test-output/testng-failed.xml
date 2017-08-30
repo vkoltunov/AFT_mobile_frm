@@ -5,14 +5,15 @@
     <listener class-name="core.Listener"/>
     <listener class-name="core.AnnotationTransformer"/>
   </listeners>
-  <test name="016(failed)" preserve-order="false">
+  <test name="024(failed)" preserve-order="false">
     <classes>
-      <class name="tests.test_Navigation_Categories">
+      <class name="tests.test_Inspiration_Recent">
         <methods>
           <include name="afterTest"/>
-          <include name="test2"/>
-          <include name="before"/>
           <include name="beforeClass"/>
+          <include name="test18_1"/>
+          <include name="before"/>
+          <include name="after"/>
         </methods>
       </class>
     </classes>

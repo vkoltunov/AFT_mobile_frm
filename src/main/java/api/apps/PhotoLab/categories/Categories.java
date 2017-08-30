@@ -22,7 +22,7 @@ public class Categories implements Activity {
     public Categories waitToLoad() {
         try{
             MyLogger.log.info("Waiting for Categories frame");
-            uiObject.effects().waitToAppear(5);
+            uiObject.category_area().waitToAppear(5);
             return Android.app.photoLab.categories;
         }catch (AssertionError e) {
             throw new AssertionError("Categories frame failed to load/open");
@@ -50,18 +50,16 @@ public class Categories implements Activity {
 
     public Pictures selectEffect(String effectName){
         MyLogger.log.info("Select effect '"+effectName+"'.");
-        Android.app.photoLab.favoriteFlag = false;
+        //Android.app.photoLab.favoriteFlag = false;
         if (scrollToEffect(effectName)) {
             uiObject.effectItem(effectName).tap();
             return Android.app.photoLab.pictures.waitToLoad();
-        }
-        else throw new AssertionError("Effect '"+effectName+"' not found.");
+        } else throw new AssertionError("Effect '"+effectName+"' not found.");
     }
 
-    private Boolean scrollToEffect(String effectName){
+    public Boolean scrollToEffect(String effectName){
         Dimension size;
         Boolean bflag = false;
-
 
         int endx = uiObject.category_area().getLocation().getX();
         size = uiObject.category_area().getSize();
@@ -72,7 +70,7 @@ public class Categories implements Activity {
         if (ind_count < 0) return false;
         else {
             String lastdesc = "";
-            String currdesc = uiObject.effectItem_last().getText();
+            String currdesc = uiObject.effectItem_by_index(ind_count).getText();
             Boolean beofflag = false;
 
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
@@ -88,8 +86,9 @@ public class Categories implements Activity {
                     break;
                 }
                 lastdesc = currdesc;
-                driver.swipe(endx + 50, starty, endx + 50, endy, 2200);
-                currdesc = uiObject.effectItem_last().getText();
+                driver.swipe(endx + 150, starty, endx + 150, endy, 1700);
+                ind_count = uiObject.effect_items().size() - 1;
+                currdesc = uiObject.effectItem_by_index(ind_count).getText();
             }
             return bflag;
         }

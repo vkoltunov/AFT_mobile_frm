@@ -34,7 +34,7 @@ public class test_Notifications_Combo extends TestManager {
         photolab.notifications.waitToLoad();
         photolab.notifications.tapNotification();
         photolab.pictures.waitToLoad();
-        photolab.custom.checkTitle("Combo by");
+        //photolab.custom.checkTitle("Combo by");
         photolab.custom.pressBack();
     }
 }

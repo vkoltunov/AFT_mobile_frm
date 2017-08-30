@@ -46,7 +46,7 @@ public class test_Collage extends TestManager {
         photolab.pictures.longClickPicture(1, "bottom");
         photolab.pictures.tapDelete();
         photolab.pictures.longClickPicture(1, "top");
-        photolab.pictures.addToFavorites();
+        photolab.pictures.tapDelete();
         photolab.pictures.selectTab("All");
         photolab.pictures.selectPicture(1);
         photolab.pictures.selectPicture(2);
