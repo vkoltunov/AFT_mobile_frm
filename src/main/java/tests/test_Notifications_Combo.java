@@ -26,7 +26,7 @@ public class test_Notifications_Combo extends TestManager {
 
     @org.testng.annotations.Test
     public void test16() {
-        testInfo.id("test16").suite("Functionality").name("Check notification work.");
+        testInfo.id("test16").suite("test_Notifications_Combo").name("Check notification work.");
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

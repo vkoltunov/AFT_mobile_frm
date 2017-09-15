@@ -31,7 +31,7 @@ public class test_SimpleWorkflow extends TestManager {
 
     @org.testng.annotations.Test
     public void test4(){
-        testInfo.id("test4").suite("Functionality").name("Full cycle work with photo + Add text Effect (Category:New Reality; Effect:Wedding March)");
+        testInfo.id("test4").suite("test_SimpleWorkflow").name("Full cycle work with photo + Add text Effect (Category:New Reality; Effect:Wedding March)");
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();
         photolab.open();

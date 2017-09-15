@@ -29,7 +29,7 @@ public class test_Favorites_Delete extends TestManager {
 
     @org.testng.annotations.Test
     public void test14_3(){
-        testInfo.id("test14_3").suite("Functionality").name("Delete effects from Favorites.");
+        testInfo.id("test14_3").suite("test_Favorites_Delete").name("Delete effects from Favorites.");
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

@@ -8,6 +8,7 @@ import core.Timer;
 import core.constants.Arg;
 import core.constants.Resources;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
@@ -54,6 +55,7 @@ public class DriverManager {
             caps.setCapability("deviceName", deviceID);
             caps.setCapability("platformName", "Android");
             caps.setCapability("app", app.getAbsolutePath());
+
         return caps;
     }
 

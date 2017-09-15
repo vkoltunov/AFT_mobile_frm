@@ -30,7 +30,7 @@ public class test_SaveAndShare extends TestManager {
 
     @org.testng.annotations.Test
     public void test3(){
-        testInfo.id("test3").suite("Functionality").name("First Start. Check Save and Share tutorial.");
+        testInfo.id("test3").suite("test_SaveAndShare").name("First Start. Check Save and Share tutorial.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

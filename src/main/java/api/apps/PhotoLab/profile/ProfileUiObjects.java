@@ -13,7 +13,7 @@ public class ProfileUiObjects {
             list;
 
     public UiObject title(){
-        if(title == null) title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").makeUiObject();
+        if(title == null) title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").text("My profile").makeUiObject();
         return title;
     }
 
@@ -21,4 +21,5 @@ public class ProfileUiObjects {
         if(list == null) list = new UiSelector().className("android.support.v7.widget.RecyclerView").resourceId("android:id/list").makeUiObject();
         return list;
     }
+
 }

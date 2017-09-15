@@ -32,7 +32,7 @@ public class test_Navigation_Tabs extends TestManager {
 
     @org.testng.annotations.Test
     public void test1() {
-        testInfo.id("test1").suite("Functionality").name("Check Categories bar.");
+        testInfo.id("test1").suite("test_Navigation_Tabs").name("Check Categories bar.");
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

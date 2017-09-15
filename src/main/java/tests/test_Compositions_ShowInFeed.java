@@ -33,7 +33,7 @@ public class test_Compositions_ShowInFeed extends TestManager {
     @org.testng.annotations.Test
     @Parameters({"Fb_Login", "Fb_Password"})
     public void test17_2(@Optional("true") String fb_Login, @Optional("true") String fb_Password){
-        testInfo.id("test17_2").suite("Functionality").name("Create composition + save to Photo Lab option.");
+        testInfo.id("test17_2").suite("test_Compositions_ShowInFeed").name("Create composition + save to Photo Lab option.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

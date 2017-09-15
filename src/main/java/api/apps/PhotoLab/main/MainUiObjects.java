@@ -26,11 +26,17 @@ public class MainUiObjects {
             inspirationBlock,
             category_area,
             inspirationItem,
-            inspirationProfile;
+            inspirationProfile,
+            navigationContainer;
 
     public UiObject photoLab(){
         if(photoLab == null) photoLab = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").text("Photo Lab").makeUiObject();
         return photoLab;
+    }
+
+    public UiObject navigationContainer(){
+        if(navigationContainer == null) navigationContainer = new UiSelector().className("android.widget.LinearLayout").resourceId("vsin.t16_funny_photo:id/bottom_navigation_container").makeUiObject();
+        return navigationContainer;
     }
 
     public UiObject actionBar(){

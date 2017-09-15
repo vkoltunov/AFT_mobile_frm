@@ -31,7 +31,7 @@ public class test_Art extends TestManager {
 
     @org.testng.annotations.Test
     public void test10(){
-        testInfo.id("test10").suite("Functionality").name("Full cycle work with photo + Add art Effect (Category:Smart Filters; Effect:Color On You)");
+        testInfo.id("test10").suite("test_Art").name("Full cycle work with photo + Add art Effect (Category:Smart Filters; Effect:Color On You)");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

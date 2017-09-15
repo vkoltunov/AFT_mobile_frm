@@ -31,7 +31,7 @@ public class test_Persistent extends TestManager {
 
     @org.testng.annotations.Test
     public void test6(){
-        testInfo.id("test6").suite("Functionality").name("OFF/ON Persistent + Full cycle work with photo + Add art Effect Kandinsky(Category:Double Exposures; Effect:Star Dust)");
+        testInfo.id("test6").suite("test_Persistent").name("OFF/ON Persistent + Full cycle work with photo + Add art Effect Kandinsky(Category:Double Exposures; Effect:Star Dust)");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

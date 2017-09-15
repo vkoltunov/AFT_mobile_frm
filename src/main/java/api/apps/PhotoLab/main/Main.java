@@ -28,7 +28,7 @@ public class Main implements Activity {
         try{
             MyLogger.log.info("Waiting for Main page.");
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            if (!(uiObject.photoLab().size() > 0)){
+            if (!(uiObject.navigationContainer().size() > 0)){
                 Android.app.photoLab.menu.open();
                 Android.app.photoLab.menu.tapHome();
             }
@@ -101,6 +101,13 @@ public class Main implements Activity {
         else throw new AssertionError("Category bar '"+categoryBarName+"' not found.");
     }
 
+    public void checkedCategoryBar (String categoryBarName, Boolean status){
+        MyLogger.log.info("Category bar '"+categoryBarName+"' is active in application.");
+        Boolean currStatus = uiObject.barItem(categoryBarName).isChecked();
+        if (status.equals(currStatus)) MyLogger.log.info("Category bar '"+categoryBarName+"' active status is "+currStatus);
+        else throw new AssertionError("Category bar '"+categoryBarName+"' active status is not "+status);
+    }
+
     public Boolean selectCategory(String categoryName){
         MyLogger.log.info("Select category '"+categoryName+"'.");
         //waitToLoad();
@@ -131,14 +138,13 @@ public class Main implements Activity {
         else throw new AssertionError("Effect '"+effectName+"' not found.");
     }
 
-    public Main existItem(String itemName, Boolean flag){
+    public Boolean existItem(String itemName, Boolean flag){
         MyLogger.log.info("Check exist item category or effect named '"+itemName+"'.");
-        if (scrollToCategory(itemName) == flag) {
-
-            MyLogger.log.info("Item category or effect '"+itemName+"' found result: "+ flag);
-            return Android.app.photoLab.main;
+        if (scrollToCategory(itemName) == flag) return true;
+        else {
+            MyLogger.log.info("Check Irem '"+itemName+"' exists failed.");
+            return false;
         }
-        else throw new AssertionError("Item category or effect named '"+itemName+"' found result: "+flag);
     }
 
     public Main tapDelete(){
@@ -172,7 +178,7 @@ public class Main implements Activity {
     public Profile openProfile(){
         try{
             MyLogger.log.info("Open Inspiration user profile.");
-            uiObject.inspirationProfile().tap();
+            uiObject.barItem("My profile").tap();
             return Android.app.photoLab.profile.waitToLoad();
         }catch (AssertionError e) {
             throw new AssertionError("Inspiration profile page not found.");

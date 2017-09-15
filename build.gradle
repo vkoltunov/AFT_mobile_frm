@@ -38,10 +38,11 @@ dependencies {
     //compile group: 'org.bytedeco.javacpp-presets', name: 'leptonica', version: '1.71-0.11', classifier: opencvBinaryClassifer
     //compile group: 'junit', name: 'junit', version: '4.11'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    compile group: 'org.json', name: 'json', version: '20090211'
     //compile group: 'net.sf.json-lib', name: 'json-lib', version: '2.4'
     compile 'org.testng:testng:6.1.1'
     compile 'org.jsoup:jsoup:1.10.3'
-    compile group: 'org.json', name: 'json', version: '20090211'
+    //compile 'org.json:json:20160212'
     //compile 'org.apache.commons:commons-lang3:3.4'
     //compile 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 }

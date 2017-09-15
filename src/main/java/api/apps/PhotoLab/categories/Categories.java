@@ -48,6 +48,23 @@ public class Categories implements Activity {
         }
     }
 
+    public Boolean checkEffectPosition(String effectName, int effectPosition){
+        MyLogger.log.info("Check effect '"+effectName+"' position list_item_"+effectPosition+" in category set.");
+        if (scrollToEffect(effectName) && (uiObject.listItemTitle(effectPosition).size()>0)){
+            String title = uiObject.listItemTitle(effectPosition).getText();
+            if (title.equals(effectName)) return true;
+            else return false;
+        } else throw new AssertionError("Effect '"+effectName+"' not found.");
+    }
+
+    public Boolean checkEffectIsNew(String effectName, int effectPosition){
+        MyLogger.log.info("Check is new marker for effect '"+effectName+"' with list_item_"+effectPosition+" in category set.");
+        if (scrollToEffect(effectName)){
+            if (uiObject.newIcon(effectPosition).size() > 0) return true;
+            else return false;
+        } else throw new AssertionError("Effect '"+effectName+"' not found.");
+    }
+
     public Pictures selectEffect(String effectName){
         MyLogger.log.info("Select effect '"+effectName+"'.");
         //Android.app.photoLab.favoriteFlag = false;

@@ -28,7 +28,7 @@ public class test_Navigation_Categories extends TestManager {
 
     @org.testng.annotations.Test
     public void test2() {
-        testInfo.id("test2").suite("Functionality").name("Check Categories.");
+        testInfo.id("test2").suite("test_Navigation_Categories").name("Check Categories.");
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

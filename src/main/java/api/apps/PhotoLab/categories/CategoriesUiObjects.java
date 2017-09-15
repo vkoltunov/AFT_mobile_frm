@@ -22,7 +22,9 @@ public class CategoriesUiObjects {
             effectItem_by_index,
             effectItem_last,
             category_area,
-            page_Title;
+            page_Title,
+            newIcon,
+            listItemTitle;
 
     public UiObject page_Title(String title){
         page_Title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").textContains(title).makeUiObject();
@@ -60,4 +62,16 @@ public class CategoriesUiObjects {
         category_area = new UiSelector().className("android.support.v7.widget.RecyclerView").resourceId("vsin.t16_funny_photo:id/recyclerView").makeUiObject();
         return category_area;
     }
+
+    public UiObject newIcon(int effectIndex){
+        newIcon = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.FrameLayout[@content-desc='list_item_"+effectIndex+"']//android.widget.ImageView[@resource-id='android:id/icon']").makeUiObject();
+        return newIcon;
+    }
+
+    public UiObject listItemTitle(int effectIndex){
+        listItemTitle = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.FrameLayout[@content-desc='list_item_"+effectIndex+"']//android.widget.TextView[@resource-id='android:id/title']").makeUiObject();
+        return listItemTitle;
+    }
+
+
 }

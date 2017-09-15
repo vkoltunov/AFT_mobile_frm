@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="тестовый запуск" verbose="1">
+<suite name="смоке запуск" verbose="1">
     <listeners>
         <listener class-name="core.Listener" />
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
+    <test name="001" preserve-order="true">
+        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.3-1483-release.apk' />
+        <classes>
+            <class name="tests.Preparation" />
+        </classes>
+    </test>
     <test name="002" preserve-order="true">
         <parameter name="Config" value='http://testing.cfg.ws.pho.to/androidphotolab/conf.json' />
         <classes>

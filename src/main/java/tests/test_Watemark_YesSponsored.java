@@ -28,7 +28,7 @@ public class test_Watemark_YesSponsored extends TestManager {
 
     @org.testng.annotations.Test
     public void test15_3(){
-        testInfo.id("test15_3").suite("Functionality").name("Check watemark working. Tap button NOT NOW. Tap Yes for sponsored video.");
+        testInfo.id("test15_3").suite("test_Watemark_YesSponsored").name("Check watemark working. Tap button NOT NOW. Tap Yes for sponsored video.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

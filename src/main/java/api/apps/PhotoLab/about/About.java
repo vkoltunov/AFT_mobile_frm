@@ -3,6 +3,11 @@ package api.apps.PhotoLab.about;
 import api.android.Android;
 import api.interfaces.Activity;
 import core.MyLogger;
+import core.UiSelector;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+
+import static api.android.Android.driver;
 
 /**
  * Created by User on 4/28/2017.
@@ -73,6 +78,20 @@ public class About implements Activity{
             return getVersion().contains(version);
         }catch (AssertionError e) {
             throw new AssertionError("Application version failed to get.");
+        }
+    }
+
+    public Boolean checkConfigVersion(String version){
+
+        MyLogger.log.info("Check Config version '"+version+"' with App config version.");
+        String appVersion = uiObject.version().getText().replace("Config version: ", "");
+        MyLogger.log.info("Versions is equal : "+appVersion);
+        if (appVersion.equals(version)){
+            MyLogger.log.info("Versions is equals.");
+            return true;
+        } else {
+            MyLogger.log.error("Config version is '"+version+"' but App config version is '"+appVersion+"'.");
+            throw new AssertionError("Versions isn't equals.");
         }
     }
 

@@ -3,17 +3,15 @@ package core.utils;
 import api.android.Android;
 
 import core.MyLogger;
-import core.framework.Reporter;
 import core.framework.base.BaseEntity;
 
-import jdk.nashorn.internal.parser.JSONParser;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.json.JSONException;
 import org.json.simple.JSONObject;
-import sun.rmi.runtime.Log;
+
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -36,7 +34,6 @@ import java.util.zip.ZipFile;
 
 import static core.managers.DriverManager.sdCard;
 import static core.utils.Config.Keys.*;
-import static org.testng.internal.Utils.error;
 
 import java.util.regex.Matcher;
 
@@ -52,6 +49,9 @@ public class Common extends BaseEntity {
     private static final Pattern SPECIAL_REGEXP_CHARS = Pattern.compile("[{}()\\[\\].+*?^$\\\\|]");
     private static final String ABSOLUTE_FILE_PATH_PATTERN = "^\\w:\\\\.*|^\\\\\\\\\\d+\\.\\d+\\.\\d+\\.\\d+\\\\.*";
     private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd";
+
+    private static String aclPackage = "net.sanapeli.adbchangelanguage";
+    public static final String aclPath = System.getProperty("user.dir")+"/src/main/resources/ACL.apk";
 
     public Common() {
         RND = new Random();
@@ -135,6 +135,19 @@ public class Common extends BaseEntity {
         }
         return "";
     }
+
+    //======================================================= Работа с локализациями =============================================================
+
+    public static void changeDeviceLoc(String lang) {
+
+        ArrayList apps = Android.adb.getInstalledPackages();
+        if(!apps.contains(aclPackage)){
+            Android.adb.installApp(aclPath);
+        }
+        else MyLogger.log.info("Device has "+aclPackage+" installed.");
+        Android.adb.changeDeviceLanguage(lang);
+    }
+
 
     //======================================================= Работа с Файловой системой =============================================================
 

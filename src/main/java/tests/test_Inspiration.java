@@ -29,7 +29,7 @@ public class test_Inspiration extends TestManager {
 
     @org.testng.annotations.Test
     public void test17_3(){
-        testInfo.id("test17_3").suite("Functionality").name("Inspiration page from start + check blocks.");
+        testInfo.id("test17_3").suite("test_Inspiration").name("Inspiration page from start + check blocks.");
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

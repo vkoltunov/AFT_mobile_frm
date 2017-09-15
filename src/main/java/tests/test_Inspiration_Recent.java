@@ -29,7 +29,7 @@ public class test_Inspiration_Recent extends TestManager {
 
     @org.testng.annotations.Test
     public void test18_1(){
-        testInfo.id("test18_1").suite("Functionality").name("Inspiration full test with FIRST pic from Recent block.");
+        testInfo.id("test18_1").suite("test_Inspiration").name("Inspiration full test with FIRST pic from Recent block.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

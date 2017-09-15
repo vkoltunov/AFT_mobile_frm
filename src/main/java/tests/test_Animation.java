@@ -31,7 +31,7 @@ public class test_Animation extends TestManager {
 
     @org.testng.annotations.Test
     public void test11(){
-        testInfo.id("test11").suite("Functionality").name("Full cycle work with Animation photo effect (Category:New Reality; Effect:Old Photo)");
+        testInfo.id("test11").suite("test_Animation").name("Full cycle work with Animation photo effect (Category:New Reality; Effect:Old Photo)");
 
         photolab.custom.loadPicsToDeviceFromFolder(Config.APP_DATA_DIR+"\\photoLab\\source");
         photolab.forceStop();

@@ -29,6 +29,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+
 import java.io.File;
 import java.io.IOException;
 
@@ -63,6 +64,7 @@ public class PhotoLab implements Application{
     public Notifications notifications = new Notifications();
     public AboutCombo aboutCombo = new AboutCombo();
     public Profile profile = new Profile();
+    public Config config = new Config();
 
     @Override
     public void forceStop() {

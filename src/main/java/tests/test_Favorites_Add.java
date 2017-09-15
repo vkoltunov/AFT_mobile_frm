@@ -29,7 +29,7 @@ public class test_Favorites_Add extends TestManager {
 
     @org.testng.annotations.Test
     public void test14_2(){
-        testInfo.id("test14_2").suite("Functionality").name("Add effects to Favorites and check they.");
+        testInfo.id("test14_2").suite("test_Favorites_Add").name("Add effects to Favorites and check they.");
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

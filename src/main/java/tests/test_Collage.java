@@ -31,7 +31,7 @@ public class test_Collage extends TestManager {
 
     @org.testng.annotations.Test
     public void test13(){
-        testInfo.id("test13").suite("Functionality").name("Full cycle work with multi pictures effect (Category:Multiple Collages; Effect:Globe) + Delete photo from recent.");
+        testInfo.id("test13").suite("test_Collage").name("Full cycle work with multi pictures effect (Category:Multiple Collages; Effect:Globe) + Delete photo from recent.");
 
         photolab.custom.loadPicsToDeviceFromFolder(Config.APP_DATA_DIR+"\\photoLab\\source");
         photolab.forceStop();

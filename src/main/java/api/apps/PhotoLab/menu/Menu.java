@@ -136,7 +136,6 @@ public class Menu implements Activity {
             //ind_count = uiObject.list_item().size() - 1;
             currdesc = uiObject.last_item().getText();
         }
-        MyLogger.log.info("bflag="+bflag);
         return bflag;
     }
 

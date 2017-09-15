@@ -29,7 +29,7 @@ public class test_GoPro extends TestManager {
 
     @org.testng.annotations.Test
     public void test7(){
-        testInfo.id("test7").suite("Functionality").name("Check Pro button (from Main page).");
+        testInfo.id("test7").suite("test_GoPro").name("Check Pro button (from Main page).");
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

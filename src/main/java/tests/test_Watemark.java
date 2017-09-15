@@ -30,7 +30,7 @@ public class test_Watemark extends TestManager {
 
     @org.testng.annotations.Test
     public void test15_1(){
-        testInfo.id("test15_1").suite("Functionality").name("Check watemark working. Tap button GO PRO.");
+        testInfo.id("test15_1").suite("test_Watemark").name("Check watemark working. Tap button GO PRO.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

@@ -2,6 +2,8 @@ package core.framework;
 
 import api.android.Android;
 import com.gargoylesoftware.htmlunit.javascript.host.xml.XMLDocument;
+import core.MyLogger;
+import core.TestInfo;
 import core.framework.base.BaseEntity;
 import core.utils.Common;
 import core.utils.Config;
@@ -89,6 +91,7 @@ public class Reporter {
 
         if(testResult.equals("FAIL")){
             takeScreenshot(suiteName, testName);
+            saveLogcat(suiteName);
             Element failure = doc.createElement("failure");
             testcase.appendChild(failure);
         }
@@ -124,6 +127,7 @@ public class Reporter {
                 if (testResult.equals("FAIL")){
                     f++;
                     takeScreenshot(suiteName, testName);
+                    saveLogcat(suiteName);
                     Element failure = doc.createElement("failure");
                     testcase.appendChild(failure);
                 }else p++;
@@ -158,9 +162,17 @@ public class Reporter {
     private void takeScreenshot(String suiteName, String testName){
         if (!folder.isEmpty()) {
             Android.adb.takeScreenshot("/storage/"+sdCard+"/Pictures/screen1.png");
-            Android.adb.pullFile("/storage/"+sdCard+"/Pictures/screen1.png", folder+"\\"+suiteName+"_"+testName.replace(" ", "_")+".png");
+            Android.adb.pullFile("/storage/"+sdCard+"/Pictures/screen1.png", folder+"\\"+suiteName.replace(" ", "_")+".png");
             Android.adb.deleteFile("/storage/"+sdCard+"/Pictures/screen1.png");
         }
+    }
+
+    public void saveLogcat(String suiteName){
+        MyLogger.log.info("LOGCAT PATH DEVICE: "+ "/storage/"+sdCard+"/aft_log.txt");
+        MyLogger.log.info("LOGCAT PATH COMP: "+ folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
+
+        Android.adb.pullFile("/storage/"+sdCard+"/aft_log.txt", folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
+        Android.adb.deleteFile("/storage/"+sdCard+"/aft_log.txt");
     }
 
 }

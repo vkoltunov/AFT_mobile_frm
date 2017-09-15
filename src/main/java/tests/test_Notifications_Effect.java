@@ -31,7 +31,7 @@ public class test_Notifications_Effect extends TestManager {
 
     @org.testng.annotations.Test
     public void test16(){
-        testInfo.id("test16").suite("Functionality").name("Check notification work.");
+        testInfo.id("test16").suite("test_Notifications_Effect").name("Check notification work.");
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();
         photolab.open();

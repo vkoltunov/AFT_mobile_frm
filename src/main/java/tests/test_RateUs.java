@@ -30,7 +30,7 @@ public class test_RateUs extends TestManager {
 
     @org.testng.annotations.Test
     public void test12(){
-        testInfo.id("test12").suite("Functionality").name("Check Rate Us Dialog.");
+        testInfo.id("test12").suite("test_RateUs").name("Check Rate Us Dialog.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.main.waitToLoad();

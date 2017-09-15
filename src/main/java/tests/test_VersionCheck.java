@@ -32,7 +32,7 @@ public class test_VersionCheck extends TestManager {
     @org.testng.annotations.Test
     @Parameters({"Version"})
     public void test5(String version){
-        testInfo.id("test5").suite("Functionality").name("version Page check.");
+        testInfo.id("test5").suite("test_VersionCheck").name("version Page check.");
         photolab.main.waitToLoad();
         photolab.menu.open();
         photolab.menu.tapAbout();

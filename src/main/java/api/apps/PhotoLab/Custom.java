@@ -247,4 +247,9 @@ public class Custom {
         else throw new AssertionError("Title Object isn't exists.");
     }
 
+    public void changeLocalization(String lang){
+        MyLogger.log.info("Change localization for device to '"+lang+"'.");
+        Common.changeDeviceLoc(lang);
+    }
+
 }

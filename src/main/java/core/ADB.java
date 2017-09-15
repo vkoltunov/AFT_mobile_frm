@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Observable;
 
+import static core.managers.DriverManager.sdCard;
+
 /**
  * Created by User on 3/28/2017.
  */
@@ -18,6 +20,7 @@ import java.util.Observable;
 public class ADB {
 
     private String ID;
+    private static String card = sdCard;
 
     public ADB(String deviceID){ID = deviceID;}
 
@@ -122,6 +125,11 @@ public class ADB {
         command("adb -s "+ID+" shell screencap "+target);
     }
 
+    public void changeDeviceLanguage(String lang){
+        command("adb -s "+ID+" shell pm grant net.sanapeli.adbchangelanguage android.permission.CHANGE_CONFIGURATION");
+        command("adb -s "+ID+" shell am start -n net.sanapeli.adbchangelanguage/.AdbChangeLanguage -e language "+ lang);
+    }
+
     public void rebootDevice(){
         command("adb -s "+ID+" reboot");
     }
@@ -160,8 +168,8 @@ public class ADB {
         Thread logcat = new Thread(new Runnable() {
             @Override
             public void run() {
-                if(grep == null) command("adb -s "+ID+" shell logcat -v threadtime > /sdcard/"+logID+".txt");
-                else command("adb -s "+ID+" shell logcat -v threadtime | grep -i '"+grep+"'> /sdcard/"+logID+".txt");
+                if(grep == null) command("adb -s "+ID+" shell logcat -v threadtime > /"+card+"/"+logID+".txt");
+                else command("adb -s "+ID+" shell logcat -v threadtime | grep -i '"+grep+"'> /"+card+"/"+logID+".txt");
             }
         });
         logcat.setName(logID);

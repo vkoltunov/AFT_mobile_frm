@@ -26,7 +26,7 @@ public class test_Inspiration_About extends TestManager {
 
     @org.testng.annotations.Test
     public void test18_2(){
-        testInfo.id("test18_2").suite("Functionality").name("Inspiration check About This Combo Page.");
+        testInfo.id("test18_2").suite("test_Inspiration").name("Inspiration check About This Combo Page.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();
