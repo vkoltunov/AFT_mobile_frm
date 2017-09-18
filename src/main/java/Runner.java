@@ -75,8 +75,6 @@ public class Runner extends BaseEntity {
             //Android.app.fabby.runToast();
 
             int res = new Runner().runTests(testSuite);
-        } catch (IOException e) {
-            e.printStackTrace();
         } finally {
             DriverManager.killDriver();
         }

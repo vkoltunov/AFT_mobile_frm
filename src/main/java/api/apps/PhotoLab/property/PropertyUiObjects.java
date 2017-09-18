@@ -18,7 +18,7 @@ public class PropertyUiObjects {
             rotate;
 
     public UiObject done(){
-        if(done == null) done = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/done").makeUiObject();
+        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/next_btn").makeUiObject();
         return done;
     }
 

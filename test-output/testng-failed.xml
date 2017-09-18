@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [тестовый запуск]">
-  <parameter name="Language" value="es"/>
-  <parameter name="Config" value="http://cfg.ws.pho.to/androidphotolab/conf.json"/>
   <listeners>
     <listener class-name="core.Listener"/>
     <listener class-name="core.AnnotationTransformer"/>
   </listeners>
-  <test name="003(failed)" preserve-order="false">
-    <parameter name="Language" value="es"/>
-    <parameter name="Config" value="http://cfg.ws.pho.to/androidphotolab/conf.json"/>
+  <test name="005(failed)" preserve-order="false">
     <classes>
-      <class name="tests.test_Config_Tabs">
+      <class name="tests.test_SaveAndShare">
         <methods>
+          <include name="test3"/>
           <include name="afterTest"/>
+          <include name="beforeClass"/>
           <include name="before"/>
-          <include name="test36" invocation-numbers="0 0 0"/>
         </methods>
       </class>
     </classes>
