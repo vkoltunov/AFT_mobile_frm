@@ -31,9 +31,11 @@ public class test_Config_Tabs extends TestManager {
     @Parameters({"Config", "Language"})
     public void test36(String configURL, String lang) throws ParseException {
         testInfo.id("test36").suite("test_Config_Tabs").name("Check Categories list.");
+        photolab.custom.changeLocalization(lang);
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();
         photolab.config.checkTabs(configURL, lang);
+        photolab.custom.changeLocalization("en");
     }
 }
