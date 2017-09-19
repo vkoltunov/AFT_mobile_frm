@@ -30,7 +30,7 @@ public class test_Config_Categories extends TestManager {
     @org.testng.annotations.Test
     @Parameters({"Config", "Language"})
     public void test32(String configURL, String lang) throws ParseException {
-        testInfo.id("test2").suite("test_Config_Categories").name("Check Categories list.");
+        testInfo.id("test2").suite("test_Config_Categories").name("Check Categories list for '"+lang+"' language.");
         photolab.custom.changeLocalization(lang);
         photolab.forceStop();
         photolab.open();

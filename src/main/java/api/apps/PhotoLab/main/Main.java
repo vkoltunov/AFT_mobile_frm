@@ -71,7 +71,11 @@ public class Main implements Activity {
     public Main selectCategoryBar (String categoryBarName){
         MyLogger.log.info("Select category bar '"+categoryBarName+"'.");
         Boolean bFlag = false;
-        if (categoryBarName.contains("Inspiration") || categoryBarName.contains("Explore") || categoryBarName.contains("Combos") || categoryBarName.contains("Community") || categoryBarName.contains("Feed")){
+        if (categoryBarName.contains("Feed") || categoryBarName.contains("Inspiration") || categoryBarName.contains("Explore") || categoryBarName.contains("Combos") || categoryBarName.contains("Community") ){
+            if (!bFlag) {
+                bFlag=scrollBarTo("Feed");
+                categoryBarName = "Feed";
+            }
             if (!bFlag) {
                 bFlag=scrollBarTo("Inspiration");
                 categoryBarName = "Inspiration";
@@ -87,10 +91,6 @@ public class Main implements Activity {
             if (!bFlag) {
                 bFlag=scrollBarTo("Community");
                 categoryBarName = "Community";
-            }
-            if (!bFlag) {
-                bFlag=scrollBarTo("Feed");
-                categoryBarName = "Feed";
             }
         } else bFlag= scrollBarTo(categoryBarName);
 
