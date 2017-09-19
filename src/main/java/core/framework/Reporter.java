@@ -171,8 +171,8 @@ public class Reporter {
         MyLogger.log.info("LOGCAT PATH DEVICE: "+ "/storage/"+sdCard+"/aft_log.txt");
         MyLogger.log.info("LOGCAT PATH COMP: "+ folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
 
-        Android.adb.pullFile("/storage/"+sdCard+"/aft_log.txt", folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
-        Android.adb.deleteFile("/storage/"+sdCard+"/aft_log.txt");
+        //Android.adb.pullFile("/storage/"+sdCard+"/aft_log.txt", folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
+        //Android.adb.deleteFile("/storage/"+sdCard+"/aft_log.txt");
     }
 
 }

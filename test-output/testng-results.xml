@@ -1,26 +1,669 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="23" passed="23">
   <reporter-output>
   </reporter-output>
-  <suite name="тестовый запуск" duration-ms="63699" started-at="2017-09-18T20:56:36Z" finished-at="2017-09-18T20:57:40Z">
+  <suite name="тестовый запуск" duration-ms="1884251" started-at="2017-09-19T15:12:27Z" finished-at="2017-09-19T15:43:51Z">
     <groups>
     </groups>
-    <test name="005" duration-ms="63699" started-at="2017-09-18T20:56:36Z" finished-at="2017-09-18T20:57:40Z">
-      <class name="tests.test_SaveAndShare">
-        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-18T20:56:36Z" finished-at="2017-09-18T20:56:36Z">
+    <test name="020" duration-ms="148261" started-at="2017-09-19T15:33:46Z" finished-at="2017-09-19T15:36:14Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:33:46Z" finished-at="2017-09-19T15:33:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@514646ef]]>
+                <![CDATA[org.testng.TestRunner@730d2164]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="beforeClass()" name="beforeClass" is-config="true" duration-ms="624" started-at="2017-09-18T20:56:36Z" finished-at="2017-09-18T20:56:37Z">
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="148261" started-at="2017-09-19T15:33:46Z" finished-at="2017-09-19T15:36:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pt-rBR]]>
+              </value>
+            </param>
+          </params>
         </test-method>
-        <test-method status="PASS" signature="test3()" name="test3" duration-ms="62838" started-at="2017-09-18T20:56:37Z" finished-at="2017-09-18T20:57:40Z">
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:36:14Z" finished-at="2017-09-19T15:36:14Z">
         </test-method>
-        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-18T20:57:40Z" finished-at="2017-09-18T20:57:40Z">
+      </class>
+    </test>
+    <test name="010" duration-ms="19332" started-at="2017-09-19T15:15:17Z" finished-at="2017-09-19T15:15:36Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="19327" started-at="2017-09-19T15:15:17Z" finished-at="2017-09-19T15:15:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ru]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:15:17Z" finished-at="2017-09-19T15:15:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@24959ca4]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:15:36Z" finished-at="2017-09-19T15:15:36Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="021" duration-ms="156347" started-at="2017-09-19T15:36:14Z" finished-at="2017-09-19T15:38:51Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="156347" started-at="2017-09-19T15:36:14Z" finished-at="2017-09-19T15:38:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ru]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:36:14Z" finished-at="2017-09-19T15:36:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@10289886]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:38:51Z" finished-at="2017-09-19T15:38:51Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="011" duration-ms="17688" started-at="2017-09-19T15:15:36Z" finished-at="2017-09-19T15:15:54Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="17688" started-at="2017-09-19T15:15:36Z" finished-at="2017-09-19T15:15:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[th]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:15:36Z" finished-at="2017-09-19T15:15:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5c86dbc5]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:15:54Z" finished-at="2017-09-19T15:15:54Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="022" duration-ms="153235" started-at="2017-09-19T15:38:51Z" finished-at="2017-09-19T15:41:24Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:38:51Z" finished-at="2017-09-19T15:38:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@461ad730]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="153233" started-at="2017-09-19T15:38:51Z" finished-at="2017-09-19T15:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[th]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:41:24Z" finished-at="2017-09-19T15:41:24Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="001" duration-ms="21362" started-at="2017-09-19T15:12:27Z" finished-at="2017-09-19T15:12:49Z">
+      <class name="tests.test_Config_CheckVersion">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="6" started-at="2017-09-19T15:12:27Z" finished-at="2017-09-19T15:12:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4ee203eb]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test31(java.lang.String)" name="test31" duration-ms="21243" started-at="2017-09-19T15:12:27Z" finished-at="2017-09-19T15:12:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:12:49Z" finished-at="2017-09-19T15:12:49Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="012" duration-ms="16939" started-at="2017-09-19T15:15:54Z" finished-at="2017-09-19T15:16:11Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:15:54Z" finished-at="2017-09-19T15:15:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1a5a4e19]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="16939" started-at="2017-09-19T15:15:54Z" finished-at="2017-09-19T15:16:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zh]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:16:11Z" finished-at="2017-09-19T15:16:11Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="023" duration-ms="147584" started-at="2017-09-19T15:41:24Z" finished-at="2017-09-19T15:43:51Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="147584" started-at="2017-09-19T15:41:24Z" finished-at="2017-09-19T15:43:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[zh]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:41:24Z" finished-at="2017-09-19T15:41:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7068e664]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:43:51Z" finished-at="2017-09-19T15:43:51Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="002" duration-ms="19388" started-at="2017-09-19T15:12:49Z" finished-at="2017-09-19T15:13:08Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="19350" started-at="2017-09-19T15:12:49Z" finished-at="2017-09-19T15:13:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[de]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:12:49Z" finished-at="2017-09-19T15:12:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@60db1c0e]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:13:08Z" finished-at="2017-09-19T15:13:08Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="013" duration-ms="148855" started-at="2017-09-19T15:16:11Z" finished-at="2017-09-19T15:18:40Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="148855" started-at="2017-09-19T15:16:11Z" finished-at="2017-09-19T15:18:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[de]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:16:11Z" finished-at="2017-09-19T15:16:11Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e78b6a5]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:18:40Z" finished-at="2017-09-19T15:18:40Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="003" duration-ms="21892" started-at="2017-09-19T15:13:08Z" finished-at="2017-09-19T15:13:30Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="1" started-at="2017-09-19T15:13:08Z" finished-at="2017-09-19T15:13:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@769a1df5]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="21891" started-at="2017-09-19T15:13:08Z" finished-at="2017-09-19T15:13:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[en]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:13:30Z" finished-at="2017-09-19T15:13:30Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="014" duration-ms="152563" started-at="2017-09-19T15:18:40Z" finished-at="2017-09-19T15:21:12Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="152563" started-at="2017-09-19T15:18:40Z" finished-at="2017-09-19T15:21:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[en]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:18:40Z" finished-at="2017-09-19T15:18:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@41f69e84]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:21:12Z" finished-at="2017-09-19T15:21:12Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="004" duration-ms="19406" started-at="2017-09-19T15:13:30Z" finished-at="2017-09-19T15:13:49Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:13:30Z" finished-at="2017-09-19T15:13:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7975d1d8]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="19400" started-at="2017-09-19T15:13:30Z" finished-at="2017-09-19T15:13:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[es]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:13:49Z" finished-at="2017-09-19T15:13:49Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="015" duration-ms="150090" started-at="2017-09-19T15:21:12Z" finished-at="2017-09-19T15:23:43Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:21:12Z" finished-at="2017-09-19T15:21:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@2438dcd]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="150090" started-at="2017-09-19T15:21:12Z" finished-at="2017-09-19T15:23:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[es]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:23:43Z" finished-at="2017-09-19T15:23:43Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="005" duration-ms="19609" started-at="2017-09-19T15:13:49Z" finished-at="2017-09-19T15:14:09Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="19609" started-at="2017-09-19T15:13:49Z" finished-at="2017-09-19T15:14:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[fr]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:13:49Z" finished-at="2017-09-19T15:13:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@24105dc5]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:09Z" finished-at="2017-09-19T15:14:09Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="016" duration-ms="153687" started-at="2017-09-19T15:23:43Z" finished-at="2017-09-19T15:26:16Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:23:43Z" finished-at="2017-09-19T15:23:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5167f57d]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="153687" started-at="2017-09-19T15:23:43Z" finished-at="2017-09-19T15:26:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[fr]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:26:16Z" finished-at="2017-09-19T15:26:16Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="006" duration-ms="17294" started-at="2017-09-19T15:14:09Z" finished-at="2017-09-19T15:14:26Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:09Z" finished-at="2017-09-19T15:14:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@64b0598]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="17294" started-at="2017-09-19T15:14:09Z" finished-at="2017-09-19T15:14:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[it]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:26Z" finished-at="2017-09-19T15:14:26Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="017" duration-ms="147605" started-at="2017-09-19T15:26:16Z" finished-at="2017-09-19T15:28:44Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:26:16Z" finished-at="2017-09-19T15:26:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@18f8cd79]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="147589" started-at="2017-09-19T15:26:16Z" finished-at="2017-09-19T15:28:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[it]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:28:44Z" finished-at="2017-09-19T15:28:44Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="007" duration-ms="17080" started-at="2017-09-19T15:14:26Z" finished-at="2017-09-19T15:14:43Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="17080" started-at="2017-09-19T15:14:26Z" finished-at="2017-09-19T15:14:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:26Z" finished-at="2017-09-19T15:14:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@3e2055d6]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:43Z" finished-at="2017-09-19T15:14:43Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="018" duration-ms="151873" started-at="2017-09-19T15:28:44Z" finished-at="2017-09-19T15:31:16Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:28:44Z" finished-at="2017-09-19T15:28:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@50029372]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="151873" started-at="2017-09-19T15:28:44Z" finished-at="2017-09-19T15:31:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ja]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:31:16Z" finished-at="2017-09-19T15:31:16Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="008" duration-ms="15592" started-at="2017-09-19T15:14:43Z" finished-at="2017-09-19T15:14:59Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:43Z" finished-at="2017-09-19T15:14:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@e3b3b2f]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="15592" started-at="2017-09-19T15:14:43Z" finished-at="2017-09-19T15:14:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ko]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:59Z" finished-at="2017-09-19T15:14:59Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="019" duration-ms="150154" started-at="2017-09-19T15:31:16Z" finished-at="2017-09-19T15:33:46Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:31:16Z" finished-at="2017-09-19T15:31:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@50f6ac94]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="150154" started-at="2017-09-19T15:31:16Z" finished-at="2017-09-19T15:33:46Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ko]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:33:46Z" finished-at="2017-09-19T15:33:46Z">
+        </test-method>
+      </class>
+    </test>
+    <test name="009" duration-ms="17999" started-at="2017-09-19T15:14:59Z" finished-at="2017-09-19T15:15:17Z">
+      <class name="tests.test_Config_Tabs">
+        <test-method status="PASS" signature="test36(java.lang.String, java.lang.String)" name="test36" duration-ms="17999" started-at="2017-09-19T15:14:59Z" finished-at="2017-09-19T15:15:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[pt-rBR]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-09-19T15:14:59Z" finished-at="2017-09-19T15:14:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@6cc4cdb9]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-09-19T15:15:17Z" finished-at="2017-09-19T15:15:17Z">
         </test-method>
       </class>
     </test>
