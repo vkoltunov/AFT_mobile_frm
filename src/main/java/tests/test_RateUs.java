@@ -16,10 +16,10 @@ public class test_RateUs extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @org.testng.annotations.BeforeClass
-    public static void beforeClass(){
-        photolab.open();
-    }
+    //@org.testng.annotations.BeforeClass
+    //public static void beforeClass(){
+    //    photolab.open();
+    //}
 
     @BeforeTest
     public void before(){
@@ -33,7 +33,7 @@ public class test_RateUs extends TestManager {
         testInfo.id("test12").suite("test_RateUs").name("Check Rate Us Dialog.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
-        photolab.main.waitToLoad();
+        //photolab.main.waitToLoad();
         photolab.forceStop();
         photolab.clearData();
         photolab.open();

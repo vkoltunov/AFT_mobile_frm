@@ -18,7 +18,13 @@ public class ArtUiObjects {
             toolbar_Title,
             artItem_by_index,
             art_items,
-            art_Result;
+            art_Result,
+            goPro;
+
+    public UiObject goPro(){
+        if(goPro == null) goPro = new UiSelector().className("android.widget.Button").textContains("Go PRO").makeUiObject();
+        return goPro;
+    }
 
     public UiObject addArtStyle(){
         if(addArtStyle == null) addArtStyle = new UiSelector().className("android.widget.TextView").textContains("Art").makeUiObject();

@@ -18,10 +18,10 @@ public class test_Compositions_Ok extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @org.testng.annotations.BeforeClass
-    public static void beforeClass(){
-        photolab.open();
-    }
+    //@org.testng.annotations.BeforeClass
+    //public static void beforeClass(){
+    //    photolab.open();
+    //}
 
     @BeforeTest
     public void before(){
@@ -36,7 +36,7 @@ public class test_Compositions_Ok extends TestManager {
         testInfo.id("test17_1").suite("test_Compositions_Ok").name("Create composition + save to Photo Lab option.");
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
-        photolab.main.waitToLoad();
+        //photolab.main.waitToLoad();
         photolab.forceStop();
         photolab.clearData();
         photolab.open();

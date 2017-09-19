@@ -40,12 +40,12 @@ public class Result implements Activity {
         }
     }
 
-    public Save tapSaveToDevice(){
+    public void tapSaveToDevice(){
             MyLogger.log.info("Tap Save to device menu option.");
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             if (uiObject.share().size() > 0) {
                 uiObject.share().tap();
-                return Android.app.photoLab.save.waitToLoad();
+                //return Android.app.photoLab.save.waitToLoad();
             }else throw new AssertionError("Save to device button failed to tap.");
     }
 

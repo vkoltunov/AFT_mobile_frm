@@ -74,7 +74,11 @@ public class Art implements Activity {
         while ((!bflag) && (!beofflag)) {
             for (int i = 0; i < index_count; i++) {
                 uiObject.artItem_by_index(i).tap();
-                uiObject.art_Result().waitToAppear(10);
+                driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+                if (!(uiObject.art_Result().size() > 0)) {
+                    if (uiObject.goPro().size() > 0) Android.app.photoLab.custom.pressBack();
+                }
+                driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
                 curTitle = uiObject.toolbar_Title().getText();
                 if (curTitle.contains(itemName)) {
                     bflag = true;

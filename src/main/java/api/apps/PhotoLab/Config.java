@@ -239,7 +239,9 @@ public class Config {
                             tabName = (String) titles.get(lang);
                             MyLogger.log.info("TAB name = " + tabName);
                             Android.app.photoLab.main.selectCategoryBar(tabName);
-                        } else MyLogger.log.info("Key value '" + lang + "' not found in Conf.json.");
+                        } else {
+                            MyLogger.log.info("Key value '" + lang + "' not found in Conf.json.");
+                        }
                         break;
                 }
             }

@@ -12,10 +12,10 @@ public class test_Notifications_User extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
-    @org.testng.annotations.BeforeClass
-    public static void beforeClass(){
-        photolab.open();
-    }
+    //@org.testng.annotations.BeforeClass
+    //public static void beforeClass(){
+    //    photolab.open();
+    //}
 
     @BeforeTest
     public void before(){

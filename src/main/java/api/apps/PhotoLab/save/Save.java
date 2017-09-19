@@ -24,6 +24,7 @@ public class Save implements Activity {
     public Save waitToLoad(){
         try{
             MyLogger.log.info("Waiting for Save & Share page");
+            if (uiObject.tutorialShare().size() > 0) uiObject.tutorialShare().tap();
             uiObject.saveAndShare().waitToAppear(10);
             return Android.app.photoLab.save;
         }catch (AssertionError e) {
@@ -44,9 +45,9 @@ public class Save implements Activity {
 
     public void selectTarget(String target){
         try{
+            waitToLoad();
             MyLogger.log.info("Tap to save option target '"+target+"'.");
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-            if (uiObject.tutorialShare().size() > 0) uiObject.tutorialShare().tap();
+
             uiObject.save_target(target).waitToAppear(5).tap();
         }catch (AssertionError e) {
             throw new AssertionError("Tap to save option target '"+target+"' failed.");
@@ -55,9 +56,9 @@ public class Save implements Activity {
 
     public void selectDownload(){
         try{
+            waitToLoad();
             MyLogger.log.info("Tap to save option Download.");
             driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-            if (uiObject.tutorialShare().size()>0) uiObject.tutorialShare().tap();
             uiObject.download().tap();
         }catch (AssertionError e) {
             throw new AssertionError("Save option Download failed to tap.");
@@ -66,6 +67,7 @@ public class Save implements Activity {
 
     public Dialogs tapWatemark() {
         try{
+            waitToLoad();
             MyLogger.log.info("Tap to watemark #photolab.");
 
             Point location;

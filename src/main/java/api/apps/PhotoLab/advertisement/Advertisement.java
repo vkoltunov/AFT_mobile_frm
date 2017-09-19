@@ -19,8 +19,8 @@ public class Advertisement implements Activity {
     @Override
     public Advertisement waitToLoad(){
         MyLogger.log.info("Waiting for Advertisement Page");
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        if ((uiObject.unmute().size() > 0) || (uiObject.video().size() > 0) || (uiObject.advertisement().size() > 0)) return Android.app.photoLab.advertisement;
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        if ((uiObject.content().size() > 0) || (uiObject.unmute().size() > 0) || (uiObject.video().size() > 0) || (uiObject.advertisement().size() > 0)) return Android.app.photoLab.advertisement;
         else throw new AssertionError("Advertisement Page failed to load/open");
     }
 
