@@ -5,34 +5,12 @@
     <listener class-name="core.Listener"/>
     <listener class-name="core.AnnotationTransformer"/>
   </listeners>
-  <test name="014(failed)" preserve-order="false">
+  <test name="012(failed)" preserve-order="false">
     <classes>
-      <class name="tests.test_Art">
+      <class name="tests.test_VSCO">
         <methods>
           <include name="afterTest"/>
-          <include name="after"/>
-          <include name="before"/>
-        </methods>
-      </class>
-      <class name="tests.test_Collage">
-        <methods>
-          <include name="after"/>
-          <include name="afterTest"/>
-          <include name="before"/>
-        </methods>
-      </class>
-      <class name="tests.test_Animation">
-        <methods>
-          <include name="test11"/>
-          <include name="afterTest"/>
-          <include name="before"/>
-          <include name="after"/>
-        </methods>
-      </class>
-      <class name="tests.test_Watemark_YesSponsored">
-        <methods>
-          <include name="afterTest"/>
-          <include name="after"/>
+          <include name="test5"/>
           <include name="before"/>
         </methods>
       </class>

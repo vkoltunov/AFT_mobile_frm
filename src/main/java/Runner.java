@@ -67,12 +67,15 @@ public class Runner extends BaseEntity {
         TimeZone.setDefault(TimeZone.getTimeZone("GMT+3"));
 
         try {
-            MyLogger.log.setLevel(Level.INFO);
+            MyLogger.log.setLevel(Level.DEBUG);
             MyLogger.log.info("Path for reports : "+ Config.REPORT_DIR);
             Listener.setReporter(new Reporter(new File(Config.REPORT_DIR + "\\result_"+Common.getCurrentDateTimeStamp()+"\\report.xml")));
             DriverManager.createDriver();
             //Android.app.fabby.runTest();
             //Android.app.fabby.runToast();
+
+            //Android.app.photoLab.config.checkEffectsPopularity("http://testing.cfg.ws.pho.to/androidphotolab/conf.json", "D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv");
+
 
             int res = new Runner().runTests(testSuite);
         } finally {

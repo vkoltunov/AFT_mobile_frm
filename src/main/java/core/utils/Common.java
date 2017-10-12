@@ -2,6 +2,7 @@ package core.utils;
 
 import api.android.Android;
 
+import com.opencsv.CSVReader;
 import core.MyLogger;
 import core.framework.base.BaseEntity;
 
@@ -17,10 +18,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBuffer;
 import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.net.*;
 import java.nio.charset.Charset;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
@@ -136,6 +134,34 @@ public class Common extends BaseEntity {
         return "";
     }
 
+
+    //======================================================= Работа с URL =============================================================
+
+    public static int getResponseCode(String urlString) throws MalformedURLException, IOException {
+        URL u = new URL(urlString);
+        HttpURLConnection huc =  (HttpURLConnection)  u.openConnection();
+        huc.setRequestMethod("GET");
+        huc.connect();
+        return huc.getResponseCode();
+    }
+
+
+    public static Boolean urlValidation(String url) {
+        try {
+            int responseCode = getResponseCode(url);
+            if (200 <= responseCode && responseCode <= 399){
+                //MyLogger.log.info("Response code is "+responseCode+". URL is work correctly.");
+                return true;
+            } else {
+                //MyLogger.log.error("Response code is "+responseCode+". URL is not work correctly.");
+                return false;
+            }
+        } catch (IOException exception) {
+            MyLogger.log.error("URL " +url+ " is not valid.");
+            return false;
+        }
+    }
+
     //======================================================= Работа с локализациями =============================================================
 
     public static void changeDeviceLoc(String lang) {
@@ -180,6 +206,24 @@ public class Common extends BaseEntity {
         hashMap.put("json", IOUtils.toString(new URL(url), Charset.forName("UTF-8")));
         JSONObject json = new JSONObject(hashMap);
         return json;
+    }
+
+    /**
+     * Загружаем файл CSV и отдаём ридер.
+     *
+     */
+    public static CSVReader readCSV(String url) throws IOException {
+
+        CSVReader reader;
+
+        if (url.contains("http")){
+            URL stockURL = new URL(url);
+            BufferedReader in = new BufferedReader(new InputStreamReader(stockURL.openStream()));
+            reader = new CSVReader(in);
+        } else {
+            reader = new CSVReader(new FileReader(url));
+        }
+        return reader;
     }
 
 

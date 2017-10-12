@@ -67,10 +67,10 @@ public class Instagram {
 
                         switch (j) {
                             case 0:
-                                sFltrToNeed = "Ginza";
+                                sFltrToNeed = "Gingham";
                                 break;
                             case 1:
-                                sFltrToNeed = "Helena";
+                                sFltrToNeed = "Moon";
                                 break;
                             default:
                                 sFltrToNeed = "Invalid filter name";

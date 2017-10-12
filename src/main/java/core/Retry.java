@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class Retry implements IRetryAnalyzer {
-    private static int MAX_RETRY_COUNT = 2;
+    private static int MAX_RETRY_COUNT = 1;
 
     AtomicInteger count = new AtomicInteger(MAX_RETRY_COUNT);
 
