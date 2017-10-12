@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [тестовый запуск]">
+  <parameter name="Config" value="http://testing.cfg.ws.pho.to/androidphotolab/conf.json"/>
+  <parameter name="CsvPath" value="D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv"/>
   <listeners>
     <listener class-name="core.Listener"/>
     <listener class-name="core.AnnotationTransformer"/>
   </listeners>
-  <test name="012(failed)" preserve-order="false">
+  <test name="002(failed)" preserve-order="false">
+    <parameter name="Config" value="http://testing.cfg.ws.pho.to/androidphotolab/conf.json"/>
     <classes>
-      <class name="tests.test_VSCO">
+      <class name="tests.test_Config_PopularityCheck">
         <methods>
           <include name="afterTest"/>
-          <include name="test5"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Config_CheckVersion">
+        <methods>
+          <include name="afterTest"/>
+          <include name="test31" invocation-numbers="0 0"/>
           <include name="before"/>
         </methods>
       </class>

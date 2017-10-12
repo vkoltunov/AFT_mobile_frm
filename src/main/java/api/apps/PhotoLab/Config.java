@@ -87,6 +87,7 @@ public class Config {
                     case "hatched":
                     case "harley_quinn":
                     case "in_a_blurry_world":
+                    case "playful_lady_frame":
                         MyLogger.log.info("Effect '"+csvEffectLegacy+"' is not used for Android App.");
                         break;
                     default:

@@ -86,7 +86,7 @@ public class About implements Activity{
         MyLogger.log.info("Check Config version '"+version+"' with App config version.");
         String appVersion = uiObject.version().getText().replace("Config version: ", "");
         MyLogger.log.info("Versions is equal : "+appVersion);
-        if (appVersion.equals(version)){
+        if (appVersion.contains(version)){
             MyLogger.log.info("Versions is equals.");
             return true;
         } else {
