@@ -45,8 +45,8 @@ public class Config {
             }
             if (listFailedEffects.isEmpty()) return true;
             else {
-                MyLogger.log.info("Failed effects preview : "+listFailedEffects.toString());
-                return false;
+                MyLogger.log.error("Failed effects preview : "+listFailedEffects.toString());
+                throw new AssertionError("Check effects preview.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -148,8 +148,8 @@ public class Config {
 
             if (listFailedEffects.isEmpty()) return true;
             else {
-                MyLogger.log.info("Failed effects : "+listFailedEffects.toString());
-                return false;
+                MyLogger.log.error("Failed effects : "+listFailedEffects.toString());
+                throw new AssertionError("Check popularity failed.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -220,8 +220,8 @@ public class Config {
             }
             if (listFailedEffects.isEmpty()) return true;
             else {
-                MyLogger.log.info("Failed effects : "+listFailedEffects.toString());
-                return false;
+                MyLogger.log.error("Failed effects : "+listFailedEffects.toString());
+                throw new AssertionError("Check New effects failed.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -284,8 +284,8 @@ public class Config {
             }
             if (resultMap.isEmpty()) return true;
             else {
-                MyLogger.log.info("Failed effects : "+resultMap.toString());
-                return false;
+                MyLogger.log.error("Failed effects : "+resultMap.toString());
+                throw new AssertionError("Check category effects failed.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -342,7 +342,8 @@ public class Config {
                     }
                     if (listFailedItem.isEmpty()) return true;
                     else {
-                        MyLogger.log.info("Failed elements titles : "+listFailedItem.toString());
+                        MyLogger.log.error("Failed elements titles : "+listFailedItem.toString());
+                        throw new AssertionError("Check Tabs content failed.");
                     }
                 }
             }

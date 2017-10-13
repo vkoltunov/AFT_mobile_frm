@@ -131,7 +131,8 @@ public class ADB {
     }
 
     public void rebootDevice(){
-        command("adb -s "+ID+" reboot");
+        command("adb -s "+ID+" shell am broadcast -a android.intent.action.BOOT_COMPLETED");
+        //command("adb -s "+ID+" reboot");
     }
 
     public String getDeviceModel(){

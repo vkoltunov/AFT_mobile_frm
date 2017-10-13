@@ -252,4 +252,20 @@ public class Custom {
         Common.changeDeviceLoc(lang);
     }
 
+    public Boolean checkErrorMessageForLogcat(){
+        Boolean flag = false;
+        LogEntries logEntries = Android.driver.manage().logs().get("logcat");
+        Iterator<LogEntry> iterator = logEntries.iterator();
+
+        while (iterator.hasNext()) {
+            LogEntry entry =  iterator.next();
+            if (entry.getMessage() != null && entry.getMessage().contains("Permission Denial")) {
+                MyLogger.log.error("Permission denial error for logcat was found.");
+                new AssertionError("Permission denial error for logcat was found.");
+            }
+        }
+        return true;
+    }
+
+
 }

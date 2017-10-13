@@ -1,60 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="тестовый запуск" duration-ms="29389" started-at="2017-10-12T18:00:06Z" finished-at="2017-10-12T18:00:36Z">
+  <suite name="тестовый запуск" duration-ms="109070" started-at="2017-10-13T18:15:59Z" finished-at="2017-10-13T18:17:48Z">
     <groups>
     </groups>
-    <test name="002" duration-ms="26311" started-at="2017-10-12T18:00:06Z" finished-at="2017-10-12T18:00:33Z">
-      <class name="tests.test_Config_CheckVersion">
-        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="16" started-at="2017-10-12T18:00:06Z" finished-at="2017-10-12T18:00:06Z">
+    <test name="020" duration-ms="109070" started-at="2017-10-13T18:15:59Z" finished-at="2017-10-13T18:17:48Z">
+      <class name="tests.test_Config_Categories">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="15" started-at="2017-10-13T18:15:59Z" finished-at="2017-10-13T18:15:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@15888343]]>
+                <![CDATA[org.testng.TestRunner@1972e513]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="test31(java.lang.String)" name="test31" duration-ms="26217" started-at="2017-10-12T18:00:06Z" finished-at="2017-10-12T18:00:32Z">
+        <test-method status="PASS" signature="test32(java.lang.String, java.lang.String)" name="test32" duration-ms="108993" started-at="2017-10-13T18:15:59Z" finished-at="2017-10-13T18:17:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-10-12T18:00:33Z" finished-at="2017-10-12T18:00:33Z">
-        </test-method>
-      </class>
-    </test>
-    <test name="009" duration-ms="3062" started-at="2017-10-12T18:00:33Z" finished-at="2017-10-12T18:00:36Z">
-      <class name="tests.test_Config_PopularityCheck">
-        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-10-12T18:00:33Z" finished-at="2017-10-12T18:00:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@33ecda92]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="test35(java.lang.String, java.lang.String)" name="test35" duration-ms="3031" started-at="2017-10-12T18:00:33Z" finished-at="2017-10-12T18:00:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[http://testing.cfg.ws.pho.to/androidphotolab/conf.json]]>
+                <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv]]>
+                <![CDATA[pt-rBR]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-10-12T18:00:36Z" finished-at="2017-10-12T18:00:36Z">
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-10-13T18:17:48Z" finished-at="2017-10-13T18:17:48Z">
         </test-method>
       </class>
     </test>

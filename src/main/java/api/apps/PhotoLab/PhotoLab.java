@@ -140,8 +140,5 @@ public class PhotoLab implements Application{
         return "com.vicman.photolab.activities.MainActivity";
     }
 
-
-
-
 }
 
