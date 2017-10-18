@@ -35,6 +35,7 @@ public class test_Notifications_Effect extends TestManager {
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();
         photolab.open();
+        Android.adb.clearLogBuffer();
         photolab.main.waitToLoad();
         photolab.custom.sendNotification("navigate=fx&id=1552");
         photolab.notifications.waitToLoad();

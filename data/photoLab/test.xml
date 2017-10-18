@@ -4,11 +4,11 @@
         <listener class-name="core.Listener" />
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
-    <test name="020" preserve-order="true">
-        <parameter name="Config" value='http://cfg.ws.pho.to/androidphotolab/conf.json' />
-        <parameter name="Language" value='pt-rBR' />
+    <test name="009" preserve-order="true">
+        <parameter name="Config" value='http://testing.cfg.ws.pho.to/androidphotolabpro/v1/conf.json' />
+        <parameter name="CsvPath" value='D:\\AFT\\data\\photoLab\\halloween.csv' />
         <classes>
-            <class name="tests.test_Config_Categories" />
+            <class name="tests.test_Config_HalloweenCheck" />
         </classes>
     </test>
 </suite>

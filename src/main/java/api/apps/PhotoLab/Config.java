@@ -20,6 +20,62 @@ import java.util.Map;
  */
 public class Config {
 
+    public Boolean checkHalloweenContent(String configURL, String csvURL) throws org.json.simple.parser.ParseException {
+
+        try {
+            ArrayList listFailedElements = new ArrayList();
+            String configJson = IOUtils.toString(new URL(configURL));
+            JSONObject configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
+            String tabName = getTabByLegacy(configJsonObject, "en", "halloween");
+
+            Integer tabId = 1200;
+            JSONObject tabJson = getTabById("", tabId.longValue(), configJsonObject);
+            org.json.simple.JSONArray content = (org.json.simple.JSONArray) tabJson.get("content");
+
+            CSVReader reader = Common.readCSV(csvURL);
+            String[] line;
+            Integer position = 0;
+
+            while ((line = reader.readNext()) != null) {
+                Boolean isOk = false;
+                Integer addToPosition = 0;
+                Long csvElementId = Long.parseLong(line[0]);
+                String csvElementType = line[1];
+
+                for(int i=0; i<content.size(); i++) {
+                    JSONObject element = (JSONObject) content.get(i);
+                    String type = (String)element.get("type");
+                    Long id = (Long)element.get("id");
+
+                    if (type.equals("ads")) addToPosition = addToPosition+1;
+
+                    if ((csvElementId.longValue() == id.longValue()) && (csvElementType.equals(type))) {
+                        if (position == (i-addToPosition)) MyLogger.log.info("Element : "+type+" |  Id : "+id+" is have equals with CSV file position.");
+                        else {
+                            MyLogger.log.error("Element : "+type+" |  Id : "+id+" is have position: " + i + " , but CSV position is:" + position);
+                            listFailedElements.add(id);
+                        }
+                        isOk = true;
+                        break;
+                    }
+                }
+                if (!isOk) {
+                    MyLogger.log.error("Element : "+csvElementType+" |  Id : "+csvElementId+" is not found in Config file.");
+                    listFailedElements.add(csvElementId);
+                }
+                position = position+1;
+            }
+            if (listFailedElements.isEmpty()) return true;
+            else {
+                MyLogger.log.error("Failed elements : "+listFailedElements.toString());
+                throw new AssertionError("Check halloween is failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public Boolean checkEffectsPreview(String configURL) throws org.json.simple.parser.ParseException {
 
         try {
@@ -216,6 +272,7 @@ public class Config {
                         MyLogger.log.info("Effect : "+effectTitle+" isn't have IsNew icon.");
                         listFailedEffects.add(effectTitle);
                     }
+
                 }
             }
             if (listFailedEffects.isEmpty()) return true;
@@ -461,6 +518,31 @@ public class Config {
             } return null;
         } catch (IOException e) {
             throw new AssertionError("Failed to get category JSON object.");
+        }
+    }
+
+    public static JSONObject getTabById(String configURL, Long id, JSONObject optional) throws org.json.simple.parser.ParseException {
+
+        try {
+            JSONObject configJsonObject;
+            if (configURL.isEmpty()) configJsonObject = optional;
+            else {
+                String configJson = IOUtils.toString(new URL(configURL));
+                configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
+            }
+
+            org.json.simple.JSONArray tabs = (org.json.simple.JSONArray) configJsonObject.get("tabs");
+
+            for(int j=0; j<tabs.size(); j++) {
+                JSONObject tabItem = (JSONObject) tabs.get(j);
+
+                Long currId = (Long) tabItem.get("id");
+                if (currId.longValue() == id.longValue()){
+                    return tabItem;
+                }
+            } return null;
+        } catch (IOException e) {
+            throw new AssertionError("Failed to get tab JSON object.");
         }
     }
 

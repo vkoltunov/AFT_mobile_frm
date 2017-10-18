@@ -53,8 +53,9 @@ public class PushNotificationTools {
 
         while(iterator.hasNext()) {
             LogEntry entry = (LogEntry)iterator.next();
-            //MyLogger.log.debug("entry: " + entry);
+            MyLogger.log.info("entry: " + entry);
             if((token = checkLogEntry(entry, ", token = ")) != null) {
+                MyLogger.log.info("Token: " + token);
                 tokenRes = token;
                 //break;
             }
@@ -69,6 +70,9 @@ public class PushNotificationTools {
             String message = entry.getMessage();
             if(entry.getMessage().contains("token") && (entry.getMessage().contains(", os"))) {
                 token = message.substring(message.indexOf(", token = "), message.indexOf(", os"));
+                MyLogger.log.debug("Token: " + token);
+            } else if (entry.getMessage().contains("token") && (entry.getMessage().contains(", isUpdated"))) {
+                token = message.substring(message.indexOf(", token = "), message.indexOf("}"));
                 MyLogger.log.debug("Token: " + token);
             }
 
