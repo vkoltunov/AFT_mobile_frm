@@ -11,7 +11,7 @@ import org.testng.annotations.Parameters;
 /**
  * Created by User on 4/5/2017.
  */
-public class test_Config_EffectsPreview extends TestManager {
+public class test_Config_CategoriesPreview extends TestManager {
 
     private static PhotoLab photolab = Android.app.photoLab;
 
@@ -22,7 +22,7 @@ public class test_Config_EffectsPreview extends TestManager {
 
     @BeforeTest
     public void before(){
-        testInfo.suite("test_Config_EffectsPreview");
+        testInfo.suite("test_Config_CategoriesPreview");
     }
 
 //===== Categories =====
@@ -30,7 +30,7 @@ public class test_Config_EffectsPreview extends TestManager {
     @org.testng.annotations.Test
     @Parameters({"Config"})
     public void test35(String configURL) throws ParseException {
-        testInfo.id("test1").suite("test_Config_EffectsPreview").name("Check Effects Preview URLs for App.");
-        photolab.config.checkElementsPreview(configURL, "effects");
+        testInfo.id("test1").suite("test_Config_CategoriesPreview").name("Check Categories Preview URLs for App.");
+        photolab.config.checkElementsPreview(configURL, "categories");
     }
 }

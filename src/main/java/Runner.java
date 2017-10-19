@@ -76,7 +76,6 @@ public class Runner extends BaseEntity {
 
             //Android.app.photoLab.config.checkEffectsPopularity("http://testing.cfg.ws.pho.to/androidphotolab/conf.json", "D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv");
 
-
             int res = new Runner().runTests(testSuite);
         } finally {
             DriverManager.killDriver();

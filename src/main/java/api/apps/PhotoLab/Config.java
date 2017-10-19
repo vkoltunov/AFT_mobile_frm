@@ -29,7 +29,7 @@ public class Config {
             String tabName = getTabByLegacy(configJsonObject, "en", "halloween");
 
             Integer tabId = 1200;
-            JSONObject tabJson = getTabById("", tabId.longValue(), configJsonObject);
+            JSONObject tabJson = getElementById("", "tabs",tabId.longValue(), configJsonObject);
             org.json.simple.JSONArray content = (org.json.simple.JSONArray) tabJson.get("content");
 
             CSVReader reader = Common.readCSV(csvURL);
@@ -76,33 +76,33 @@ public class Config {
         }
     }
 
-    public Boolean checkEffectsPreview(String configURL) throws org.json.simple.parser.ParseException {
+    public Boolean checkElementsPreview(String configURL, String type) throws org.json.simple.parser.ParseException {
 
         try {
-            ArrayList listFailedEffects = new ArrayList();
+            ArrayList listFailedElements = new ArrayList();
             String configJson = IOUtils.toString(new URL(configURL));
             JSONObject configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
 
-            org.json.simple.JSONArray effects = (org.json.simple.JSONArray) configJsonObject.get("effects");
+            org.json.simple.JSONArray elements = (org.json.simple.JSONArray) configJsonObject.get(type);
 
-            for(int j=0; j<effects.size(); j++) {
+            for(int j=0; j<elements.size(); j++) {
 
-                JSONObject effectItem = (JSONObject) effects.get(j);
-                String previewUrl = (String) effectItem.get("preview");
+                JSONObject elementItem = (JSONObject) elements.get(j);
+                String previewUrl = (String) elementItem.get("preview");
 
                 if (!Common.urlValidation(previewUrl)){
 
-                    JSONObject titles = (JSONObject) effectItem.get("title");
-                    String effectTitle = (String) titles.get("en");
+                    JSONObject titles = (JSONObject) elementItem.get("title");
+                    String elementTitle = (String) titles.get("en");
 
-                    MyLogger.log.info("Effect : "+effectTitle+" is have bad preview URL : "+previewUrl);
-                    listFailedEffects.add(effectTitle);
+                    MyLogger.log.info("Element : "+elementTitle+" from '"+type+"' is have bad preview URL : "+previewUrl);
+                    listFailedElements.add(elementTitle);
                 }
             }
-            if (listFailedEffects.isEmpty()) return true;
+            if (listFailedElements.isEmpty()) return true;
             else {
-                MyLogger.log.error("Failed effects preview : "+listFailedEffects.toString());
-                throw new AssertionError("Check effects preview.");
+                MyLogger.log.error("Failed "+type+" preview : "+listFailedElements.toString());
+                throw new AssertionError("Check elements preview.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -167,7 +167,7 @@ public class Config {
                                 String categoryTitle = resultSetWithAds.getValue();
                                 Integer effectPosition = resultSetWithAds.getKey();
 
-                                JSONObject categoryJSON = getCategoryByTitle("", categoryTitle, "en", configJsonObject);
+                                JSONObject categoryJSON = getElementByTitle("", "categories", categoryTitle, "en", configJsonObject);
                                 Boolean isNew = (Boolean) effectItem.get("is_new");
 
                                 Map<Integer, Long> isNewResult = getNewEffectsFromCategory(configJsonObject, categoryJSON, true);
@@ -223,7 +223,7 @@ public class Config {
             String type = (String)element.get("type");
             if (type.equals("fx")) {
                 Long id = (Long) element.get("id");
-                JSONObject effectItem = getEffectById("", id, configObject);
+                JSONObject effectItem = getElementById("", "effects", id, configObject);
                 position = position + 1;
                 Boolean isNew = (Boolean) effectItem.get("is_new");
 
@@ -323,7 +323,7 @@ public class Config {
 
                             if (type.equals("fx")){
                                 JSONObject resObject;
-                                resObject = getEffectById("", id, configJsonObject);
+                                resObject = getElementById("", "effects", id, configJsonObject);
                                 title = getJsonObjTitle(resObject, "en");
 
                                 if (!Android.app.photoLab.categories.effectExists(title)) listFailedEffects.add(title);
@@ -378,16 +378,22 @@ public class Config {
                         JSONObject resObject;
                         switch (type) {
                             case "fx":
-                                resObject = getEffectById("", id, configJsonObject);
+                                resObject = getElementById("", "effects", id, configJsonObject);
                                 title = getJsonObjTitle(resObject, "en");
                                 //MyLogger.log.info("Type is : EFFECT. Title :"+title);
                                 if (!Android.app.photoLab.categories.effectExists(title)) listFailedItem.add(title);
                                 break;
                             case "category":
-                                resObject  = getCategoryById("", id, configJsonObject);
+                                resObject  = getElementById("", "categories", id, configJsonObject);
                                 title = getJsonObjTitle(resObject, lang);
                                 //MyLogger.log.info("Type is : CATEGORY. Title :"+title);
                                 if (!Android.app.photoLab.main.existItem(title, true)) listFailedItem.add(title);
+                                break;
+                            case "combo":
+                                resObject = getElementById("", "combos", id, configJsonObject);
+                                //title = getJsonObjTitle(resObject, "en");
+                                //MyLogger.log.info("Type is : EFFECT. Title :"+title);
+                                if (resObject.isEmpty()) listFailedItem.add(id);
                                 break;
                             case "ads":
                                 //MyLogger.log.info("This is ADS banner.");
@@ -471,7 +477,7 @@ public class Config {
         }
     }
 
-    public static JSONObject getCategoryByTitle(String configURL, String title, String lang, JSONObject optional) throws org.json.simple.parser.ParseException {
+    public static JSONObject getElementByTitle(String configURL, String type, String title, String lang, JSONObject optional) throws org.json.simple.parser.ParseException {
 
         try {
             JSONObject configJsonObject;
@@ -482,21 +488,21 @@ public class Config {
                 configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
             }
 
-            org.json.simple.JSONArray categories = (org.json.simple.JSONArray) configJsonObject.get("categories");
+            org.json.simple.JSONArray elements = (org.json.simple.JSONArray) configJsonObject.get("categories");
 
-            for(int j=0; j<categories.size(); j++) {
+            for(int j=0; j<elements.size(); j++) {
 
-                JSONObject categoryItem = (JSONObject) categories.get(j);
-                JSONObject titles = (JSONObject) categoryItem.get("title");
+                JSONObject elementItem = (JSONObject) elements.get(j);
+                JSONObject titles = (JSONObject) elementItem.get("title");
                 categoryName = (String) titles.get(lang);
-                if (categoryName.equals(title)) return categoryItem;
+                if (categoryName.equals(title)) return elementItem;
             } return null;
         } catch (IOException e) {
-            throw new AssertionError("Failed to get category JSON object.");
+            throw new AssertionError("Failed to get "+type+" JSON object.");
         }
     }
 
-    public static JSONObject getCategoryById(String configURL, Long id, JSONObject optional) throws org.json.simple.parser.ParseException {
+    public static JSONObject getElementById(String configURL, String type, Long id, JSONObject optional) throws org.json.simple.parser.ParseException {
 
         try {
             JSONObject configJsonObject;
@@ -506,67 +512,18 @@ public class Config {
                 configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
             }
 
-            org.json.simple.JSONArray categories = (org.json.simple.JSONArray) configJsonObject.get("categories");
+            org.json.simple.JSONArray elements = (org.json.simple.JSONArray) configJsonObject.get(type);
 
-            for(int j=0; j<categories.size(); j++) {
-                JSONObject categoryItem = (JSONObject) categories.get(j);
+            for(int j=0; j<elements.size(); j++) {
+                JSONObject elementItem = (JSONObject) elements.get(j);
 
-                Long currId = (Long) categoryItem.get("id");
+                Long currId = (Long) elementItem.get("id");
                 if (currId.longValue() == id.longValue()){
-                    return categoryItem;
+                    return elementItem;
                 }
             } return null;
         } catch (IOException e) {
-            throw new AssertionError("Failed to get category JSON object.");
-        }
-    }
-
-    public static JSONObject getTabById(String configURL, Long id, JSONObject optional) throws org.json.simple.parser.ParseException {
-
-        try {
-            JSONObject configJsonObject;
-            if (configURL.isEmpty()) configJsonObject = optional;
-            else {
-                String configJson = IOUtils.toString(new URL(configURL));
-                configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
-            }
-
-            org.json.simple.JSONArray tabs = (org.json.simple.JSONArray) configJsonObject.get("tabs");
-
-            for(int j=0; j<tabs.size(); j++) {
-                JSONObject tabItem = (JSONObject) tabs.get(j);
-
-                Long currId = (Long) tabItem.get("id");
-                if (currId.longValue() == id.longValue()){
-                    return tabItem;
-                }
-            } return null;
-        } catch (IOException e) {
-            throw new AssertionError("Failed to get tab JSON object.");
-        }
-    }
-
-    public static JSONObject getEffectById(String configURL, Long id, JSONObject optional) throws org.json.simple.parser.ParseException {
-
-        try {
-            JSONObject configJsonObject;
-            if (configURL.isEmpty()) configJsonObject = optional;
-            else {
-                String configJson = IOUtils.toString(new URL(configURL));
-                configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
-            }
-
-            org.json.simple.JSONArray effects = (org.json.simple.JSONArray) configJsonObject.get("effects");
-
-            for(int j=0; j<effects.size(); j++) {
-                JSONObject effectItem = (JSONObject) effects.get(j);
-                Long currId = (Long) effectItem.get("id");
-                if (currId.longValue() == id.longValue()){
-                    return effectItem;
-                }
-            } return null;
-        } catch (IOException e) {
-            throw new AssertionError("Failed to get effect JSON object.");
+            throw new AssertionError("Failed to get "+type+" JSON object.");
         }
     }
 
