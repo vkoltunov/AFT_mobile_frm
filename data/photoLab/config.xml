@@ -5,7 +5,7 @@
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
     <test name="001" preserve-order="true">
-        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.7-1641-release.apk' />
+        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.8-1679-release.apk' />
         <parameter name="AppType" value='free' />
         <classes>
             <class name="tests.Preparation" />

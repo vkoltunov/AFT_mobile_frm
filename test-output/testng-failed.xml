@@ -1,21 +1,2917 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [тестовый запуск]">
-  <parameter name="Config" value="http://cfg.ws.pho.to/androidphotolab/conf.json"/>
-  <parameter name="CsvPath" value="D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv"/>
+  <parameter name="Build_Path" value="https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.8-1679-release.apk"/>
+  <parameter name="Fb_Password" value="testbook"/>
+  <parameter name="Fb_Login" value="zqobenkoji_1497287426@tfbnw.net"/>
+  <parameter name="AppType" value="free"/>
   <listeners>
     <listener class-name="core.Listener"/>
     <listener class-name="core.AnnotationTransformer"/>
   </listeners>
-  <test name="011(failed)" preserve-order="false">
-    <parameter name="Config" value="http://cfg.ws.pho.to/androidphotolab/conf.json"/>
-    <parameter name="CsvPath" value="D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv"/>
+  <test name="020(failed)" preserve-order="false">
     <classes>
-      <class name="tests.test_Config_NotInPopularity">
+      <class name="tests.test_GoPro_PostProc">
         <methods>
           <include name="afterTest"/>
           <include name="before"/>
-          <include name="test35" invocation-numbers="0"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test16" invocation-numbers="0 0"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="010(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test15_1"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="021(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="test13" invocation-numbers="0 0"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="011(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="test15_2"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="022(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test17_3"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="001(failed)" preserve-order="false">
+    <parameter name="Build_Path" value="https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.8-1679-release.apk"/>
+    <parameter name="AppType" value="free"/>
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test0" invocation-numbers="0 0"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="012(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="test15_3"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="013(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="test12" invocation-numbers="0 0"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="014(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="test11" invocation-numbers="0 0"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="025(failed)" preserve-order="false">
+    <parameter name="Fb_Password" value="testbook"/>
+    <parameter name="Fb_Login" value="zqobenkoji_1497287426@tfbnw.net"/>
+    <classes>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="test17_1" invocation-numbers="0 0"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="015(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="test10" invocation-numbers="0 0"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="026(failed)" preserve-order="false">
+    <parameter name="Fb_Password" value="testbook"/>
+    <parameter name="Fb_Login" value="zqobenkoji_1497287426@tfbnw.net"/>
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="test17_2" invocation-numbers="0 0"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="005(failed)" preserve-order="false">
+    <parameter name="AppType" value="free"/>
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="test3" invocation-numbers="0 0"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="016(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test16" invocation-numbers="0 0"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="006(failed)" preserve-order="false">
+    <parameter name="AppType" value="free"/>
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+          <include name="test4" invocation-numbers="0 0"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="017(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test16" invocation-numbers="0 0"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="007(failed)" preserve-order="false">
+    <parameter name="AppType" value="free"/>
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="test6" invocation-numbers="0 0"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="018(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="test16" invocation-numbers="0 0"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="008(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test7"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="019(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="test16" invocation-numbers="0 0"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="009(failed)" preserve-order="false">
+    <classes>
+      <class name="tests.test_GoPro_PostProc">
+        <methods>
+          <include name="test8"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_Ok">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Effect">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SaveAndShare">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Combo">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Animation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_SimpleWorkflow">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Inspiration">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Art">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Collage">
+        <methods>
+          <include name="after"/>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.Preparation">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Group">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_NoSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_Tab">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_RateUs">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_GoPro">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Compositions_ShowInFeed">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Persistent">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+          <include name="after"/>
+        </methods>
+      </class>
+      <class name="tests.test_Notifications_User">
+        <methods>
+          <include name="afterTest"/>
+          <include name="before"/>
+        </methods>
+      </class>
+      <class name="tests.test_Watemark_YesSponsored">
+        <methods>
+          <include name="afterTest"/>
+          <include name="after"/>
+          <include name="before"/>
         </methods>
       </class>
     </classes>
