@@ -43,17 +43,6 @@ public abstract class BaseEntity {
         return Logger.getLoc(key);
     }
 
-    /**
-     * Делает снимок экрана и сохраняет его на диск
-     *
-     *
-     */
-    public void makeScreen(String suiteName, String testName){
-        Android.adb.takeScreenshot("/storage/"+sdCard+"/Pictures/screen1.png");
-        Android.adb.pullFile("/storage/"+sdCard+"/Pictures/screen1.png", Config.REPORT_DIR+"\\"+suiteName+"_"+testName.replace(" ", "_")+".png");
-        Android.adb.deleteFile("/storage/"+sdCard+"/Pictures/screen1.png");
-    }
-
     // ==============================================================================================
     // Методы для поддержки логирования
     /**

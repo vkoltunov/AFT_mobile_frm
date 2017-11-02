@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.processing;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -18,7 +19,7 @@ public class ProcessingUiObjects {
             goPRO;
 
     public UiObject progressBar(){
-        if(progressBar == null) progressBar = new UiSelector().className("android.widget.ProgressBar").resourceId("vsin.t16_funny_photo:id/progressBar").makeUiObject();
+        if(progressBar == null) progressBar = new UiSelector().className("android.widget.ProgressBar").resourceId(Android.app.photoLab.packageID()+":id/progressBar").makeUiObject();
         return progressBar;
     }
 
@@ -28,12 +29,12 @@ public class ProcessingUiObjects {
     }
 
     public UiObject advertisementBlock(){
-        if(advertisementBlock == null) advertisementBlock = new UiSelector().className("android.webkit.WebView").packageName("vsin.t16_funny_photo").makeUiObject();
+        if(advertisementBlock == null) advertisementBlock = new UiSelector().className("android.webkit.WebView").packageName(Android.app.photoLab.packageID()).makeUiObject();
         return advertisementBlock;
     }
 
     public UiObject advertisementPage(){
-        if(advertisementPage == null) advertisementPage = new UiSelector().className("android.webkit.WebView").packageName("vsin.t16_funny_photo").makeUiObject();
+        if(advertisementPage == null) advertisementPage = new UiSelector().className("android.webkit.WebView").packageName(Android.app.photoLab.packageID()).makeUiObject();
         return advertisementPage;
     }
 
@@ -43,7 +44,7 @@ public class ProcessingUiObjects {
     }
 
     public UiObject share(){
-        if(share == null) share = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/menu_share").makeUiObject();
+        if(share == null) share = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/menu_share").makeUiObject();
         return share;
     }
 

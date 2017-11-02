@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.pictures;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -30,7 +31,7 @@ public class PicturesUiObjects {
             option;
 
     public UiObject previewPic(){
-        if(previewPic == null) previewPic = new UiSelector().className("android.widget.ImageView").resourceIdMatches("vsin.t16_funny_photo:id/preview.*").makeUiObject();
+        if(previewPic == null) previewPic = new UiSelector().className("android.widget.LinearLayout").resourceId(Android.app.photoLab.packageID()+":id/collapsing_top_badges_container").makeUiObject();
         return previewPic;
     }
 
@@ -45,7 +46,7 @@ public class PicturesUiObjects {
     }
 
     public UiObject topPicture(int ind){
-        topPicture = new UiSelector().xPath("//android.support.v7.widget.RecyclerView[@resource-id='vsin.t16_funny_photo:id/multi_select_list']//android.widget.FrameLayout[@index='"+ind+"']//android.widget.ImageView[@resource-id='android:id/icon']").makeUiObject();
+        topPicture = new UiSelector().xPath("//android.support.v7.widget.RecyclerView[@resource-id='"+Android.app.photoLab.packageID()+":id/multi_select_list']//android.widget.FrameLayout[@index='"+ind+"']//android.widget.ImageView[@resource-id='android:id/icon']").makeUiObject();
         return topPicture;
     }
 
@@ -70,27 +71,27 @@ public class PicturesUiObjects {
     }
 
     public UiObject favorites(){
-        if(favorites == null) favorites = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/favorite").makeUiObject();
+        if(favorites == null) favorites = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/favorite").makeUiObject();
         return favorites;
     }
 
     public UiObject advertisement(){
-        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName("vsin.t16_funny_photo").makeUiObject();
+        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName(Android.app.photoLab.packageID()).makeUiObject();
         return advertisement;
     }
 
     public UiObject camera(){
-        if(camera == null) camera = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/camera_fab").makeUiObject();
+        if(camera == null) camera = new UiSelector().className("android.widget.FrameLayout").description("list_item_0").makeUiObject();
         return camera;
     }
 
     public UiObject next(){
-        if(next == null) next = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/next_fab").makeUiObject();
+        if(next == null) next = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/next_fab").makeUiObject();
         return next;
     }
 
     public UiObject delete(){
-        if(delete == null) delete = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/delete").makeUiObject();
+        if(delete == null) delete = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/delete").makeUiObject();
         return delete;
     }
 
@@ -100,7 +101,7 @@ public class PicturesUiObjects {
     }
 
     public UiObject selectedPicCount(){
-        selectedPicCount = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").makeUiObject();
+        selectedPicCount = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").makeUiObject();
         return selectedPicCount;
     }
 
@@ -111,17 +112,17 @@ public class PicturesUiObjects {
     }
 
     public UiObject persistent(int ind){
-        persistent = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.FrameLayout[@index='"+ind+"']//android.widget.FrameLayout[@resource-id='vsin.t16_funny_photo:id/email_notifications']").makeUiObject();
+        persistent = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.FrameLayout[@index='"+ind+"']//android.widget.FrameLayout[@resource-id='"+Android.app.photoLab.packageID()+":id/email_notifications']").makeUiObject();
         return persistent;
     }
 
     public UiObject moreOptions(){
-        if(moreOptions == null) moreOptions = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/more").makeUiObject();
+        if(moreOptions == null) moreOptions = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/more").makeUiObject();
         return moreOptions;
     }
 
     public UiObject option(String name){
-        option = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/title").textContains(name).makeUiObject();
+        option = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/title").textContains(name).makeUiObject();
         return option;
     }
 }

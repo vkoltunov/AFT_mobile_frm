@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.save;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -25,7 +26,7 @@ public class SaveUiObjects {
     }
 
     public UiObject advertisement(){
-        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName("vsin.t16_funny_photo").makeUiObject();
+        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName(Android.app.photoLab.packageID()).makeUiObject();
         return advertisement;
     }
 
@@ -35,7 +36,7 @@ public class SaveUiObjects {
     }
 
     public UiObject saveToDevice(){
-        if(saveToDevice == null) saveToDevice = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/title").text("Save to device").makeUiObject();
+        if(saveToDevice == null) saveToDevice = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/title").text("Save to device").makeUiObject();
         return saveToDevice;
     }
 
@@ -50,7 +51,7 @@ public class SaveUiObjects {
     }
 
     public UiObject collage(){
-        if(collage == null) collage = new UiSelector().className("android.view.View").resourceId("vsin.t16_funny_photo:id/collageView").makeUiObject();
+        if(collage == null) collage = new UiSelector().className("android.view.View").resourceId(Android.app.photoLab.packageID()+":id/collageView").makeUiObject();
         return collage;
     }
 

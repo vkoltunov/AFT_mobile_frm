@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.dialogs;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -22,12 +23,12 @@ public class DialogsUiObjects {
             showInFeed;
 
     public UiObject dialog(){
-        if(dialog == null) dialog = new UiSelector().className("android.support.v7.widget.LinearLayoutCompat").resourceId("vsin.t16_funny_photo:id/parentPanel").makeUiObject();
+        if(dialog == null) dialog = new UiSelector().className("android.support.v7.widget.LinearLayoutCompat").resourceId(Android.app.photoLab.packageID()+":id/parentPanel").makeUiObject();
         return dialog;
     }
 
     public UiObject dialogTitle(){
-        if(dialogTitle == null) dialogTitle = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/alertTitle").makeUiObject();
+        if(dialogTitle == null) dialogTitle = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/alertTitle").makeUiObject();
         return dialogTitle;
     }
 

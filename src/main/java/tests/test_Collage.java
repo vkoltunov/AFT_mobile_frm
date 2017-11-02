@@ -9,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/26/2017.
@@ -30,8 +32,10 @@ public class test_Collage extends TestManager {
     //===== Multiple Collages =====
 
     @org.testng.annotations.Test
-    public void test13(){
+    @Parameters({"AppType"})
+    public void test13(@Optional String appType){
         testInfo.id("test13").suite("test_Collage").name("Full cycle work with multi pictures effect (Category:Multiple Collages; Effect:Globe) + Delete photo from recent.");
+        photolab.setAppType(appType);
 
         photolab.custom.loadPicsToDeviceFromFolder(Config.APP_DATA_DIR+"\\photoLab\\source");
         photolab.forceStop();
@@ -65,7 +69,7 @@ public class test_Collage extends TestManager {
         photolab.menu.open();
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
-        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\MultipleCollages_Globe.jpg");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\MultipleCollages_Globe_"+Android.app.photoLab.appType+".jpg");
     }
 
     @AfterTest

@@ -2,30 +2,35 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="тестовый запуск" duration-ms="6077" started-at="2017-10-19T21:22:46Z" finished-at="2017-10-19T21:22:52Z">
+  <suite name="тестовый запуск" duration-ms="6062" started-at="2017-11-01T20:40:51Z" finished-at="2017-11-01T20:40:57Z">
     <groups>
     </groups>
-    <test name="011" duration-ms="6077" started-at="2017-10-19T21:22:46Z" finished-at="2017-10-19T21:22:52Z">
-      <class name="tests.test_Config_CategoriesPreview">
-        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-10-19T21:22:46Z" finished-at="2017-10-19T21:22:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@3e08ff24]]>
-              </value>
-            </param>
-          </params>
-        </test-method>
-        <test-method status="PASS" signature="test35(java.lang.String)" name="test35" duration-ms="5921" started-at="2017-10-19T21:22:46Z" finished-at="2017-10-19T21:22:52Z">
+    <test name="011" duration-ms="6062" started-at="2017-11-01T20:40:51Z" finished-at="2017-11-01T20:40:57Z">
+      <class name="tests.test_Config_NotInPopularity">
+        <test-method status="PASS" signature="test35(java.lang.String, java.lang.String)" name="test35" duration-ms="6000" started-at="2017-11-01T20:40:51Z" finished-at="2017-11-01T20:40:57Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[http://cfg.ws.pho.to/androidphotolab/conf.json]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv]]>
+              </value>
+            </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-10-19T21:22:52Z" finished-at="2017-10-19T21:22:52Z">
+        <test-method status="PASS" signature="before(org.testng.ITestContext)" name="before" is-config="true" duration-ms="0" started-at="2017-11-01T20:40:51Z" finished-at="2017-11-01T20:40:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4082ba93]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="afterTest()" name="afterTest" is-config="true" duration-ms="0" started-at="2017-11-01T20:40:57Z" finished-at="2017-11-01T20:40:57Z">
         </test-method>
       </class>
     </test>

@@ -13,5 +13,5 @@ public class Apps {
     public PhotoLab photoLab = new PhotoLab();
     public Instagram instagram = new Instagram();
     public Vsco vsco = new Vsco();
-    //public Fabby fabby = new Fabby();
+    public Fabby fabby = new Fabby();
 }

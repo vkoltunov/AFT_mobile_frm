@@ -5,6 +5,7 @@ import api.apps.PhotoLab.PhotoLab;
 import core.managers.TestManager;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 //import org.testng.annotations.*;
 
@@ -28,8 +29,8 @@ public class test_Config_NewEffects extends TestManager {
 //===== Categories =====
 
     @org.testng.annotations.Test
-    @Parameters({"Config"})
-    public void test35(String configURL) throws ParseException {
+    @Parameters({"Config", "AppType"})
+    public void test35(String configURL, @Optional String appType) throws ParseException {
         testInfo.id("test1").suite("test_Config_NewEffects").name("Check New Effects for App.");
         photolab.forceStop();
         photolab.open();

@@ -39,10 +39,11 @@ public class Preparation extends TestManager {
      *
      */
     @org.testng.annotations.Test
-    @Parameters({"Build_Path", "Build_Type"})
-    public void test0(String buildPath, @Optional("true") String buildType){
+    @Parameters({"Build_Path", "Build_Type", "AppType"})
+    public void test0(String buildPath, @Optional("true") String buildType, @Optional String appType){
         testInfo.id("test0").suite("Preparation").name("Clear application data. Uninstall current application build. Install new build.");
         //photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
+        photolab.setAppType(appType);
         photolab.forceStop();
         photolab.clearData();
         photolab.uninstallApp();

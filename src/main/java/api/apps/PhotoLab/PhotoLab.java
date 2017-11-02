@@ -40,6 +40,7 @@ public class PhotoLab implements Application{
 
     public Boolean favoriteFlag = false;
     private Common commonFunc;
+    public String appType = "free";
 
     public Main main = new Main();
     public Menu menu = new Menu();
@@ -132,12 +133,19 @@ public class PhotoLab implements Application{
 
     @Override
     public String packageID() {
-        return "vsin.t16_funny_photo";
+        if (appType.equals("pro")) return "com.vicman.photolabpro";
+        else return "vsin.t16_funny_photo";
     }
 
     @Override
     public String activityID() {
         return "com.vicman.photolab.activities.MainActivity";
+    }
+
+    public void setAppType(String type) {
+        if (!(type == null)){
+            if (type.equals("pro")) appType = "pro";
+        }
     }
 
 }

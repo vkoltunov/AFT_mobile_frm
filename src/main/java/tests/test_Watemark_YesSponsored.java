@@ -6,6 +6,7 @@ import core.managers.TestManager;
 import core.utils.Config;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/26/2017.
@@ -35,8 +36,8 @@ public class test_Watemark_YesSponsored extends TestManager {
         photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
-        photolab.main.selectCategory("Masterpiece");
-        photolab.categories.selectEffect("Pop Art Style");
+        photolab.main.selectCategory("New Reality");
+        photolab.categories.selectEffect("Birthday Ecard with Balloons");
         photolab.pictures.selectTab("All");
         photolab.pictures.selectPicture(1);
         photolab.property.waitToLoad();

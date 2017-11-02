@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.animate;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -27,7 +28,7 @@ public class AnimateUiObjects {
     }
 
     public UiObject done(){
-        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/fab").makeUiObject();
+        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/fab").makeUiObject();
         return done;
     }
 
@@ -57,7 +58,7 @@ public class AnimateUiObjects {
     }
 
     public UiObject toolbar_Title(){
-        toolbar_Title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").makeUiObject();
+        toolbar_Title = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").makeUiObject();
         return toolbar_Title;
     }
 
@@ -72,7 +73,7 @@ public class AnimateUiObjects {
     }
 
     public UiObject animate_Result(){
-        animate_Result = new UiSelector().className("android.view.View").resourceId("vsin.t16_funny_photo:id/result_content").makeUiObject();
+        animate_Result = new UiSelector().className("android.view.View").resourceId(Android.app.photoLab.packageID()+":id/result_content").makeUiObject();
         return animate_Result;
     }
 

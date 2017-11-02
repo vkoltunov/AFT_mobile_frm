@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.art;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -32,7 +33,7 @@ public class ArtUiObjects {
     }
 
     public UiObject done(){
-        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/fab").makeUiObject();
+        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/fab").makeUiObject();
         return done;
     }
 
@@ -62,7 +63,7 @@ public class ArtUiObjects {
     }
 
     public UiObject toolbar_Title(){
-        toolbar_Title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").makeUiObject();
+        toolbar_Title = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").makeUiObject();
         return toolbar_Title;
     }
 
@@ -77,7 +78,7 @@ public class ArtUiObjects {
     }
 
     public UiObject art_Result(){
-        art_Result = new UiSelector().className("android.view.View").resourceId("vsin.t16_funny_photo:id/result_content").makeUiObject();
+        art_Result = new UiSelector().className("android.view.View").resourceId(Android.app.photoLab.packageID()+":id/result_content").makeUiObject();
         return art_Result;
     }
 

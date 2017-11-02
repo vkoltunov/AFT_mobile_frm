@@ -76,7 +76,7 @@ public class Menu implements Activity {
         //    MyLogger.log.info("Scroll to Home is OK !");
             waitToLoad();
             uiObject.home().tap();
-            return Android.app.photoLab.main.waitToLoad();
+            return Android.app.photoLab.main;
         //}
         //else throw new AssertionError("Menu Home button tap failed.");
     }

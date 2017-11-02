@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.about;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -22,27 +23,27 @@ public class AboutUiObjects {
     }
 
     public UiObject version(){
-        if(version == null) version = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/version").makeUiObject();
+        if(version == null) version = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/version").makeUiObject();
         return version;
     }
 
     public UiObject contactUs(){
-        if(contactUs == null) contactUs = new UiSelector().className("android.widget.Button").resourceId("vsin.t16_funny_photo:id/leave_feedback").makeUiObject();
+        if(contactUs == null) contactUs = new UiSelector().className("android.widget.Button").resourceId(Android.app.photoLab.packageID()+":id/leave_feedback").makeUiObject();
         return contactUs;
     }
 
     public UiObject follow_instagram(){
-        if(follow_instagram == null) follow_instagram = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/follow_instagram").makeUiObject();
+        if(follow_instagram == null) follow_instagram = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/follow_instagram").makeUiObject();
         return follow_instagram;
     }
 
     public UiObject follow_twitter(){
-        if(follow_twitter == null) follow_twitter = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/follow_twitter").makeUiObject();
+        if(follow_twitter == null) follow_twitter = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/follow_twitter").makeUiObject();
         return follow_twitter;
     }
 
     public UiObject follow_facebook(){
-        if(follow_facebook == null) follow_facebook = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/follow_facebook").makeUiObject();
+        if(follow_facebook == null) follow_facebook = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/follow_facebook").makeUiObject();
         return follow_facebook;
     }
 

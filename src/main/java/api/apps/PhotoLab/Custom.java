@@ -124,11 +124,11 @@ public class Custom {
 
     public void sendNotification (String action){
         try{
-            MyLogger.log.info("Sent Notification to PhotoLab.1");
+            //MyLogger.log.info("Sent Notification to PhotoLab.1");
             PushNotificationTools.sentTestData(Android.driver, action);
-            MyLogger.log.info("Sent Notification to PhotoLab.2");
+            //MyLogger.log.info("Sent Notification to PhotoLab.2");
             Android.driver.openNotifications();
-            MyLogger.log.info("Sent Notification to PhotoLab.3");
+            //MyLogger.log.info("Sent Notification to PhotoLab.3");
         }catch (AssertionError e ) {
             throw new AssertionError("Send notification to PhotoLab failed.");
         } catch (InterruptedException e) {

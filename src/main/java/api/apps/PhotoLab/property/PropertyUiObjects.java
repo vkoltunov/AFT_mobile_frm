@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.property;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -18,7 +19,7 @@ public class PropertyUiObjects {
             rotate;
 
     public UiObject done(){
-        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/next_btn").makeUiObject();
+        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/next_btn").makeUiObject();
         return done;
     }
 
@@ -28,27 +29,27 @@ public class PropertyUiObjects {
     }
 
     public UiObject hints(){
-        if(hints == null) hints = new UiSelector().className("android.widget.CheckBox").resourceId("vsin.t16_funny_photo:id/email_notifications_checkbox").makeUiObject();
+        if(hints == null) hints = new UiSelector().className("android.widget.CheckBox").resourceId(Android.app.photoLab.packageID()+":id/email_notifications_checkbox").makeUiObject();
         return hints;
     }
 
     public UiObject crop1(){
-        if(crop1 == null) crop1 = new UiSelector().className("android.widget.RadioButton").resourceId("vsin.t16_funny_photo:id/asp1").makeUiObject();
+        if(crop1 == null) crop1 = new UiSelector().className("android.widget.RadioButton").resourceId(Android.app.photoLab.packageID()+":id/asp1").makeUiObject();
         return crop1;
     }
 
     public UiObject crop2(){
-        if(crop2 == null) crop2 = new UiSelector().className("android.widget.RadioButton").resourceId("vsin.t16_funny_photo:id/asp2").makeUiObject();
+        if(crop2 == null) crop2 = new UiSelector().className("android.widget.RadioButton").resourceId(Android.app.photoLab.packageID()+":id/asp2").makeUiObject();
         return crop2;
     }
 
     public UiObject crop3(){
-        if(crop3 == null) crop3 = new UiSelector().className("android.widget.RadioButton").resourceId("vsin.t16_funny_photo:id/asp3").makeUiObject();
+        if(crop3 == null) crop3 = new UiSelector().className("android.widget.RadioButton").resourceId(Android.app.photoLab.packageID()+":id/asp3").makeUiObject();
         return crop3;
     }
 
     public UiObject rotate(){
-        if(rotate == null) rotate = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/rotateRight").makeUiObject();
+        if(rotate == null) rotate = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/rotateRight").makeUiObject();
         return rotate;
     }
 }

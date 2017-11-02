@@ -9,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/26/2017.
@@ -25,13 +27,17 @@ public class test_SimpleWorkflow extends TestManager {
     @BeforeTest
     public void before(){
         testInfo.suite("test_SimpleWorkflow");
+        photolab.custom.clearFolderData(Config.APP_DATA_DIR+"\\photoLab\\result");
     }
 
     //===== Simple Workflow + Full Screen + Add Text =====
 
     @org.testng.annotations.Test
-    public void test4(){
+    @Parameters({"AppType"})
+    public void test4(@Optional String appType){
         testInfo.id("test4").suite("test_SimpleWorkflow").name("Full cycle work with photo + Add text Effect (Category:New Reality; Effect:Wedding March)");
+        photolab.setAppType(appType);
+
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();
         photolab.open();
@@ -61,7 +67,7 @@ public class test_SimpleWorkflow extends TestManager {
         photolab.menu.open();
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
-        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\NR_WeddingMarch.jpg");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\NR_WeddingMarch_"+Android.app.photoLab.appType+".jpg");
     }
 
     @AfterTest

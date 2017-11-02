@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.categories;
 
+import api.android.Android;
 import core.MyLogger;
 import core.UiObject;
 import core.UiSelector;
@@ -27,12 +28,12 @@ public class CategoriesUiObjects {
             listItemTitle;
 
     public UiObject page_Title(String title){
-        page_Title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").textContains(title).makeUiObject();
+        page_Title = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").textContains(title).makeUiObject();
         return page_Title;
     }
 
     public UiObject advertisement(){
-        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName("vsin.t16_funny_photo").makeUiObject();
+        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName(Android.app.photoLab.packageID()).makeUiObject();
         return advertisement;
     }
 
@@ -59,7 +60,7 @@ public class CategoriesUiObjects {
     }
 
     public UiObject category_area(){
-        category_area = new UiSelector().className("android.support.v7.widget.RecyclerView").resourceId("vsin.t16_funny_photo:id/recyclerView").makeUiObject();
+        category_area = new UiSelector().className("android.support.v7.widget.RecyclerView").resourceId(Android.app.photoLab.packageID()+":id/recyclerView").makeUiObject();
         return category_area;
     }
 

@@ -13,12 +13,69 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  * Created by User on 9/7/2017.
  */
 public class Config {
+
+
+
+    public Boolean checkNotInPopularityEffects(String configURL, String csvURL) throws org.json.simple.parser.ParseException {
+
+        try {
+            ArrayList listFailedElements = new ArrayList();
+            String configJson = IOUtils.toString(new URL(configURL));
+            JSONObject configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
+
+            org.json.simple.JSONArray elements = (org.json.simple.JSONArray) configJsonObject.get("effects");
+            CSVReader reader = Common.readCSV(csvURL);
+            String[] line;
+            List<Long> csvIds = new ArrayList<>();
+            Integer index =0;
+
+            while ((line = reader.readNext()) != null){
+                Long csvEffectId = Long.parseLong(line[0]);
+                csvIds.add(index, csvEffectId);
+            }
+
+            for(int j=0; j<elements.size(); j++) {
+
+                JSONObject elementItem = (JSONObject) elements.get(j);
+                Long effectId = (Long) elementItem.get("id");
+
+                Boolean isExist = false;
+                for (int i=0; i<csvIds.size(); i++){
+                    Long csvEffectId = csvIds.get(i);
+                    if (csvEffectId.longValue() == effectId.longValue()){
+                        isExist = true;
+                        break;
+                    }
+                }
+                if (!isExist) {
+                    JSONObject titles = (JSONObject) elementItem.get("title");
+                    String elementTitle = (String) titles.get("en");
+
+                    MyLogger.log.error("Effect : " + elementTitle + " | ID : " + effectId + " from 'conf.json' is not exists for  Popularity.csv.");
+
+                    listFailedElements.add(effectId);
+                    //listFailedElements.add(elementTitle);
+                }
+            }
+            if (listFailedElements.isEmpty()) return true;
+            else {
+                MyLogger.log.error("Failed effects id : "+listFailedElements.toString());
+                //MyLogger.log.error("Failed effects titles : "+listFailedElements.toString());
+                MyLogger.log.error("Total count failed effects : "+listFailedElements.size());
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public Boolean checkHalloweenContent(String configURL, String csvURL) throws org.json.simple.parser.ParseException {
 
@@ -68,6 +125,7 @@ public class Config {
             if (listFailedElements.isEmpty()) return true;
             else {
                 MyLogger.log.error("Failed elements : "+listFailedElements.toString());
+                MyLogger.log.error("Total count failed elements : "+listFailedElements.size());
                 throw new AssertionError("Check halloween is failed.");
             }
         } catch (IOException e) {
@@ -88,20 +146,29 @@ public class Config {
             for(int j=0; j<elements.size(); j++) {
 
                 JSONObject elementItem = (JSONObject) elements.get(j);
-                String previewUrl = (String) elementItem.get("preview");
+                String previewUrl;
+                if(type.equals("combos")) previewUrl = (String) elementItem.get("result_url");
+                else previewUrl = (String) elementItem.get("preview");
 
                 if (!Common.urlValidation(previewUrl)){
 
-                    JSONObject titles = (JSONObject) elementItem.get("title");
-                    String elementTitle = (String) titles.get("en");
+                    if(type.equals("combos")) {
+                        Long elementId = (Long) elementItem.get("id");
+                        MyLogger.log.info("Element id: " + elementId + " from '" + type + "' is have bad preview URL : " + previewUrl);
+                        listFailedElements.add(elementId);
+                    } else {
+                        JSONObject titles = (JSONObject) elementItem.get("title");
+                        String elementTitle = (String) titles.get("en");
 
-                    MyLogger.log.info("Element : "+elementTitle+" from '"+type+"' is have bad preview URL : "+previewUrl);
-                    listFailedElements.add(elementTitle);
+                        MyLogger.log.info("Element : " + elementTitle + " from '" + type + "' is have bad preview URL : " + previewUrl);
+                        listFailedElements.add(elementTitle);
+                    }
                 }
             }
             if (listFailedElements.isEmpty()) return true;
             else {
                 MyLogger.log.error("Failed "+type+" preview : "+listFailedElements.toString());
+                MyLogger.log.error("Total count failed preview : "+listFailedElements.size());
                 throw new AssertionError("Check elements preview.");
             }
         } catch (IOException e) {
@@ -128,6 +195,7 @@ public class Config {
             Integer isNewIncluded = 0;
 
             while ((line = reader.readNext()) != null) {
+                Boolean status = false;
                 Long csvEffectId = Long.parseLong(line[0]);
                 String csvEffectLegacy = line[1];
                 String csvCategoryLegacy = line[2];
@@ -143,6 +211,7 @@ public class Config {
                     case "hatched":
                     case "harley_quinn":
                     case "in_a_blurry_world":
+                    case "calendar":
                     case "playful_lady_frame":
                         MyLogger.log.info("Effect '"+csvEffectLegacy+"' is not used for Android App.");
                         break;
@@ -161,7 +230,7 @@ public class Config {
 
                             Long effectId = (Long) effectItem.get("id");
                             if (csvEffectId.longValue() == effectId.longValue()){
-
+                                status = true;
                                 Pair<Integer, String> resultSetWithAds = getEffectPositionInCategory(configJsonObject, effectId, true);
                                 //Pair<Integer, String> resultSetWithoutAds = getEffectPositionInCategory(configJsonObject, effectId, false);
                                 String categoryTitle = resultSetWithAds.getValue();
@@ -199,12 +268,14 @@ public class Config {
                         }
                         break;
                 }
+                if (!status) MyLogger.log.error("Category Legacy : "+csvCategoryLegacy+" |  Effect id : " + csvEffectId + " is not found for Config.json");
 
             }
 
             if (listFailedEffects.isEmpty()) return true;
             else {
                 MyLogger.log.error("Failed effects : "+listFailedEffects.toString());
+                MyLogger.log.error("Total count failed effects : "+listFailedEffects.size());
                 throw new AssertionError("Check popularity failed.");
             }
         } catch (IOException e) {
@@ -278,6 +349,7 @@ public class Config {
             if (listFailedEffects.isEmpty()) return true;
             else {
                 MyLogger.log.error("Failed effects : "+listFailedEffects.toString());
+                MyLogger.log.error("Total count failed effects : "+listFailedEffects.size());
                 throw new AssertionError("Check New effects failed.");
             }
         } catch (IOException e) {
@@ -342,6 +414,7 @@ public class Config {
             if (resultMap.isEmpty()) return true;
             else {
                 MyLogger.log.error("Failed effects : "+resultMap.toString());
+                MyLogger.log.error("Total count failed effects : "+resultMap.size());
                 throw new AssertionError("Check category effects failed.");
             }
         } catch (IOException e) {

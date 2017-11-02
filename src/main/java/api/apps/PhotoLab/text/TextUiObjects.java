@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.text;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -32,12 +33,12 @@ public class TextUiObjects {
     }
 
     public UiObject next(){
-        if(next == null) next = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/button_apply").makeUiObject();
+        if(next == null) next = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/button_apply").makeUiObject();
         return next;
     }
 
     public UiObject done(){
-        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/add").description("Apply").makeUiObject();
+        if(done == null) done = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/add").description("Apply").makeUiObject();
         return done;
     }
 
@@ -52,22 +53,22 @@ public class TextUiObjects {
     }
 
     public UiObject font(){
-        if(font == null) font = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/font").makeUiObject();
+        if(font == null) font = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/font").makeUiObject();
         return font;
     }
 
     public UiObject style(){
-        if(style == null) style = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/style").makeUiObject();
+        if(style == null) style = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/style").makeUiObject();
         return style;
     }
 
     public UiObject color(){
-        if(color == null) color = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/color").makeUiObject();
+        if(color == null) color = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/color").makeUiObject();
         return color;
     }
 
     public UiObject opacity(){
-        if(opacity == null) opacity = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/button_opacity").makeUiObject();
+        if(opacity == null) opacity = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/button_opacity").makeUiObject();
         return opacity;
     }
 

@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/26/2017.
@@ -29,8 +31,10 @@ public class test_SaveAndShare extends TestManager {
     //===== Save and Share Tutorial =====
 
     @org.testng.annotations.Test
-    public void test3(){
+    @Parameters({"AppType"})
+    public void test3(@Optional String appType){
         testInfo.id("test3").suite("test_SaveAndShare").name("First Start. Check Save and Share tutorial.");
+        photolab.setAppType(appType);
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();

@@ -151,6 +151,10 @@ public class ADB {
         command("adb -s "+ID+" shell am broadcast -a android.intent.action.MEDIA_MOUNTED -d file:///mnt/sdcard/Pictures");
     }
 
+    public void clearLogcat(){
+        command("adb -s "+ID+" logcat -c");
+    }
+
     public List<String> getLogcatProcesses(){
         String[] output = command("adb -s "+ID+" shell top -n 1 | grep -i 'logcat'").split("\n");
         List<String> processes = new ArrayList<>();

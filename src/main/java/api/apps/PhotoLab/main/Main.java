@@ -101,7 +101,7 @@ public class Main implements Activity {
         else throw new AssertionError("Category bar '"+categoryBarName+"' not found.");
     }
 
-    public void checkedCategoryBar (String categoryBarName, Boolean status){
+    public void checkedMenuBar (String categoryBarName, Boolean status){
         MyLogger.log.info("Category bar '"+categoryBarName+"' is active in application.");
         Boolean currStatus = uiObject.barItem(categoryBarName).isChecked();
         if (status.equals(currStatus)) MyLogger.log.info("Category bar '"+categoryBarName+"' active status is "+currStatus);

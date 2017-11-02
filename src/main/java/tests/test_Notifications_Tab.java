@@ -6,6 +6,8 @@ import core.managers.TestManager;
 import core.utils.Config;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/26/2017.
@@ -27,8 +29,11 @@ public class test_Notifications_Tab extends TestManager {
     //===== Notification work =====
 
     @org.testng.annotations.Test
-    public void test16(){
+    @Parameters({"AppType"})
+    public void test16(@Optional String appType){
         testInfo.id("test16").suite("test_Notifications_Tab").name("Check notification work.");
+        photolab.setAppType(appType);
+
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

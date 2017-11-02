@@ -6,8 +6,9 @@
     </listeners>
     <test name="011" preserve-order="true">
         <parameter name="Config" value='http://cfg.ws.pho.to/androidphotolab/conf.json' />
+        <parameter name="CsvPath" value='D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv' />
         <classes>
-            <class name="tests.test_Config_CategoriesPreview" />
+            <class name="tests.test_Config_NotInPopularity" />
         </classes>
     </test>
 </suite>

@@ -1,5 +1,7 @@
 package api.apps.PhotoLab.main;
 
+import api.android.Android;
+import api.apps.PhotoLab.PhotoLab;
 import core.UiObject;
 import core.UiSelector;
 
@@ -29,23 +31,25 @@ public class MainUiObjects {
             inspirationProfile,
             navigationContainer;
 
+
     public UiObject photoLab(){
-        if(photoLab == null) photoLab = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").text("Photo Lab").makeUiObject();
+
+        if(photoLab == null) photoLab = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").text("Photo Lab").makeUiObject();
         return photoLab;
     }
 
     public UiObject navigationContainer(){
-        if(navigationContainer == null) navigationContainer = new UiSelector().className("android.widget.LinearLayout").resourceId("vsin.t16_funny_photo:id/bottom_navigation_container").makeUiObject();
+        if(navigationContainer == null) navigationContainer = new UiSelector().className("android.widget.LinearLayout").resourceId(Android.app.photoLab.packageID()+":id/bottom_navigation_container").makeUiObject();
         return navigationContainer;
     }
 
     public UiObject actionBar(){
-        if(actionBar == null) actionBar = new UiSelector().className("android.support.v7.app.ActionBar$Tab").packageName("vsin.t16_funny_photo").instance(0).makeUiObject();
+        if(actionBar == null) actionBar = new UiSelector().className("android.support.v7.app.ActionBar$Tab").instance(0).makeUiObject();
         return actionBar;
     }
 
     public UiObject pro(){
-        if(pro == null) pro = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/buy").makeUiObject();
+        if(pro == null) pro = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/buy").makeUiObject();
         return pro;
     }
 
@@ -91,7 +95,7 @@ public class MainUiObjects {
     }
 
     public UiObject category_area(){
-        category_area = new UiSelector().className("android.support.v4.view.ViewPager").resourceId("vsin.t16_funny_photo:id/non_swipe_view_pager").makeUiObject();
+        category_area = new UiSelector().className("android.support.v4.view.ViewPager").resourceId(Android.app.photoLab.packageID()+":id/non_swipe_view_pager").makeUiObject();
         return category_area;
     }
 
@@ -102,12 +106,12 @@ public class MainUiObjects {
     }
 
     public UiObject delete(){
-        if(delete == null) delete = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/delete_fab").makeUiObject();
+        if(delete == null) delete = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/delete_fab").makeUiObject();
         return delete;
     }
 
     public UiObject favoritesText(){
-        if(favoritesText == null) favoritesText = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/favoriteEmpty").textContains("Your favorite effects \n" +
+        if(favoritesText == null) favoritesText = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/favoriteEmpty").textContains("Your favorite effects \n" +
                 "will be stored here.").makeUiObject();
         return favoritesText;
     }
@@ -118,12 +122,12 @@ public class MainUiObjects {
     }
 
     public UiObject inspirationItem(int index){
-        inspirationItem = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.FrameLayout[@index='"+index+"']//android.widget.ImageView[@resource-id='vsin.t16_funny_photo:id/image_collage']").makeUiObject();
+        inspirationItem = new UiSelector().xPath("//android.support.v7.widget.RecyclerView//android.widget.FrameLayout[@index='"+index+"']//android.widget.ImageView[@resource-id='"+Android.app.photoLab.packageID()+":id/image_collage']").makeUiObject();
         return inspirationItem;
     }
 
     public UiObject inspirationProfile(){
-        if(inspirationProfile == null) inspirationProfile = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/profile").makeUiObject();
+        if(inspirationProfile == null) inspirationProfile = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/profile").makeUiObject();
         return inspirationProfile;
     }
 }

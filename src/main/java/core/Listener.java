@@ -30,24 +30,25 @@ public class Listener extends TestListenerAdapter {
     @Override
     public void onTestStart(ITestResult tr) {
         MyLogger.log.info("Test Started....");
-        //logcatPid = Android.adb.startLogcat("aft_log",null);
+        Android.adb.clearLogcat();
     }
 
     @Override
     public void onTestSuccess(ITestResult tr) {
         MyLogger.log.info("Test Passed.");
         TestInfo.printResults();
-        //Android.adb.stopLogcat(logcatPid);
         if (Listener.reporter != null)
-            Listener.reporter.update(TestInfo.suite(), TestInfo.name(), "PASS");
-        //Android.adb.deleteFile("/storage/"+sdCard+"/aft_log.txt");
+            try {
+                Listener.reporter.update(TestInfo.suite(), TestInfo.name(), "PASS");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
     }
 
     @Override
     public void onTestFailure(ITestResult tr) {
         if (tr.getMethod().getRetryAnalyzer() != null) {
             Retry retryAnalyzer = (Retry)tr.getMethod().getRetryAnalyzer();
-            //Android.adb.stopLogcat(logcatPid);
             if(retryAnalyzer.isRetryAvailable()) {
                 MyLogger.log.info("Test '" +TestInfo.name()+ "' failed and will be run again.");
                 //tr.setStatus(ITestResult.SKIP);
@@ -56,9 +57,12 @@ public class Listener extends TestListenerAdapter {
                 MyLogger.log.info("Test Failed.");
                 TestInfo.printResults();
                 if (Listener.reporter != null)
-                    Listener.reporter.update(TestInfo.suite(), TestInfo.name(), "FAIL");
+                    try {
+                        Listener.reporter.update(TestInfo.suite(), TestInfo.name(), "FAIL");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
             }
-            //Android.adb.deleteFile("/storage/"+sdCard+"/aft_log.txt");
         }
     }
 

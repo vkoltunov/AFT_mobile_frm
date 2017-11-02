@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.advertisement;
 
+import api.android.Android;
 import api.interfaces.Activity;
 import core.UiObject;
 import core.UiSelector;
@@ -17,7 +18,7 @@ public class AdvertisementUiObjects {
             content;
 
     public UiObject advertisement(){
-        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName("vsin.t16_funny_photo").makeUiObject();
+        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName(Android.app.photoLab.packageID()).makeUiObject();
         return advertisement;
     }
 

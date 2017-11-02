@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.aboutCombo;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -14,12 +15,12 @@ public class AboutComboUiObjects {
             close;
 
     public UiObject title(){
-        if(title == null) title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").textContains("About this combo").makeUiObject();
+        if(title == null) title = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").textContains("About this combo").makeUiObject();
         return title;
     }
 
     public UiObject comboBy(){
-        if(comboBy == null) comboBy = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/text_user_name").textContains("Combo by").makeUiObject();
+        if(comboBy == null) comboBy = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/text_user_name").textContains("Combo by").makeUiObject();
         return comboBy;
     }
 

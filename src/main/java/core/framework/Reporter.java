@@ -9,6 +9,7 @@ import core.utils.Common;
 import core.utils.Config;
 import core.utils.GlobalDict;
 import javafx.scene.shape.PathElement;
+import org.openqa.selenium.logging.LogEntry;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -26,9 +27,14 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.nio.file.Files;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.FileHandler;
+import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
 
 import static core.managers.DriverManager.sdCard;
@@ -51,10 +57,9 @@ public class Reporter {
         builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
     }
 
-    public void update(String suiteName, String testName, String testResult){
+    public void update(String suiteName, String testName, String testResult) throws Exception {
 
         try{
-
             Document doc;
             if(!file.exists()){
                 Files.createDirectories(file.toPath().getParent());
@@ -74,7 +79,7 @@ public class Reporter {
         }
     }
 
-    private Document create_new_xml(String suiteName, String testName, String testResult) throws FileNotFoundException {
+    private Document create_new_xml(String suiteName, String testName, String testResult) throws Exception {
         Document doc = builder.newDocument();
 
         Element testsuites = doc.createElement("testsuites");
@@ -90,7 +95,7 @@ public class Reporter {
         testcase.setAttribute("status", testResult);
 
         if(testResult.equals("FAIL")){
-            takeScreenshot(suiteName, testName);
+            takeScreenshot(suiteName);
             saveLogcat(suiteName);
             Element failure = doc.createElement("failure");
             testcase.appendChild(failure);
@@ -102,7 +107,7 @@ public class Reporter {
         return doc;
     }
 
-    private Document update_existing_xml(String suiteName, String testName, String testResult) throws IOException, SAXException {
+    private Document update_existing_xml(String suiteName, String testName, String testResult) throws Exception {
 
         Document doc = builder.parse(file);
         Node testsuites = doc.getFirstChild();
@@ -126,7 +131,7 @@ public class Reporter {
 
                 if (testResult.equals("FAIL")){
                     f++;
-                    takeScreenshot(suiteName, testName);
+                    takeScreenshot(suiteName);
                     saveLogcat(suiteName);
                     Element failure = doc.createElement("failure");
                     testcase.appendChild(failure);
@@ -159,7 +164,7 @@ public class Reporter {
         return doc;
     }
 
-    private void takeScreenshot(String suiteName, String testName){
+    private void takeScreenshot(String suiteName){
         if (!folder.isEmpty()) {
             Android.adb.takeScreenshot("/storage/"+sdCard+"/Pictures/screen1.png");
             Android.adb.pullFile("/storage/"+sdCard+"/Pictures/screen1.png", folder+"\\"+suiteName.replace(" ", "_")+".png");
@@ -167,12 +172,16 @@ public class Reporter {
         }
     }
 
-    public void saveLogcat(String suiteName){
-        MyLogger.log.info("LOGCAT PATH DEVICE: "+ "/storage/"+sdCard+"/aft_log.txt");
-        MyLogger.log.info("LOGCAT PATH COMP: "+ folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
-
-        //Android.adb.pullFile("/storage/"+sdCard+"/aft_log.txt", folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
-        //Android.adb.deleteFile("/storage/"+sdCard+"/aft_log.txt");
+    public void saveLogcat(String suiteName) {
+        try{
+            MyLogger.log.info("LOGCAT PATH COMP: "+ folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
+            List<LogEntry> logEntries = Android.driver.manage().logs().get("logcat").filter(Level.ALL);
+            File logFile = new File(folder+"\\"+"log_"+suiteName.replace(" ", "_")+".txt");
+            PrintWriter log_file_writer = new PrintWriter(logFile);
+            log_file_writer.println(logEntries );
+            log_file_writer.flush();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
-
 }

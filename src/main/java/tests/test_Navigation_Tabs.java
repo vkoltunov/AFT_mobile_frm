@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 //import org.testng.annotations.*;
 
@@ -31,8 +32,11 @@ public class test_Navigation_Tabs extends TestManager {
 //===== Categories =====
 
     @org.testng.annotations.Test
-    public void test1() {
+    @Parameters({"AppType"})
+    public void test1(@Optional String appType) {
         testInfo.id("test1").suite("test_Navigation_Tabs").name("Check Categories bar.");
+        photolab.setAppType(appType);
+
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

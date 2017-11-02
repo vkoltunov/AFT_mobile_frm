@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.result;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -28,7 +29,7 @@ public class ResultUiObjects {
     }
 
     public UiObject share(){
-        if(share == null) share = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/menu_share").makeUiObject();
+        if(share == null) share = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/menu_share").makeUiObject();
         return share;
     }
 
@@ -38,12 +39,12 @@ public class ResultUiObjects {
     }
 
     public UiObject advertisement(){
-        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName("vsin.t16_funny_photo").description("Web View").makeUiObject();
+        if(advertisement == null) advertisement = new UiSelector().className("android.webkit.WebView").packageName(Android.app.photoLab.packageID()).description("Web View").makeUiObject();
         return advertisement;
     }
 
     public UiObject addEffects(){
-        if(addEffects == null) addEffects = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/add").makeUiObject();
+        if(addEffects == null) addEffects = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/add").makeUiObject();
         return addEffects;
     }
 
@@ -58,27 +59,27 @@ public class ResultUiObjects {
     }
 
     public UiObject animate(){
-        if(animate == null) animate = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/add_action3").makeUiObject();
+        if(animate == null) animate = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/add_action3").makeUiObject();
         return animate;
     }
 
     public UiObject addArtStyle(){
-        if(addArtStyle == null) addArtStyle = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/add_action2").makeUiObject();
+        if(addArtStyle == null) addArtStyle = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/add_action2").makeUiObject();
         return addArtStyle;
     }
 
     public UiObject addYourText(){
-        if(addYourText == null) addYourText = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/add_action1").makeUiObject();
+        if(addYourText == null) addYourText = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/add_action1").makeUiObject();
         return addYourText;
     }
 
     public UiObject closeEffects(){
-        if(closeEffects == null) closeEffects = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/add").makeUiObject();
+        if(closeEffects == null) closeEffects = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/add").makeUiObject();
         return closeEffects;
     }
 
     public UiObject destination(){
-        if(destination == null) destination = new UiSelector().className("android.widget.ImageButton").resourceId("vsin.t16_funny_photo:id/add").makeUiObject();
+        if(destination == null) destination = new UiSelector().className("android.widget.ImageButton").resourceId(Android.app.photoLab.packageID()+":id/add").makeUiObject();
         return destination;
     }
 }

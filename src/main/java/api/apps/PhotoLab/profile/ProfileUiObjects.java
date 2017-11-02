@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.profile;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -10,11 +11,17 @@ public class ProfileUiObjects {
 
     private static UiObject
             title,
-            list;
+            list,
+            share;
 
     public UiObject title(){
-        if(title == null) title = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").text("My profile").makeUiObject();
+        if(title == null) title = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").text("My profile").makeUiObject();
         return title;
+    }
+
+    public UiObject share(){
+        if(share == null) share = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/menu_share").makeUiObject();
+        return share;
     }
 
     public UiObject list(){

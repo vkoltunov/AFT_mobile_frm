@@ -9,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 /**
  * Created by User on 6/26/2017.
@@ -30,8 +32,10 @@ public class test_Art extends TestManager {
     //===== Full + Art =====
 
     @org.testng.annotations.Test
-    public void test10(){
+    @Parameters({"AppType"})
+    public void test10(@Optional String appType){
         testInfo.id("test10").suite("test_Art").name("Full cycle work with photo + Add art Effect (Category:Smart Filters; Effect:Color On You)");
+        photolab.setAppType(appType);
 
         photolab.custom.loadPictureToDevice(Config.APP_DATA_DIR+"\\photoLab\\source\\t1.png");
         photolab.forceStop();
@@ -53,7 +57,7 @@ public class test_Art extends TestManager {
         photolab.menu.open();
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
-        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\RedLipsSticker.jpg");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\RedLipsSticker_"+Android.app.photoLab.appType+".jpg");
     }
 
     @AfterTest

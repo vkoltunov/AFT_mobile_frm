@@ -72,9 +72,6 @@ public class Runner extends BaseEntity {
             Listener.setReporter(new Reporter(new File(Config.REPORT_DIR + "\\result_"+Common.getCurrentDateTimeStamp()+"\\report.xml")));
             DriverManager.createDriver();
             //Android.app.fabby.runTest();
-            //Android.app.fabby.runToast();
-
-            //Android.app.photoLab.config.checkEffectsPopularity("http://testing.cfg.ws.pho.to/androidphotolab/conf.json", "D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv");
 
             int res = new Runner().runTests(testSuite);
         } finally {

@@ -19,7 +19,7 @@ public class Profile  implements Activity {
     public Profile waitToLoad(){
         MyLogger.log.info("waiting for profile activity");
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        if ((uiObject.list().size() > 0) || (uiObject.title().size()>0)) return Android.app.photoLab.profile;
+        if ((uiObject.list().size() > 0) && ((uiObject.title().size()>0) || (uiObject.share().size()>0))) return Android.app.photoLab.profile;
         else throw new AssertionError("profile activity failed to load/open");
     }
 

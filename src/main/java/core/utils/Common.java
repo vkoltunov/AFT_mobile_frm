@@ -12,6 +12,7 @@ import org.apache.commons.io.filefilter.FileFilterUtils;
 import org.apache.commons.io.filefilter.IOFileFilter;
 import org.json.JSONException;
 import org.json.simple.JSONObject;
+import org.openqa.selenium.logging.LogEntry;
 
 
 import javax.imageio.ImageIO;
@@ -26,12 +27,14 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.logging.Level;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import static core.managers.DriverManager.sdCard;
 import static core.utils.Config.Keys.*;
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 import java.util.regex.Matcher;
 
@@ -134,17 +137,18 @@ public class Common extends BaseEntity {
         return "";
     }
 
-
     //======================================================= Работа с URL =============================================================
 
     public static int getResponseCode(String urlString) throws MalformedURLException, IOException {
         URL u = new URL(urlString);
         HttpURLConnection huc =  (HttpURLConnection)  u.openConnection();
+
         huc.setRequestMethod("GET");
+        huc.setRequestProperty("User-Agent", "Mozilla/5.0");
+        //huc.setRequestProperty("charset", "utf-8");
         huc.connect();
         return huc.getResponseCode();
     }
-
 
     public static Boolean urlValidation(String url) {
         try {
@@ -153,7 +157,7 @@ public class Common extends BaseEntity {
                 //MyLogger.log.info("Response code is "+responseCode+". URL is work correctly.");
                 return true;
             } else {
-                //MyLogger.log.error("Response code is "+responseCode+". URL is not work correctly.");
+                MyLogger.log.error("Response code is "+responseCode+". URL is not work correctly.");
                 return false;
             }
         } catch (IOException exception) {

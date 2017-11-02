@@ -16,6 +16,8 @@ public class Camera implements Activity {
     public Camera waitToLoad(){
         try{
             MyLogger.log.info("waiting for Camera activity");
+
+
             uiObject.shuter().waitToAppear(10);
             return Android.app.photoLab.camera;
         }catch (AssertionError e) {

@@ -1,5 +1,6 @@
 package api.apps.PhotoLab.logIn;
 
+import api.android.Android;
 import core.UiObject;
 import core.UiSelector;
 
@@ -17,12 +18,12 @@ public class LogInUiObjects {
             fb_logIn_btn;
 
     public UiObject logInTitle(){
-        if(logInTitle == null) logInTitle = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/toolbar_title").text("Log in").makeUiObject();
+        if(logInTitle == null) logInTitle = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").text("Log in").makeUiObject();
         return logInTitle;
     }
 
     public UiObject logInWithFB(){
-        if(logInWithFB == null) logInWithFB = new UiSelector().className("android.widget.Button").resourceId("vsin.t16_funny_photo:id/btnLoginWithFb").makeUiObject();
+        if(logInWithFB == null) logInWithFB = new UiSelector().className("android.widget.Button").resourceId(Android.app.photoLab.packageID()+":id/btnLoginWithFb").makeUiObject();
         return logInWithFB;
     }
 
@@ -37,7 +38,7 @@ public class LogInUiObjects {
     }
 
     public UiObject pageMessage(){
-        if(pageMessage == null) pageMessage = new UiSelector().className("android.widget.TextView").resourceId("vsin.t16_funny_photo:id/login_text_footer").makeUiObject();
+        if(pageMessage == null) pageMessage = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/login_text_footer").makeUiObject();
         return pageMessage;
     }
 
