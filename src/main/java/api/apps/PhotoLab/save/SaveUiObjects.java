@@ -18,7 +18,9 @@ public class SaveUiObjects {
             save_target,
             collage,
             tutorialLogo,
-            tutorialShare;
+            tutorialShare,
+            share,
+            tagEdit;
 
     public UiObject saveAndShare(){
         if(saveAndShare == null) saveAndShare = new UiSelector().className("android.widget.TextView").text("Save & Share").makeUiObject();
@@ -65,4 +67,13 @@ public class SaveUiObjects {
         return tutorialShare;
     }
 
+    public UiObject share(){
+        if(share == null) share = new UiSelector().className("android.widget.Button").resourceId("android:id/button1").text("Share").makeUiObject();
+        return share;
+    }
+
+    public UiObject tagEdit(){
+        if(tagEdit == null) tagEdit = new UiSelector().className("android.widget.EditText").resourceId("android:id/edit").makeUiObject();
+        return tagEdit;
+    }
 }

@@ -32,6 +32,23 @@ public class Save implements Activity {
         }
     }
 
+    public void tapShare(){
+        try{
+            MyLogger.log.info("Tap to Share button.");
+            uiObject.share().tap();
+        }catch (AssertionError e) {
+            throw new AssertionError("Share button failed to tap.");
+        }
+    }
+
+    public void addTag(String tag){
+        if (uiObject.tagEdit().size()>0) {
+            MyLogger.log.info("Add tag '"+tag+"' for picture result.");
+            uiObject.tagEdit().typeText(tag);
+        }
+        else throw new AssertionError("Tag '"+tag+"' for picture result failed to add.");
+    }
+
     public void tapSaveToDevice(){
         try{
             MyLogger.log.info("Tap to Save to device option.");

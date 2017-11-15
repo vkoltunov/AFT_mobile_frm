@@ -3,6 +3,7 @@ package api.apps;
 import api.apps.Fabby.Fabby;
 import api.apps.Instagram.Instagram;
 import api.apps.PhotoLab.PhotoLab;
+import api.apps.Teleport.Teleport;
 import api.apps.Vsco.Vsco;
 
 /**
@@ -13,5 +14,6 @@ public class Apps {
     public PhotoLab photoLab = new PhotoLab();
     public Instagram instagram = new Instagram();
     public Vsco vsco = new Vsco();
+    public Teleport teleport = new Teleport();
     public Fabby fabby = new Fabby();
 }

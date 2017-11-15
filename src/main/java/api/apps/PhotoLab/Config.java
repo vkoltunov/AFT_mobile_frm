@@ -21,6 +21,69 @@ import java.util.Map;
  */
 public class Config {
 
+    public Boolean checkAllEffectsInCategory(String configURL, String lang, String legacyID) throws org.json.simple.parser.ParseException {
+
+        try {
+            String title,catTitle;
+            Map<String, ArrayList> resultMap = new HashMap<String, ArrayList>();
+            String configJson = IOUtils.toString(new URL(configURL));
+            JSONObject configJsonObject = (JSONObject) JSONValue.parseWithException(configJson);
+            String tabName = getTabByLegacy(configJsonObject, lang, "categories");
+            org.json.simple.JSONArray category = (org.json.simple.JSONArray) configJsonObject.get("categories");
+
+            for(int j=0; j<category.size(); j++) {
+
+                JSONObject categoryItem = (JSONObject) category.get(j);
+                String tabId = (String) categoryItem.get("legacy_id");
+                if (legacyID.equals(tabId) || (legacyID.equals(""))){
+
+                    JSONObject titles = (JSONObject) categoryItem.get("title");
+
+                    if (titles.containsKey(lang)) {
+                        catTitle = (String) titles.get(lang);
+
+                        ArrayList listFailedEffects = new ArrayList();
+
+
+
+                        org.json.simple.JSONArray content = (org.json.simple.JSONArray) categoryItem.get("content");
+                        for(int i=0; i<content.size(); i++) {
+                            JSONObject element = (JSONObject) content.get(i);
+                            String type = (String)element.get("type");
+                            Long id = (Long)element.get("id");
+
+                            if (type.equals("fx")){
+                                JSONObject resObject;
+                                resObject = getElementById("", "effects", id, configJsonObject);
+                                title = getJsonObjTitle(resObject, "en");
+
+                                if (!Android.app.photoLab.categories.effectExists(title)) listFailedEffects.add(title);
+                            }
+                        }
+                        if (!listFailedEffects.isEmpty()){
+                            resultMap.put(catTitle, listFailedEffects);
+                            listFailedEffects.clear();
+                        }
+                    } else {
+                        MyLogger.log.error("Caategory key value '" + lang + "' not found JSON object.");
+                        throw new AssertionError ("Caategory key value '" + lang + "' not found JSON object.");
+                    }
+                }
+            }
+            if (resultMap.isEmpty()) return true;
+            else {
+                MyLogger.log.error("Failed effects : "+resultMap.toString());
+                MyLogger.log.error("Total count failed effects : "+resultMap.size());
+                throw new AssertionError("Check category effects failed.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+
 
 
     public Boolean checkNotInPopularityEffects(String configURL, String csvURL) throws org.json.simple.parser.ParseException {
@@ -209,7 +272,7 @@ public class Config {
                     case "2162":
                     case "2002":
                     case "hatched":
-                    case "harley_quinn":
+                    //case "harley_quinn":
                     case "in_a_blurry_world":
                     case "calendar":
                     case "playful_lady_frame":
@@ -407,7 +470,7 @@ public class Config {
                         }
                     } else {
                         MyLogger.log.error("Caategory key value '" + lang + "' not found JSON object.");
-                        new AssertionError ("Caategory key value '" + lang + "' not found JSON object.");
+                        throw new AssertionError ("Caategory key value '" + lang + "' not found JSON object.");
                     }
                 }
             }
@@ -612,19 +675,22 @@ public class Config {
             org.json.simple.JSONArray content = (org.json.simple.JSONArray) categoryItem.get("content");
             JSONObject titles = (JSONObject) categoryItem.get("title");
             String title = (String) titles.get("en");
-            Integer position = 0;
-            for (int i = 0; i < content.size(); i++) {
-                JSONObject element = (JSONObject) content.get(i);
-                String type = (String)element.get("type");
-                if (type.equals("fx")) position = position + 1;
-                Long id = (Long) element.get("id");
-                if (id.longValue() == effectId.longValue()) {
-                    Pair<Integer, String> result;
-                    if (withAdsPosition) result = new Pair<>(position-1, title);
-                    else result = new Pair<>(i, title);
-                    return result;
+            if (!title.equals("Popular")){
+                Integer position = 0;
+                for (int i = 0; i < content.size(); i++) {
+                    JSONObject element = (JSONObject) content.get(i);
+                    String type = (String)element.get("type");
+                    if (type.equals("fx")) position = position + 1;
+                    Long id = (Long) element.get("id");
+                    if (id.longValue() == effectId.longValue()) {
+                        Pair<Integer, String> result;
+                        if (withAdsPosition) result = new Pair<>(position-1, title);
+                        else result = new Pair<>(i, title);
+                        return result;
+                    }
                 }
             }
+
         }
         return null;
     }

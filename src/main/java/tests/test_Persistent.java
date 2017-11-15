@@ -42,8 +42,8 @@ public class test_Persistent extends TestManager {
         photolab.open();
         photolab.main.waitToLoad();
         photolab.main.selectCategoryBar("Categories");
-        photolab.main.selectCategory("Face Photo Props");
-        photolab.categories.selectEffect("Cat Face Drawn Sticker");
+        photolab.main.selectCategory("Amazing Frames");
+        photolab.categories.selectEffect("Nautical Frame");
 
         photolab.pictures.selectTab("All");
         photolab.pictures.selectPicture(1);
@@ -70,7 +70,7 @@ public class test_Persistent extends TestManager {
         photolab.menu.open();
         photolab.menu.tapHome();
         photolab.custom.moveResPictureToPC(Config.APP_DATA_DIR+"\\photoLab\\result");
-        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\Persist_CatFace_"+Android.app.photoLab.appType+".jpg");
+        photolab.custom.compareFiles(Config.APP_DATA_DIR+"\\photoLab\\result", Config.APP_DATA_DIR+"\\photoLab\\result\\Persist_"+Android.app.photoLab.appType+".jpg");
     }
 
     @AfterTest

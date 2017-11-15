@@ -191,10 +191,10 @@ public class Fabby {
         location = driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").resourceId(\"com.fabby.android:id/tab\")").getLocation();
         size2 = driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").resourceId(\"com.fabby.android:id/tab\")").getSize();
         int ypos = (int) (location.getY() + size2.getHeight() / 2);
-        while (!(driver.findElementsByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").text(\"МОЯ ТЕМА\")").size() > 0)) {
+        while (!(driver.findElementsByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").text(\"CUSTOM\")").size() > 0)) {
             driver.swipe(startx, ypos, endx, ypos, 500);
         }
-        driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").text(\"МОЯ ТЕМА\")").click();
+        driver.findElementByAndroidUIAutomator("new UiSelector().className(\"android.widget.TextView\").text(\"CUSTOM\")").click();
         return true;
     }
 }

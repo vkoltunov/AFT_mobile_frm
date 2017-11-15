@@ -5,68 +5,85 @@
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
     <test name="001" preserve-order="true">
-        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.8-1679-release.apk' />
+        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.10-1746-release.apk' />
         <parameter name="AppType" value='free' />
         <classes>
             <class name="tests.Preparation" />
         </classes>
     </test>
-    <test name="005" preserve-order="true">
+    <test name="002" preserve-order="true">
         <parameter name="AppType" value='free' />
         <classes>
             <class name="tests.test_SaveAndShare" />
         </classes>
     </test>
-    <test name="006" preserve-order="true">
+    <test name="003" preserve-order="true">
         <parameter name="AppType" value='free' />
         <classes>
             <class name="tests.test_SimpleWorkflow" />
         </classes>
     </test>
-    <test name="007" preserve-order="true">
+    <test name="004" preserve-order="true">
         <parameter name="AppType" value='free' />
         <classes>
             <class name="tests.test_Persistent" />
         </classes>
     </test>
-    <test name="008" preserve-order="true">
+    <test name="005" preserve-order="true">
         <classes>
             <class name="tests.test_GoPro" />
         </classes>
     </test>
-    <test name="009" preserve-order="true">
+    <test name="006" preserve-order="true">
         <classes>
             <class name="tests.test_GoPro_PostProc" />
         </classes>
     </test>
-    <test name="010" preserve-order="true">
+    <test name="007" preserve-order="true">
         <classes>
             <class name="tests.test_Watemark" />
         </classes>
     </test>
-    <test name="011" preserve-order="true">
+    <test name="008" preserve-order="true">
         <classes>
             <class name="tests.test_Watemark_NoSponsored" />
         </classes>
     </test>
-    <test name="012" preserve-order="true">
+    <test name="009" preserve-order="true">
         <classes>
             <class name="tests.test_Watemark_YesSponsored" />
         </classes>
     </test>
-    <test name="013" preserve-order="true">
+    <test name="010" preserve-order="true">
         <classes>
             <class name="tests.test_RateUs" />
         </classes>
     </test>
-    <test name="014" preserve-order="true">
+    <test name="011" preserve-order="true">
         <classes>
             <class name="tests.test_Animation" />
         </classes>
     </test>
-    <test name="015" preserve-order="true">
+    <test name="012" preserve-order="true">
         <classes>
             <class name="tests.test_Art" />
+        </classes>
+    </test>
+    <test name="013" preserve-order="true">
+        <classes>
+            <class name="tests.test_Collage" />
+        </classes>
+    </test>
+    <test name="014" preserve-order="true">
+        <classes>
+            <class name="tests.test_Inspiration" />
+        </classes>
+    </test>
+    <test name="015" preserve-order="true">
+        <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
+        <parameter name="Fb_Password" value='testbook' />
+        <classes>
+            <class name="tests.test_Compositions_Ok" />
         </classes>
     </test>
     <test name="016" preserve-order="true">
@@ -92,30 +109,6 @@
     <test name="020" preserve-order="true">
         <classes>
             <class name="tests.test_Notifications_User" />
-        </classes>
-    </test>
-    <test name="021" preserve-order="true">
-        <classes>
-            <class name="tests.test_Collage" />
-        </classes>
-    </test>
-    <test name="022" preserve-order="true">
-        <classes>
-            <class name="tests.test_Inspiration" />
-        </classes>
-    </test>
-    <test name="025" preserve-order="true">
-        <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
-        <parameter name="Fb_Password" value='testbook' />
-        <classes>
-            <class name="tests.test_Compositions_Ok" />
-        </classes>
-    </test>
-    <test name="026" preserve-order="true">
-        <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
-        <parameter name="Fb_Password" value='testbook' />
-        <classes>
-            <class name="tests.test_Compositions_ShowInFeed" />
         </classes>
     </test>
 </suite>

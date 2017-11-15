@@ -5,7 +5,7 @@
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
     <test name="001" preserve-order="true">
-        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayPro-v3.0.7-1641-release.apk' />
+        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayPro-v3.0.10-1746-release.apk' />
         <parameter name="AppType" value='pro' />
         <classes>
             <class name="tests.Preparation" />
@@ -60,9 +60,10 @@
     </test>
     <test name="008" preserve-order="true">
         <parameter name="Config" value='http://cfg.ws.pho.to/androidphotolabpro/v1/conf.json' />
-        <parameter name="CsvPath" value='D:\\AFT\\data\\photoLab\\popularity_photolab_free.csv' />
+        <parameter name="Language" value='en' />
+        <parameter name="AppType" value='pro' />
         <classes>
-            <class name="tests.test_Config_PopularityCheck" />
+            <class name="tests.test_Config_Effects" />
         </classes>
     </test>
     <test name="009" preserve-order="true">
@@ -75,20 +76,6 @@
         <parameter name="Config" value='http://cfg.ws.pho.to/androidphotolabpro/v1/conf.json' />
         <classes>
             <class name="tests.test_Config_CategoriesPreview" />
-        </classes>
-    </test>
-    <test name="012" preserve-order="true">
-        <parameter name="Config" value='http://cfg.ws.pho.to/androidphotolabpro/v1/conf.json' />
-        <classes>
-            <class name="tests.test_Config_CombosPreview" />
-        </classes>
-    </test>
-    <test name="013" preserve-order="true">
-        <parameter name="Config" value='http://cfg.ws.pho.to/androidphotolabpro/v1/conf.json' />
-        <parameter name="Language" value='en' />
-        <parameter name="AppType" value='pro' />
-        <classes>
-            <class name="tests.test_Config_Effects" />
         </classes>
     </test>
 </suite>

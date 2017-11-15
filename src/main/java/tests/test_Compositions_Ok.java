@@ -51,6 +51,8 @@ public class test_Compositions_Ok extends TestManager {
         photolab.result.tapSaveToDevice();
         photolab.save.selectTarget("Photo Lab");
         photolab.logIn.tapLogInFB(fb_Login,fb_Password);
+        photolab.save.addTag("#autotest");
+        photolab.save.tapShare();
         photolab.dialogs.checkDialogMessage("Your photo effects combo has been published");
         photolab.dialogs.tapOk();
         photolab.menu.open();

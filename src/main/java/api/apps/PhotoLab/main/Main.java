@@ -70,6 +70,7 @@ public class Main implements Activity {
 
     public Main selectCategoryBar (String categoryBarName){
         MyLogger.log.info("Select category bar '"+categoryBarName+"'.");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Boolean bFlag = false;
         if (categoryBarName.contains("Feed") || categoryBarName.contains("Inspiration") || categoryBarName.contains("Explore") || categoryBarName.contains("Combos") || categoryBarName.contains("Community") ){
             if (!bFlag) {
@@ -97,8 +98,7 @@ public class Main implements Activity {
         if (bFlag){
             uiObject.barItem(categoryBarName).tap();
             return Android.app.photoLab.main.waitToLoad();
-        }
-        else throw new AssertionError("Category bar '"+categoryBarName+"' not found.");
+        } else throw new AssertionError("Category bar '"+categoryBarName+"' not found.");
     }
 
     public void checkedMenuBar (String categoryBarName, Boolean status){

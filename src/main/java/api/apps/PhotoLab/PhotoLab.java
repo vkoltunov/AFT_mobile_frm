@@ -79,6 +79,7 @@ public class PhotoLab implements Application{
 
     @Override
     public void uninstallApp() {
+        if (appType.equals("free")) Android.adb.uninstallApp("com.vicman.photolabpro");
         Android.adb.uninstallApp(packageID());
     }
 
