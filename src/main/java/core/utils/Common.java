@@ -137,6 +137,18 @@ public class Common extends BaseEntity {
         return "";
     }
 
+    /**
+     * Получает через adb уровень заряда батарем девайса.
+     *
+     * @return Возвращает уровень заряда батареи девайса
+     */
+    public static String getBatteryLvl() {
+        String percentage;
+        percentage = getMatch(Android.adb.getBattaryStats(), "level:*\\s*\\d+");
+        percentage = getMatch(percentage, "\\d+");
+        return percentage;
+    }
+
     //======================================================= Работа с URL =============================================================
 
     public static int getResponseCode(String urlString) throws MalformedURLException, IOException {

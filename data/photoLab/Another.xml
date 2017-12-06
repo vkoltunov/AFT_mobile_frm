@@ -37,4 +37,16 @@
             <class name="tests.test_Compositions_ShowInFeed" />
         </classes>
     </test>
+    <test name="009" preserve-order="true">
+        <parameter name="Config" value='http://testing.cfg.ws.pho.to/androidxmas/v1/conf.json' />
+        <classes>
+            <class name="tests.xmas_Config_EffectsPreview" />
+        </classes>
+    </test>
+    <test name="010" preserve-order="true">
+        <parameter name="Config" value='http://testing.cfg.ws.pho.to/androidxmas/v1/conf.json' />
+        <classes>
+            <class name="tests.xmas_Config_CategoriesPreview" />
+        </classes>
+    </test>
 </suite>

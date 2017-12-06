@@ -1,6 +1,8 @@
 package core;
 
+import api.android.Android;
 import core.managers.ServerManager;
+import core.utils.Common;
 import org.aspectj.lang.annotation.Before;
 import org.junit.Test;
 
@@ -18,6 +20,8 @@ import static core.managers.DriverManager.sdCard;
  */
 
 public class ADB {
+
+    //private Common commonFunc;
 
     private String ID;
     private static String card = sdCard;
@@ -193,6 +197,11 @@ public class ADB {
         else if(pidAfter.size() > 1) throw new RuntimeException("Multiple logcat processes were started when only one was expected!");
         else throw new RuntimeException("Failed to start logcat process!");
     }
+
+    public String getBattaryStats(){
+        return command("adb -s "+ID+" shell dumpsys battery");
+    }
+
 
     public void stopLogcat(Object PID){
         command("adb -s "+ID+" shell kill "+PID);

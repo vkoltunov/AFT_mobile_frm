@@ -2,6 +2,7 @@ package tests;
 
 import api.android.Android;
 import api.apps.PhotoLab.PhotoLab;
+import api.apps.Xmas.Xmas;
 import core.managers.TestManager;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.BeforeTest;
@@ -11,9 +12,9 @@ import org.testng.annotations.Parameters;
 /**
  * Created by User on 4/5/2017.
  */
-public class test_Config_HalloweenCheck extends TestManager {
+public class xmas_Config_EffectsPreview extends TestManager {
 
-    private static PhotoLab photolab = Android.app.photoLab;
+    private static Xmas xmas = Android.app.xmas;
 
 //    @org.testng.annotations.BeforeClass
 //    public static void beforeClass(){
@@ -22,15 +23,15 @@ public class test_Config_HalloweenCheck extends TestManager {
 
     @BeforeTest
     public void before(){
-        testInfo.suite("test_Config_HalloweenCheck");
+        testInfo.suite("xmas_Config_EffectsPreview");
     }
 
 //===== Categories =====
 
     @org.testng.annotations.Test
-    @Parameters({"Config", "CsvPath"})
-    public void test35(String configURL, String csvPath) throws ParseException {
-        testInfo.id("test1").suite("test_Config_HalloweenCheck").name("Check Halloween Elements position with csv file.");
-        photolab.config.checkHalloweenContent(configURL, csvPath);
+    @Parameters({"Config"})
+    public void test35(String configURL) throws ParseException {
+        testInfo.id("test1").suite("xmas_Config_EffectsPreview").name("Check Effects Preview URLs for App.");
+        xmas.config.checkElementsPreview(configURL, "effects");
     }
 }

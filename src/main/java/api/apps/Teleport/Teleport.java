@@ -2,6 +2,7 @@ package api.apps.Teleport;
 
 import api.android.Android;
 import core.MyLogger;
+import core.utils.Common;
 import io.appium.java_client.android.AndroidKeyCode;
 import org.apache.commons.io.FilenameUtils;
 import org.openqa.selenium.Dimension;
@@ -41,6 +42,20 @@ public class Teleport {
             File[] listOfFiles = folder.listFiles();
 
             for (int i = 0; i < listOfFiles.length; i++) {
+
+                //String batLvl = Common.getBatteryLvl();
+                //int lvl = Integer.parseInt(batLvl);
+
+                //if (lvl < 7){
+                    //Android.adb.forceStopApp("com.teleportfuturetechnologies.teleport");
+                    //MyLogger.log.info("Battery LVL is bad. Waiting...");
+                    //try {
+                    //    Thread.sleep(7200000);
+                    //} catch (InterruptedException e) {
+                    //    e.printStackTrace();
+                    //}
+                    //Android.adb.openAppsActivity("com.teleportfuturetechnologies.teleport", "com.teleportfuturetechnologies.teleport.camera.CameraActivity");
+                //} else MyLogger.log.info("Battery LVL = "+lvl);
 
                 Android.adb.deleteFolderFiles("/storage/sdcard0/Pictures/Teleport");
                 if (listOfFiles[i].isFile()) {
@@ -117,22 +132,22 @@ public class Teleport {
                             counter = counter + 1;
                             MyLogger.log.info("Counter : "+counter);
                             try {
-                                Thread.sleep(2500);
+                                Thread.sleep(1000);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                         }
 
-                        uiObject.filterNameTop("Background").tap();
-                        try {
-                            Thread.sleep(200);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        uiObject.filterNameTop("Skin Color").tap();
+                        //uiObject.filterNameTop("Background").tap();
+                        //try {
+                        //    Thread.sleep(200);
+                        //} catch (InterruptedException e) {
+                        //    e.printStackTrace();
+                        //}
+                        //uiObject.filterNameTop("Skin Color").tap();
 
                         Boolean bflag = false;
-                        Android.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+                        Android.driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
                         while ((!bflag)) {
                             if (uiObject.filterNameBottom(sFltrToNeed).size() > 0){
                                 uiObject.filterNameBottom(sFltrToNeed).tap();

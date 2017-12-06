@@ -71,7 +71,7 @@ public class Runner extends BaseEntity {
             MyLogger.log.info("Path for reports : "+ Config.REPORT_DIR);
             Listener.setReporter(new Reporter(new File(Config.REPORT_DIR + "\\result_"+Common.getCurrentDateTimeStamp()+"\\report.xml")));
             DriverManager.createDriver();
-            //Android.app.fabby.runTest();
+            //Android.app.photoLab.config.compareJsons("http://testing.cfg.ws.pho.to/androidphotolab/conf.json", "http://cfg.ws.pho.to/androidphotolab/conf.json");
 
             int res = new Runner().runTests(testSuite);
         } finally {
