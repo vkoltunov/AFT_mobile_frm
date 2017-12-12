@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [тестовый запуск]">
-  <parameter name="Config" value="http://cfg.ws.pho.to/androidphotolab/conf.json"/>
-  <parameter name="CsvPath" value="D:\\AFT\\data\\photoLab\\christmas.csv"/>
   <listeners>
     <listener class-name="core.Listener"/>
     <listener class-name="core.AnnotationTransformer"/>
   </listeners>
-  <test name="001(failed)" preserve-order="false">
-    <parameter name="Config" value="http://cfg.ws.pho.to/androidphotolab/conf.json"/>
-    <parameter name="CsvPath" value="D:\\AFT\\data\\photoLab\\christmas.csv"/>
+  <test name="010(failed)" preserve-order="false">
     <classes>
-      <class name="tests.test_Config_ChristmasCheck">
+      <class name="tests.test_RateUs">
         <methods>
+          <include name="test12" invocation-numbers="0 0"/>
           <include name="afterTest"/>
           <include name="before"/>
-          <include name="test35" invocation-numbers="0"/>
         </methods>
       </class>
     </classes>

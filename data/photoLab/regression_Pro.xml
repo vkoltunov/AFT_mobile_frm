@@ -5,7 +5,7 @@
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
     <test name="001" preserve-order="true">
-        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayPro-v3.0.12-1863-release.apk' />
+        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayPro-v3.0.13-1913-release.apk' />
         <parameter name="AppType" value='pro' />
         <classes>
             <class name="tests.Preparation" />
@@ -50,28 +50,34 @@
     <test name="008" preserve-order="true">
         <parameter name="AppType" value='pro' />
         <classes>
-            <class name="tests.test_Notifications_Effect" />
+            <class name="tests.test_AboutThisCombo" />
         </classes>
     </test>
     <test name="009" preserve-order="true">
         <parameter name="AppType" value='pro' />
         <classes>
-            <class name="tests.test_Notifications_Combo" />
+            <class name="tests.test_Notifications_Effect" />
         </classes>
     </test>
     <test name="010" preserve-order="true">
         <parameter name="AppType" value='pro' />
         <classes>
-            <class name="tests.test_Notifications_Group" />
+            <class name="tests.test_Notifications_Combo" />
         </classes>
     </test>
     <test name="011" preserve-order="true">
         <parameter name="AppType" value='pro' />
         <classes>
-            <class name="tests.test_Notifications_Tab" />
+            <class name="tests.test_Notifications_Group" />
         </classes>
     </test>
     <test name="012" preserve-order="true">
+        <parameter name="AppType" value='pro' />
+        <classes>
+            <class name="tests.test_Notifications_Tab" />
+        </classes>
+    </test>
+    <test name="013" preserve-order="true">
         <parameter name="AppType" value='pro' />
         <classes>
             <class name="tests.test_Notifications_User" />

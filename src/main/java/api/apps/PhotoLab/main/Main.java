@@ -27,8 +27,8 @@ public class Main implements Activity {
     public Main waitToLoad(){
         try{
             MyLogger.log.info("Waiting for Main page.");
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            if (!(uiObject.navigationContainer().size() > 0)){
+            driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+            if (!(uiObject.menu().size() > 0)){
                 Android.app.photoLab.menu.open();
                 Android.app.photoLab.menu.tapHome();
             }
@@ -72,6 +72,7 @@ public class Main implements Activity {
         MyLogger.log.info("Select category bar '"+categoryBarName+"'.");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Boolean bFlag = false;
+        uiObject.bottomNavigation().waitToAppear(10);
         if (categoryBarName.contains("Feed") || categoryBarName.contains("Inspiration") || categoryBarName.contains("Explore") || categoryBarName.contains("Combos") || categoryBarName.contains("Community") ){
             if (!bFlag) {
                 bFlag=scrollBarTo("Feed");
@@ -112,6 +113,7 @@ public class Main implements Activity {
         MyLogger.log.info("Select category '"+categoryName+"'.");
         //waitToLoad();
         if (scrollToCategory(categoryName)) {
+            //MyLogger.log.info("Hello!");
             uiObject.categoryItem(categoryName).tap();
             return Android.app.photoLab.categories.categoryTitle_check(categoryName);
         }
@@ -189,7 +191,9 @@ public class Main implements Activity {
         Dimension size;
         Boolean bflag = false;
         int endx = uiObject.category_area().getLocation().getX();
+        //MyLogger.log.info("Hello AREA !");
         int ind_count = uiObject.category_items().size() - 1;
+        //MyLogger.log.info("Hello ITEMS !");
 
         if (ind_count < 0) return false;
         else {

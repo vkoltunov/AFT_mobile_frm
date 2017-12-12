@@ -4,11 +4,9 @@
         <listener class-name="core.Listener" />
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
-    <test name="001" preserve-order="true">
-        <parameter name="Config" value='http://cfg.ws.pho.to/androidphotolab/conf.json' />
-        <parameter name="CsvPath" value='D:\\AFT\\data\\photoLab\\christmas.csv' />
+    <test name="010" preserve-order="true">
         <classes>
-            <class name="tests.test_Config_ChristmasCheck" />
+            <class name="tests.test_RateUs" />
         </classes>
     </test>
 </suite>

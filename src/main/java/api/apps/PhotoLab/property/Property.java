@@ -6,6 +6,13 @@ import api.apps.PhotoLab.processing.Processing;
 import api.apps.PhotoLab.result.Result;
 import api.interfaces.Activity;
 import core.MyLogger;
+import io.appium.java_client.TouchAction;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+
+import java.util.concurrent.TimeUnit;
+
+import static api.android.Android.driver;
 
 /**
  * Created by User on 5/2/2017.
@@ -18,7 +25,7 @@ public class Property implements Activity {
     public Property waitToLoad(){
         try{
             MyLogger.log.info("Waiting for Picture Property page");
-            uiObject.done().waitToAppear(10);
+            uiObject.title().waitToAppear(10);
             return Android.app.photoLab.property;
         }catch (AssertionError e) {
             throw new AssertionError("Picture Property page failed to load/open");
@@ -28,8 +35,33 @@ public class Property implements Activity {
     public Object tapDone(){
         try{
             MyLogger.log.info("Tap to Next button.");
-            uiObject.done().tap();
-            return Android.app.photoLab.processing.waitToLoad();
+
+            Point location;
+            Dimension size, size2;
+            Boolean bflag = false;
+            driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+
+            size = uiObject.imageView().getSize();
+            int startx = size.width;
+            int xpos = startx;
+            int xpos2 = xpos;
+
+            location = uiObject.imageView().getLocation();
+            size2 = uiObject.imageView().getSize();
+            int ypos = (int) (location.getY() + size2.getHeight() * 0.95);
+            int ypos2 = (int) ypos/2;
+            while ((ypos > ypos2) && (!bflag)){
+                while ((!bflag) && (xpos > startx/2)) {
+                    xpos = (int)(xpos * 0.9);
+                    TouchAction touchAction=new TouchAction(driver);
+                    touchAction.tap(xpos, ypos).perform();
+                    if (!(uiObject.title().size() > 0)) bflag = true;
+                }
+                xpos = xpos2;
+                ypos = (int)(ypos * 0.95);
+            }
+            if (xpos > startx/2) return Android.app.photoLab.processing.waitToLoad();
+            else throw new AssertionError("Button Next is not found.");
         }catch (AssertionError e) {
             throw new AssertionError("Next button failed to tap.");
         }

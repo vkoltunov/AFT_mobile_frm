@@ -29,7 +29,9 @@ public class MainUiObjects {
             category_area,
             inspirationItem,
             inspirationProfile,
-            navigationContainer;
+            navigationContainer,
+            bottomNavigation,
+            searchButton;
 
 
     public UiObject photoLab(){
@@ -41,6 +43,16 @@ public class MainUiObjects {
     public UiObject navigationContainer(){
         if(navigationContainer == null) navigationContainer = new UiSelector().className("android.widget.LinearLayout").resourceId(Android.app.photoLab.packageID()+":id/bottom_navigation_container").makeUiObject();
         return navigationContainer;
+    }
+
+    public UiObject bottomNavigation(){
+        if(bottomNavigation == null) bottomNavigation = new UiSelector().className("android.widget.LinearLayout").resourceId(Android.app.photoLab.packageID()+":id/bottom_navigation").makeUiObject();
+        return bottomNavigation;
+    }
+
+    public UiObject searchButton(){
+        if(searchButton == null) searchButton = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/search").makeUiObject();
+        return searchButton;
     }
 
     public UiObject actionBar(){
@@ -95,7 +107,7 @@ public class MainUiObjects {
     }
 
     public UiObject category_area(){
-        category_area = new UiSelector().className("android.support.v4.view.ViewPager").resourceId(Android.app.photoLab.packageID()+":id/non_swipe_view_pager").makeUiObject();
+        category_area = new UiSelector().className("android.support.v7.widget.RecyclerView").resourceId(Android.app.photoLab.packageID()+":id/recyclerView").makeUiObject();
         return category_area;
     }
 

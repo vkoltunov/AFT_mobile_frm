@@ -32,6 +32,7 @@ public class test_Config_NewEffects extends TestManager {
     @Parameters({"Config", "AppType"})
     public void test35(String configURL, @Optional String appType) throws ParseException {
         testInfo.id("test1").suite("test_Config_NewEffects").name("Check New Effects for App.");
+        photolab.setAppType(appType);
         photolab.forceStop();
         photolab.open();
         photolab.main.waitToLoad();

@@ -12,11 +12,17 @@ public class AboutComboUiObjects {
     private static UiObject
             title,
             comboBy,
-            close;
+            close,
+            share;
 
     public UiObject title(){
         if(title == null) title = new UiSelector().className("android.widget.TextView").resourceId(Android.app.photoLab.packageID()+":id/toolbar_title").textContains("About this combo").makeUiObject();
         return title;
+    }
+
+    public UiObject share(){
+        if(share == null) share = new UiSelector().className("android.widget.Button").resourceId("android:id/button1").textContains("Share").makeUiObject();
+        return share;
     }
 
     public UiObject comboBy(){

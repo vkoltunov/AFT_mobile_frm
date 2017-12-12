@@ -31,7 +31,8 @@ public class AboutCombo implements Activity {
         try{
             MyLogger.log.info("Check All Page elements for exists.");
             uiObject.title().waitToAppear(3);
-            checkComboBy();
+            Custom.swipeTo("bottom", "top");
+            uiObject.share().waitToAppear(3);
             uiObject.close().waitToAppear(2);
         }catch (AssertionError e) {
             throw new AssertionError("All Page elements for exists check failed.");

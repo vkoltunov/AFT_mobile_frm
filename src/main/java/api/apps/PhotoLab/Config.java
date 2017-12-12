@@ -354,7 +354,7 @@ public class Config {
 
                 switch (csvEffectLegacy) {
                     //case "mickey_mouse_dreams":
-                    case "british_pound_sterling":
+                    case "british123":
                     //case "transparent_calendar_2016":
                     //case "calendar_2016":
                     //case "2162":

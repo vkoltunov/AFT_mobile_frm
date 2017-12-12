@@ -5,7 +5,7 @@
         <listener class-name="core.AnnotationTransformer"/>
     </listeners>
     <test name="001" preserve-order="true">
-        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.10-1746-release.apk' />
+        <parameter name="Build_Path" value='https://ci.pho.to/builds/photolab/android/PhotoLab-PlayFree-v3.0.13-1913-release.apk' />
         <parameter name="AppType" value='free' />
         <classes>
             <class name="tests.Preparation" />
@@ -80,33 +80,38 @@
         </classes>
     </test>
     <test name="015" preserve-order="true">
+        <classes>
+            <class name="tests.test_AboutThisCombo" />
+        </classes>
+    </test>
+    <test name="016" preserve-order="true">
         <parameter name="Fb_Login" value='zqobenkoji_1497287426@tfbnw.net' />
         <parameter name="Fb_Password" value='testbook' />
         <classes>
             <class name="tests.test_Compositions_Ok" />
         </classes>
     </test>
-    <test name="016" preserve-order="true">
+    <test name="017" preserve-order="true">
         <classes>
             <class name="tests.test_Notifications_Effect" />
         </classes>
     </test>
-    <test name="017" preserve-order="true">
+    <test name="018" preserve-order="true">
         <classes>
             <class name="tests.test_Notifications_Combo" />
         </classes>
     </test>
-    <test name="018" preserve-order="true">
+    <test name="019" preserve-order="true">
         <classes>
             <class name="tests.test_Notifications_Group" />
         </classes>
     </test>
-    <test name="019" preserve-order="true">
+    <test name="020" preserve-order="true">
         <classes>
             <class name="tests.test_Notifications_Tab" />
         </classes>
     </test>
-    <test name="020" preserve-order="true">
+    <test name="021" preserve-order="true">
         <classes>
             <class name="tests.test_Notifications_User" />
         </classes>
